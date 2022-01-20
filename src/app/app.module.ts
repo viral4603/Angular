@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './main/video/video.component';
+import { FirstcapPipe } from './main/custompipe/firstcap.pipe';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { VideoComponent } from './main/video/video.component';
     MainComponent,
     FooterComponent,
     VideoComponent,
+    FirstcapPipe,
     ],
   imports: [
     BrowserModule,

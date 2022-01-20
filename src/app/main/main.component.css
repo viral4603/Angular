@@ -5,3 +5,11 @@
 button{
     margin: 20px;
 }
+.my-table{
+    margin-top: 20px;
+}
+.my-table table,tr,td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+        
+}
