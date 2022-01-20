@@ -1,39 +1,44 @@
-
-<video width="320" height="240" controls>
-    <source src="assets/video/movie.mp4" type="video/mp4">
-</video>
+<button (click)="showVideo()">Watch Video</button>
+<button (click)="closeVideo()">close Video</button>
+<div *ngIf="vClass === true">
+    <video width="320" height="240" controls>
+        <source src="assets/video/movie.mp4" type="video/mp4">
+    </video>
+</div>
+    
 <form action="#" method="post">
     <fieldset style="background-color: azure; padding: 50px">
         <legend style="font-weight: 600;">Registraion Form</legend>
 
-        <div>
-            <label for="fisrtName">First Name</label>
-            <input type="text" name="fisrtName" id="fisrtName" placeholder="Enter your first name" required autofocus>
+        <div [ngClass]="'form-input'">
+            <label for="fisrtName">First Name </label>
+            <input type="text" name="fisrtName" id="fisrtName" placeholder="Enter your first name" required autofocus [(ngModel)] ="firstName"><span>{{firstName}}</span>
+            
         </div>
 
-        <div>
+        <div [ngClass]="'form-input'">
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" [(ngModel)]="lastName"><span>{{lastName}}</span>
         </div>
 
-        <div>
+        <div [ngClass]="'form-input'">
             <label for="email">Email Address</label>
             <input type="email" name="email" id="email" placeholder="Enter your email" required autocomplete="off">
         </div>
 
-        <div>
+        <div [ngClass]="'form-input'">
             <label for="contactNo">Contact Number</label>
             <input type="contactNo" name="contactNo" id="contactNo" placeholder="Enter Contact number" required>
         </div>
 
-        <div style="flex-direction: row;">
+        <div [ngClass]="'form-input'" style="flex-direction: row;">
             <label for="gender">Gender</label>
             <input type="radio" name="gender" id ="male" value="male"><label for="male">male</label>
             <input type="radio" name="gender" id ="female"value="female"><label for="fmale">female</label>
             <input type="radio" name="gender" id="other"value="other"><label for="other">other</label>
         </div>
 
-        <div style="flex-direction: row;">
+        <div [ngClass]="'form-input'" style="flex-direction: row;">
             <label for="languge">Select languge</label>
             <input type="checkbox" name="languge" value="English"><label for="english">English</label>
             <input type="checkbox" name="languge" value="English"><label for="Gujrati">Gujrati</label>
@@ -62,3 +67,5 @@
 
     </fieldset>
 </form>
+<app-video [name] ="firstName" (dataParent)="parentCall($event)"></app-video>
+   

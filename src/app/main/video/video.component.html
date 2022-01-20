@@ -1,0 +1,8 @@
+<p>video works!</p>
+
+<h3>Your first Name is: {{name}}</h3>
+<form action="">
+    <label for="email">subscribe</label>
+    <input [(ngModel)]="email" type="email" name="email" id="email" placeholder="Enter your email">
+    <button (click)="getEmail(email)">send mail</button>
+</form>
