@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   firstName: string = "";
   lastName: string = "";
-  currencyCode:string ="INR";
-  vClass: boolean = false;
   index:string ='';
   currentDate = new Date();
   constructor() {
@@ -21,9 +19,11 @@ export class MainComponent implements OnInit {
   parentCall(data: string) {
     alert("thank you  " + data);
   }
-  showVideo() {
-    this.vClass = !this.vClass;
-  }
+  listcr = [
+    {
+      
+    }
+  ]
   listData = [{
     "id": "1",
     "name": "id labore ex et quam laborum",
@@ -226,15 +226,16 @@ export class MainComponent implements OnInit {
     "amount":1000,
     "currencycode":"INR"       
   }];
-
+//  get index and alert email
   indexClick(i: number) {
     alert(this.listData[i].email + this.index);
   }
-  trackByid(index: number, listData: any) {
+//  trackby index
+  trackByid(index: number, listData:any) {
     return listData.id;
   }
 
-}
+ }
 
 
 

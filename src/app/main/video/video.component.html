@@ -1,8 +1,18 @@
-<p>video works!</p>
+<div class="video-section">
 
-<h3>Your first Name is: {{name}}</h3>
-<form action="">
-    <label for="email">subscribe</label>
-    <input [(ngModel)]="email" type="email" name="email" id="email" placeholder="Enter your email">
-    <button (click)="getEmail(email)">send mail</button>
-</form>
+    <button (click)="showVideo()" class="video-btn">Watch Video</button>
+    <div *ngIf="vClass === true">
+        <video width="320" height="240" controls>
+            <source src="assets/video/movie.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
+    <h3 class="video-form-title">Your first Name is: {{name}}</h3>
+    <form action="">
+        <label for="email">subscribe</label>
+        <input [(ngModel)]="email" type="email" name="email" id="email" placeholder="Enter your email">
+        <button (click)="getEmail(email)">send mail</button>
+    </form>
+</div>
+

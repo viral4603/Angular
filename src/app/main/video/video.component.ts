@@ -8,17 +8,20 @@ import { Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
 })
 export class VideoComponent implements OnInit {
   @Input() name:string ='';
-  @Output() dataParent:EventEmitter<any> = new EventEmitter();
-  email:string ='asas@gmail.com';
+  @Output() dataParent:EventEmitter<string> = new EventEmitter();
+  vClass: boolean = false;
+  email:string ='';
   getEmail(email:string){
     this.dataParent.emit(this.email);
   }
-
   constructor() { }
 
   ngOnInit(): void {
     
 
+  }
+  showVideo() {
+    this.vClass = !this.vClass;
   }
 
 }

@@ -1,7 +1,6 @@
 .form-input{
     margin-top: 10px;
 }
-
 button{
     margin: 20px;
 }
@@ -11,5 +10,15 @@ button{
 .my-table table,tr,td,th{
     border: 1px solid black;
     border-collapse: collapse;
-        
+}
+.my-table{
+    padding: 0px 100px;
+}
+.my-table .t-title{
+    margin-bottom: 5px;
+    
+}
+.my-form{
+    width: 40%;
+    margin: 0 auto;
 }

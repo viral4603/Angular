@@ -1,4 +1,4 @@
-export interface Comments {
+export interface List {
     id:number,
     name:string,
     email:string,

@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './main/video/video.component';
 import { FirstcapPipe } from './main/custompipe/firstcap.pipe';
+import { ChangeColorDirective } from './main/video/change-color.directive';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FirstcapPipe } from './main/custompipe/firstcap.pipe';
     FooterComponent,
     VideoComponent,
     FirstcapPipe,
+    ChangeColorDirective,
     ],
   imports: [
     BrowserModule,
