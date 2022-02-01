@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -11,6 +11,7 @@ import { FirstcapPipe } from './main/custompipe/firstcap.pipe';
 import { ChangeColorDirective } from './main/video/change-color.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -23,12 +24,14 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     VideoComponent,
     FirstcapPipe,
     ChangeColorDirective,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    FormComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-userforms',
@@ -7,9 +8,11 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./userforms.component.css']
 })
 export class UserformsComponent implements OnInit {
-  firstName: string = "";
-  lastName: string = "";
   
+  userGroup = new FormGroup({
+    // firstName : (''),
+    // lastName :(''),  
+  });
   constructor() { }
 
   ngOnInit(): void {
