@@ -6,9 +6,7 @@ import { Comments } from './model/comments';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  firstName: string = "";
-  lastName: string = "";
-  index: string = '';
+   index: string = '';
   currentDate = new Date();
   constructor() {
 

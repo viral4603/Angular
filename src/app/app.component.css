@@ -1,0 +1,9 @@
+.d-flex{
+    display: flex;
+}
+.navbar {
+    width: 250px;
+}
+.container{
+    height: 90vh;
+}
