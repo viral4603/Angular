@@ -1,5 +1,4 @@
-
-<form action="#" method="post" class="my-form" >
+<form action="#" method="post" class="my-form">
     <fieldset style="background-color: azure; padding: 50px">
         <legend style="font-weight: 600;">Registraion Form</legend>
 
@@ -60,11 +59,15 @@
 
     </fieldset>
 </form>
+
 <app-video [name]="firstName" (dataParent)="parentCall($event)"></app-video>
 <div class="my-table">
-    <h3 class="t-title">list of data</h3>
-    <h3  class="t-title">date:<span>{{currentDate | date:'dd/mm/yyyy'}} time:{{currentDate |  date:'hh: mm: ss'}}</span></h3>
-    
+    <div class="t-title">
+        <h3 class="t-title">list of data</h3>
+        <h3 class="t-title">date:<span>{{currentDate | date:'dd/mm/yyyy'}} time:{{currentDate | date:'hh: mm:ss'}}</span>
+        </h3>
+    </div>
+
     <table>
         <thead appChangeColor>
             <tr>
@@ -78,8 +81,8 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let listdata of listData;let index = index; trackBy:trackByid" >
-                <td>                    
+            <tr *ngFor="let listdata of listData;let index = index; trackBy:trackByid">
+                <td>
                     {{listdata.id }}
                 </td>
                 <td>

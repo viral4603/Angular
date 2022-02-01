@@ -6,3 +6,10 @@ export interface List {
     amount:number,
     currencycode:string
 }
+export class  Comments{
+    constructor(){
+
+    }
+  
+}
+

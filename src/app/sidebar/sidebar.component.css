@@ -4,3 +4,24 @@ ul{
 aside ul li a{
     text-decoration: none;
 }
+.navbar {
+    width: 250px;
+}
+.navbar .navbar-wrap{
+    padding: 0px 20px;
+}
+.navbar h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.navbar .navbar-items a{
+    display: flex;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 0.25rem;
+    background-color: #7fffd454;
+    transition: 0.5s all;
+}
+.navbar .navbar-items a:hover{
+    background-color: #7fffd4;
+}

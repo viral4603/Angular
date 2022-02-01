@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './main/video/video.component';
 import { FirstcapPipe } from './main/custompipe/firstcap.pipe';
 import { ChangeColorDirective } from './main/video/change-color.directive';
+import { AppRoutingModule } from './app-routing.module';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -21,10 +23,12 @@ import { ChangeColorDirective } from './main/video/change-color.directive';
     VideoComponent,
     FirstcapPipe,
     ChangeColorDirective,
+    PagenotfoundComponent
     ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

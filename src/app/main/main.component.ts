@@ -1,5 +1,5 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-
+import { Component, OnInit, ElementRef} from '@angular/core';
+import { Comments } from './model/comments';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',

@@ -5,7 +5,8 @@ button{
     margin: 20px;
 }
 .my-table{
-    margin-top: 20px;
+    margin-top: 20px a  ;
+    
 }
 .my-table table,tr,td,th{
     border: 1px solid black;
