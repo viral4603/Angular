@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup,Form } from '@angular/forms';
 
 @Component({
   selector: 'app-userforms',

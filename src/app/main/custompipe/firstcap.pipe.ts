@@ -7,8 +7,8 @@ import { first } from 'rxjs';
 export class FirstcapPipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]): unknown {
-    let first = value.substring(0,1).toUpperCase();
-    return first+value.substring(1);
+    let first = value.charAt(0).toUpperCase();
+    return first+value.slice(1);
   }
 
 }
