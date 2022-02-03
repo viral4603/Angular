@@ -1,5 +1,4 @@
-
-<form [formGroup]="userForm">
+<form formGroup="employeeForm">
     <div>
         <label>First Name</label><br>
         <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="Enter your firstname">
@@ -7,8 +6,7 @@
                 <div *ngIf="getValue['firstName'].errors && getValue['firstName'].errors['required']">firstName is required.</div>
                 <div *ngIf="getValue['firstName'].errors && getValue['firstName'].errors['minlength']">firstName should be 4 character.</div>
             </div>
-    </div> 
-         
+    </div>          
     <div>
         <label>last Name</label><br>
         <input type="text" name="lastName" formControlName="lastName" placeholder="last Name">
@@ -26,11 +24,33 @@
         </div>
     </div>
     <div>
+        <label>Phone Number</label><br>
+        <input type="text" name="phone" formControlName="phone" placeholder="Add phone Number">
+        <div class="error" *ngIf="getValue['email'].touched && getValue['email'].invalid">
+            <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
+            <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.</div>
+        </div>
+    </div>
+    <div>
         <label>gender</label>
         <input type="radio" name="gender" formControlName="gender" value="male"><label for="male">male</label>
         <input type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">male</label>
-
-        
     </div>
-    <button class="btn" type="submit" (click)="saveData()">submit</button>
+    <div>
+        <label>Joining Date</label><br>
+        <input type="date" name="joiningdate" formControlName="joiningdate">
+    </div>
+    <div>
+        <label for="category" class="form-label w-25 me-3">Department:</label>
+        <div>
+            <select class="form-select" formControlName="department">
+                <option [value]="0" disabled>Open this select menu</option>
+                <option [value]="1">UI designer</option>
+
+                <option></option>
+            </select>
+            
+        </div>
+    </div>
+    <button class="btn" type="submit" (click)="saveProduct()">submit</button>
 </form>

@@ -7,11 +7,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './main/video/video.component';
-import { FirstcapPipe } from './main/custompipe/firstcap.pipe';
 import { ChangeColorDirective } from './main/video/change-color.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormComponent } from './form/form.component';
+import { UserModule } from './user/user.module';
+import { EmployeeModule } from './employee/employee.module';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -22,7 +26,6 @@ import { FormComponent } from './form/form.component';
     MainComponent,
     FooterComponent,
     VideoComponent,
-    FirstcapPipe,
     ChangeColorDirective,
     PagenotfoundComponent,
     FormComponent
@@ -31,9 +34,14 @@ import { FormComponent } from './form/form.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserModule,
+    EmployeeModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

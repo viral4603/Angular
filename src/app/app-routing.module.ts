@@ -11,7 +11,11 @@ const routes: Routes = [
   {path:'main',component: MainComponent},
   {path:'databinding',component:VideoComponent},
   {path:'userform',component:UserformsComponent},
-  { path: '**', component: PagenotfoundComponent }
+  {
+    path: 'employee',
+    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+  },
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({

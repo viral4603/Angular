@@ -7,25 +7,24 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
   public submitted:boolean =false;
   constructor(private fb:FormBuilder) { 
 
   }
-  
-  userForm =this.fb.group({
-    firstName:['',[Validators.required,Validators.minLength(5)]],
-    lastName:['',Validators.required],
-    email:['',[Validators.email,Validators.required]],
-    gender:['',Validators.required],
-
-
-  })
-  
+  userForm = {} as FormGroup;
+ 
   ngOnInit(): void {
+    this.userForm = this.createUserForm()
     console.log(this.userForm);
   }
-
+  createUserForm():FormGroup{
+    return this.fb.group({
+      firstName:['',[Validators.required,Validators.minLength(5)]],
+      lastName:['',Validators.required],
+      email:['',[Validators.email,Validators.required]],
+      gender:['',Validators.required],
+    })
+  }
    // convenience getter for easy access to form fields
    get getValue() { 
      return this.userForm['controls']; 
@@ -42,7 +41,5 @@ export class FormComponent implements OnInit {
             return;
         }
     }
-    
-    
   }
 }
