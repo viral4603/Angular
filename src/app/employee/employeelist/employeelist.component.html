@@ -1,26 +1,33 @@
 
-<div>
-    <div>
-        <h2>Employee details</h2>
-        <input type="search">
-        <button class="btn" routerLink="employeeform">Add</button>
+<div class="employee-list d-flex space-between">
+    <div class="employee-display">
+        <div >
+            <h2 class="title">Employee details</h2>
+            <div class="d-flex space-around align-center">
+                <input type="search" placeholder="search employee">
+                <button class="btn" routerLink="employeeform">Add Details</button>
+            </div>
+        </div>
+        <div class="employee-details">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>email</th>
+                        <th>Contact No</th>
+                        <th>Gender</th>
+                        <th>Joining Date</th>
+                        <th>Department</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
-    <div class="employee-list">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>email</th>
-                    <th>Contact No</th>
-                    <th>Gender</th>
-                    <th>Joining Date</th>
-                    <th>Department</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                </tr>
-            </thead>
-        </table>
+    <div class="employee-form">
+        <router-outlet></router-outlet>
     </div>
-</div>
-<router-outlet></router-outlet>
+ </div>
+

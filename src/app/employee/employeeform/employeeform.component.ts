@@ -13,12 +13,12 @@ import { Employee } from '../model';
 export class EmployeeformComponent implements OnInit {
 
   @Output() addEmployee:EventEmitter<Employee> =new EventEmitter();
-
+  
   employeeForm = {} as FormGroup;
  
   ngOnInit(): void {
     this.employeeForm = this.createEmployeeForm()
-    // console.log(this.employeeForm);
+    console.log(this.getValue);
     
   }
   constructor(private fb:FormBuilder,private employeeService:EmployeeServicesService) { 
@@ -29,11 +29,10 @@ export class EmployeeformComponent implements OnInit {
       firstName:['',[Validators.required,Validators.minLength(5)]],
       lastName:['',Validators.required],
       email:['',[Validators.email,Validators.required]],
-      phone:[Number,Validators.required],
+      phone:[Number,[Validators.required,Validators.minLength(10)]],
       gender:['male'],
       joiningdate:[Date],
-      department:['',Validators.required]
-     
+      department:['',Validators.required]     
     })
   }
 
@@ -43,7 +42,7 @@ export class EmployeeformComponent implements OnInit {
       this.addEmployee.emit(productToSave);
     }
     else{
-      console.log("solve Errors")
+      console.log("solve Errors");
     }
   }
 

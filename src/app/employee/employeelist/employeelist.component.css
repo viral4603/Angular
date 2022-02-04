@@ -1,0 +1,24 @@
+.d-flex{
+    display: flex;
+}
+.title{
+    padding-bottom: 1rem;
+}
+.space-between{
+    justify-content: space-between;
+}
+.space-around{
+    justify-content: space-around;
+}
+.employee-list{
+    padding: 3rem 0;
+}
+.employee-display{
+    width: 60%;
+}
+.employee-form{
+    width: 30%;
+}
+.employee-details{
+    padding-top: 1.2rem;
+}

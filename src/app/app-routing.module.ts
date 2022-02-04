@@ -5,16 +5,17 @@ import { MainComponent } from './main/main.component';
 import { VideoComponent } from './main/video/video.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserformsComponent } from './user/userforms/userforms.component';
+import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
+import { EmployeeformComponent } from './employee/employeeform/employeeform.component';
 
 
 const routes: Routes = [
   {path:'main',component: MainComponent},
-  {path:'databinding',component:VideoComponent},
+  {path:'reactivefoms',component:VideoComponent},
   {path:'userform',component:UserformsComponent},
-  {
-    path: 'employee',
-    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
-  },
+  {path:'employee',component:EmployeelistComponent,children:[
+    {path:'employeeform',component:EmployeeformComponent}
+  ]},
   { path: '**', component: PagenotfoundComponent },
 ];
 

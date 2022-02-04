@@ -1,6 +1,9 @@
 .d-flex{
     display: flex;
 }
+.space-between{
+    justify-content: space-between;
+}
 .navbar {
     width: 250px;
 }
