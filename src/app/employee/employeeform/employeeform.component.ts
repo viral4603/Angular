@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { EmployeeServicesService } from '../employeeService/employee-services.service';
@@ -12,51 +12,51 @@ import { Employee } from '../model';
 })
 export class EmployeeformComponent implements OnInit {
 
-  @Output() addEmployee:EventEmitter<Employee> =new EventEmitter();
-  
+  employee: Employee[] = [];
   employeeForm = {} as FormGroup;
- 
+
   ngOnInit(): void {
     this.employeeForm = this.createEmployeeForm()
-    console.log(this.getValue);
-    
-  }
-  constructor(private fb:FormBuilder,private employeeService:EmployeeServicesService) { 
+    }
+  constructor(private fb: FormBuilder, private employeeService: EmployeeServicesService) {
 
   }
-  createEmployeeForm():FormGroup{
+
+  //create a employe form
+  createEmployeeForm(): FormGroup {
     return this.fb.group({
-      firstName:['',[Validators.required,Validators.minLength(5)]],
-      lastName:['',Validators.required],
-      email:['',[Validators.email,Validators.required]],
-      phone:[Number,[Validators.required,Validators.minLength(10)]],
-      gender:['male'],
-      joiningdate:[Date],
-      department:['',Validators.required]     
+      firstname: ['', [Validators.required, Validators.minLength(5)]],
+      lastname: ['', Validators.required],
+      email: ['', [Validators.email, Validators.required]],
+      phone: [null, [Validators.required, Validators.minLength(10)]],
+      gender: ['male'],
+      joiningdate: [null],
+      department: ['', Validators.required]
     })
   }
-
-  saveProduct() {
-    const productToSave = this.employeeForm.value;
-    if (this.employeeForm.valid) {
-      this.addEmployee.emit(productToSave);
+  //create new entry of employee
+  saveEmployee() {
+    if (this.employeeForm['status'] == 'INVALID') {
+      console.log('reslove error');
     }
-    else{
-      console.log("solve Errors");
+    else {
+      console.log(this.getValue);
+      this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
+        console.log('Product created!');
+      })
     }
   }
 
-   // convenience getter for easy access to form fields
-   get getValue() { 
-     return this.employeeForm['controls']; 
-    }
-  
+  // convenience getter for easy access to form fields
+  get getValue() {
+    return this.employeeForm['controls'];
+  }
+
   //onsubmit method call
-  saveData(){
+  saveData() {
     //if user send blank data
-    this.employeeService.getEmployeelist();
-     
-    }
-  
+    this.employeeService.getAllDetails();
+  }
+
 
 }

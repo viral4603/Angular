@@ -22,4 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EmployeeformComponent
   ]
 })
-export class EmployeeModule { }
+export class EmployeeModule {
+  constructor(){
+    console.log('emppoyee module run');
+  }
+ }

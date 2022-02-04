@@ -13,9 +13,7 @@ const routes: Routes = [
   {path:'main',component: MainComponent},
   {path:'reactivefoms',component:VideoComponent},
   {path:'userform',component:UserformsComponent},
-  {path:'employee',component:EmployeelistComponent,children:[
-    {path:'employeeform',component:EmployeeformComponent}
-  ]},
+  {path:'employee',loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)},
   { path: '**', component: PagenotfoundComponent },
 ];
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { catchError, Observable, Subject } from 'rxjs';
+import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -14,17 +14,27 @@ import { Department, Employee } from '../model';
 })
 export class EmployeeServicesService {
 
-  constructor(private http: HttpClient) { 
+  httpLink: string = environment.baseURL;
+
+  constructor(private https: HttpClient) { 
      
   } 
-  
-  saveProduct(employee:Employee): Observable<Employee> {
-    debugger
-    return this.http.post<Employee>(`localhost:3000/employee`,employee);
+  //add employee
+  createEmployee(employee:Employee): Observable<Employee> {
+     return this.https.post<Employee>(`${this.httpLink}/employee`,employee);
+  }
+  getAllDetails(): Observable<Employee[]> {
+    return this.https.get<Employee[]>(`${this.httpLink}/employee`);
   }
 
-  getEmployeelist():Observable<Employee[]>{
-    return this.http.get<Employee[]>(`localhost:3000/employee`);
+  //delele employee
+  deleteProduct(id:number):Observable<number>{
+    return this.https.delete<number>(`${this.httpLink}/employee/${id}`);
   }
+  
+  // send data to all parentcomponet
+
+  
+
 
 }

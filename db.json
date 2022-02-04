@@ -1,19 +1,56 @@
 {
-  "posts": [
+  "department": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "UI"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "FrontEnd"
+    },
+    {
+      "id": 3,
+      "name": "MobileDevlopment"
+    },
+    {
+      "id": 4,
+      "name": "Ios"
+    },
+    {
+      "id": 5,
+      "name": ".Net"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "employee": [
+    {
+      "firstname": "viral patel",
+      "lastname": "SASDS",
+      "email": "ASDDA@GMAIL.COM",
+      "phone": "89416364646",
+      "gender": "fmale",
+      "joiningdate": "2022-02-02",
+      "department": "1",
+      "id": 1
+    },
+    {
+      "firstName": "viralas",
+      "lastName": "hariyakar",
+      "email": "vbanbs@gmail.com",
+      "phone": "454646464646",
+      "gender": "fmale",
+      "joiningdate": "2022-02-17",
+      "department": "1",
+      "id": 2
+    },
+    {
+      "firstname": "tnamay",
+      "lastname": "patel",
+      "email": "ASDDA@GMAIL.COM",
+      "phone": "454646464646",
+      "gender": "fmale",
+      "joiningdate": "2022-02-15",
+      "department": "1",
+      "id": 3
+    }
+  ]
 }

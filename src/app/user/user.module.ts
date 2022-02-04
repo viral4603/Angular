@@ -24,4 +24,8 @@ import { FirstcapPipe } from '../main/custompipe/firstcap.pipe';
     HighlightDirective
   ]
 })
-export class UserModule { }
+export class UserModule { 
+  constructor(){
+    console.log('user module load');
+  }
+}
