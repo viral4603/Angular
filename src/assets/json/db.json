@@ -1,0 +1,36 @@
+{
+  "department": [
+    {
+      "id": 1,
+      "name": "UI"
+    },
+    {
+      "id": 2,
+      "name": "FrontEnd"
+    },
+    {
+      "id": 3,
+      "name": "MobileDevlopment"
+    },
+    {
+      "id": 4,
+      "name": "Ios"
+    },
+    {
+      "id": 5,
+      "name": ".Net"
+    }
+  ],
+  "employee": [
+    {
+      "firstname": "sushi",
+      "lastname": "patel",
+      "email": "i@ham.com",
+      "phone": "846026854855",
+      "gender": "male",
+      "joiningdate": "2022-02-16",
+      "department": "FrontEnd",
+      "id": 2
+    }
+  ]
+}

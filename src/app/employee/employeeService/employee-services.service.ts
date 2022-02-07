@@ -23,6 +23,8 @@ export class EmployeeServicesService {
   createEmployee(employee:Employee): Observable<Employee> {
      return this.https.post<Employee>(`${this.httpLink}/employee`,employee);
   }
+  
+  //get all employee
   getAllDetails(): Observable<Employee[]> {
     return this.https.get<Employee[]>(`${this.httpLink}/employee`);
   }
@@ -32,7 +34,19 @@ export class EmployeeServicesService {
     return this.https.delete<number>(`${this.httpLink}/employee/${id}`);
   }
   
-  // send data to all parentcomponet
+  // get perticular data from id
+  getDataById(id:number):Observable<Employee>{
+    return this.https.get<Employee>(`${this.httpLink}/employee/${id}`);
+  }
+  //get department list
+  getDepartment():Observable<Department[]>{
+    return this.https.get<Department[]>(`${this.httpLink}/department`);
+  }
+
+  //upadte employee 
+  updateEmployee(id:number,Employee:Employee[]):Observable<Employee>{
+    return this.https.put<Employee>(`${this.httpLink}/employee/${id}`,Employee);
+  }
 
   
 

@@ -1,5 +1,6 @@
 <form [formGroup]="employeeForm">
     <div>
+        
         <label>First Name</label><br>
         <input formControlName="firstname" id="firstname" type="text" class="form-control" placeholder="Enter your firstname">
             <div class="error" *ngIf="getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
@@ -34,21 +35,21 @@
     <div>
         <label>gender</label>
         <input type="radio" name="gender" formControlName="gender" value="male"><label for="male">male</label>
-        <input type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">male</label>
+        <input type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">female</label>
     </div>
     <div>
-        <label>Joining Date</label><br>
-        <input type="date" name="joiningdate" formControlName="joiningdate">
+        <label for="date">Joining Date</label><br>
+        <input type="date" name="joiningdate" formControlName="joiningdate" id="date">
     </div>
     <div>
         <label for="category" class="form-label w-25 me-3">Department:</label>
         <div>
             <select class="form-select" formControlName="department">
-                <option [value]="0" disabled>Open this select menu</option>
-                <option [value]="1">UI designer</option>
-
-                <option></option>
-            </select>
+                <option disabled selected>Open this select menu</option>
+                <option *ngFor="let department of departmentList" [value]="department.name">
+                    {{department.name}}
+                </option>
+                </select>
             
         </div>
     </div>

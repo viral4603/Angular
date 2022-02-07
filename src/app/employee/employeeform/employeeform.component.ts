@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { EmployeeServicesService } from '../employeeService/employee-services.service';
-import { Employee } from '../model';
+import { Department, Employee } from '../model';
 
 
 @Component({
@@ -12,14 +13,29 @@ import { Employee } from '../model';
 })
 export class EmployeeformComponent implements OnInit {
 
-  employee: Employee[] = [];
+  employee: Employee[];
   employeeForm = {} as FormGroup;
-
+  departmentList:Department[];
+  urlid:number;
+ 
   ngOnInit(): void {
     this.employeeForm = this.createEmployeeForm()
+    this.listDepartment();
+    this.getUrlId();
+    this.patchValueForm(this.urlid);
     }
-  constructor(private fb: FormBuilder, private employeeService: EmployeeServicesService) {
+  constructor(private fb: FormBuilder, private employeeService: EmployeeServicesService ,private router:Router,private activateRouter:ActivatedRoute) {
 
+  }
+  //get id from url
+  getUrlId(){
+    this.urlid = this.activateRouter.snapshot.params['id'];
+  }
+  //upadte value in input 
+  patchValueForm(id:number){
+    this.employeeService.getDataById(id).subscribe((res:Employee) =>{
+      this.employeeForm.patchValue(res);
+    })
   }
 
   //create a employe form
@@ -40,10 +56,22 @@ export class EmployeeformComponent implements OnInit {
       console.log('reslove error');
     }
     else {
-      console.log(this.getValue);
-      this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
-        console.log('Product created!');
-      })
+      if(this.urlid == null){
+        this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
+          console.log('Product created!');
+          this.router.navigate(['/employee/list']);
+        })
+      }
+      else{
+        this.employeeService.updateEmployee(this.urlid,this.employeeForm.value).subscribe(res =>{
+          console.log('employee upadte succesfully');
+          this.router.navigate(['/employee/list']);
+
+        })
+      }
+      
+   
+    
     }
   }
 
@@ -56,6 +84,11 @@ export class EmployeeformComponent implements OnInit {
   saveData() {
     //if user send blank data
     this.employeeService.getAllDetails();
+  }
+  listDepartment(){
+    this.employeeService.getDepartment().subscribe(data => {
+      this.departmentList =data;
+    })
   }
 
 
