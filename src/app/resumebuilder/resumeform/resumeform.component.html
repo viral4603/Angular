@@ -1,0 +1,56 @@
+<div class="title">
+    <h2>Resume Builder form</h2>
+</div>
+<!-- start :form -->
+<form [formGroup]="resumeForm">
+    <div class="form-field">
+        <label for="name">Name</label>
+        <input class ="form-input" type="text" formControlName="name">
+    </div>
+    <div class="form-field">
+        <label for="designation">Designation</label>
+        <input class ="form-input" type="text" formControlName="designation">
+    </div>
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input class ="form-input" type="text" formControlName="email">
+    </div>
+    <div class="form-field">
+        <label for="number">Contact-No</label>
+        <input class ="form-input" type="text" formControlName="number">
+    </div>
+    <div class="form-field">
+        <label for="profile">Profile</label>
+        <textarea class ="form-input" type="textarea" formControlName="profile">Write profile details</textarea>
+    </div>
+    <div class="form-field">
+        <label for="Skills">Skills</label>
+        <div class="skill-group">
+            <input class ="skill" type="text" formControlName="skills" placeholder="skill title">
+            <input class ="skill" type="text" formControlName="skilldetails" placeholder="skill description">
+            <button class="btn"> Add skill +</button>
+        </div>
+    </div>
+    <div class="form-field">
+        <label for="technical">Technical</label>
+        <div class="skill-group">
+            <input class ="skill" type="text" formControlName="technial" placeholder="Technical">
+            <button class="btn"> Add More +</button>
+        </div>
+    </div>
+    <div class="form-field">
+        <label for="Skills">Experience</label>
+        <div class="skill-group colum">
+            <input class ="skill" type="text" formControlName="company" placeholder="company">
+            <input class ="skill" type="text" formControlName="designationCompany" placeholder="roll in that company">
+            <input class ="skill" type="text" formControlName="detailscompny" placeholder="brief of work">
+        </div>
+        <div class="skill-group colum">
+            <button type="button" class="btn"> Add Experience +</button>
+            <input type="date">
+        </div>
+        
+    </div>
+
+
+</form> 

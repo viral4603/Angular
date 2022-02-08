@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { ChangeColorDirective } from './main/video/change-color.directive';
 import { VideoComponent } from './main/video/video.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ResumebuilderModule } from './resumebuilder/resumebuilder.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 
@@ -34,7 +35,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ResumebuilderModule
   ],
   providers: [
     

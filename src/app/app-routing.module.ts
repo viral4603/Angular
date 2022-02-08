@@ -14,6 +14,8 @@ const routes: Routes = [
   {path:'reactivefoms',component:VideoComponent},
   {path:'userform',component:UserformsComponent},
   {path:'employee',loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)},
+  {path:'resumebuilder',loadChildren: () => import('./resumebuilder/resumebuilder.module').then(m => m.ResumebuilderModule)},
+
   { path: '**', component: PagenotfoundComponent },
 ];
 

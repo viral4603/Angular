@@ -29,17 +29,18 @@ export class FormComponent implements OnInit {
    get getValue() { 
      return this.userForm['controls']; 
     }
+    get invalidform(){
+      return this.userForm['status'] ==="INVALID"
+    }
   
   //onsubmit method call
   saveData(){
     //if user send blank data
-    if(this.userForm.dirty){
-     
-      this.submitted = true;
+    this.submitted = true;
         // stop here if form is invalid
-        if (this.userForm.invalid) {
-            return;
+        if (this.userForm.valid) {
+            alert('form  submitted');
         }
-    }
+    
   }
 }
