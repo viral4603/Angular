@@ -10,6 +10,6 @@ export interface Employee{
     phone:number,
     gender:string,
     joiningdate:number,
-    department:string
+    department:number
     
 }

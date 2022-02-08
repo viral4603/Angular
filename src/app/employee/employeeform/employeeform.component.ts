@@ -44,7 +44,7 @@ export class EmployeeformComponent implements OnInit {
       firstname: ['', [Validators.required, Validators.minLength(5)]],
       lastname: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
-      phone: [null, [Validators.required, Validators.minLength(10)]],
+      phone: [null, [Validators.required, Validators.minLength(10),Validators.maxLength(10)]],
       gender: ['male'],
       joiningdate: [null],
       department: ['', Validators.required]
@@ -56,7 +56,7 @@ export class EmployeeformComponent implements OnInit {
       console.log('reslove error');
     }
     else {
-      if(this.urlid == null){
+      if(!this.urlid){
         this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
           console.log('Product created!');
           this.router.navigate(['/employee/list']);
@@ -66,11 +66,8 @@ export class EmployeeformComponent implements OnInit {
         this.employeeService.updateEmployee(this.urlid,this.employeeForm.value).subscribe(res =>{
           console.log('employee upadte succesfully');
           this.router.navigate(['/employee/list']);
-
         })
-      }
-      
-   
+      } 
     
     }
   }

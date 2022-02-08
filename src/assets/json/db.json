@@ -28,9 +28,39 @@
       "email": "i@ham.com",
       "phone": "846026854855",
       "gender": "male",
-      "joiningdate": "2022-02-16",
-      "department": "FrontEnd",
+      "joiningdate": "2022-02-21",
+      "department": 1,
       "id": 2
+    },
+    {
+      "firstname": "tnamay",
+      "lastname": "asasa",
+      "email": "ASDDA@GMAIL.COM",
+      "phone": "84565665656",
+      "gender": "fmale",
+      "joiningdate": "2022-02-10",
+      "department": "3",
+      "id": 3
+    },
+    {
+      "firstname": "ajayss",
+      "lastname": "patel",
+      "email": "p@gmail.com",
+      "phone": "8466556565",
+      "gender": "male",
+      "joiningdate": "2022-02-23",
+      "department": 5,
+      "id": 4
+    },
+    {
+      "firstname": "ajayss",
+      "lastname": "asasa",
+      "email": "i@ham.com",
+      "phone": "8460265667",
+      "gender": "male",
+      "joiningdate": "2022-02-17",
+      "department": "4",
+      "id": 6
     }
   ]
 }

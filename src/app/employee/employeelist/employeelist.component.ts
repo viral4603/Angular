@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeServicesService } from '../employeeService/employee-services.service';
-import { Employee } from '../model';
+import { Department, Employee } from '../model';
 
 @Component({
   selector: 'app-employeelist',
@@ -9,12 +9,15 @@ import { Employee } from '../model';
   styleUrls: ['./employeelist.component.css']
 })
 export class EmployeelistComponent implements OnInit {
-  employeeList: Employee[] = [];
+  departmentList:Department[];
+  public searchtext:string="";
+  employeeList: Employee[];
   constructor(private employeeService: EmployeeServicesService,private router:Router) {
 
   }
   ngOnInit(): void {
     this.getEmployeelist();
+    this.listDepartment();
  }
   //list employee data
   getEmployeelist() {
@@ -29,8 +32,13 @@ export class EmployeelistComponent implements OnInit {
     this.employeeService.deleteProduct(id).subscribe((res:number)=>{
       this.getEmployeelist();
     }); 
-
   }
+  listDepartment(){
+    this.employeeService.getDepartment().subscribe(data => {
+      this.departmentList =data;
+    })
+  }
+
 
 
 
