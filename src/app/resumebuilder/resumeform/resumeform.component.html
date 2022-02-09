@@ -2,55 +2,83 @@
     <h2>Resume Builder form</h2>
 </div>
 <!-- start :form -->
-<form [formGroup]="resumeForm">
+{{resumeForm.value | json}}
+<form [formGroup]="resumeForm" autocomplete="on">
     <div class="form-field">
         <label for="name">Name</label>
-        <input class ="form-input" type="text" formControlName="name">
+        <input class="form-input" type="text" formControlName="name" placeholder="Enter your name">
     </div>
     <div class="form-field">
         <label for="designation">Designation</label>
-        <input class ="form-input" type="text" formControlName="designation">
+        <input class="form-input" type="text" formControlName="designation" placeholder="Current Designation">
     </div>
     <div class="form-field">
         <label for="email">Email</label>
-        <input class ="form-input" type="text" formControlName="email">
+        <input class="form-input" type="text" formControlName="email" placeholder="Enter your email">
     </div>
     <div class="form-field">
         <label for="number">Contact-No</label>
-        <input class ="form-input" type="text" formControlName="number">
+        <input class="form-input" type="text" formControlName="number" placeholder="Enter your contact Number">
     </div>
     <div class="form-field">
         <label for="profile">Profile</label>
-        <textarea class ="form-input" type="textarea" formControlName="profile">Write profile details</textarea>
+        <textarea class="form-input" type="textarea" formControlName="profile" placeholder="profile details">Write profile details</textarea>
     </div>
-    <div class="form-field">
+    <div class="form-field row" formArrayName="skill">
         <label for="Skills">Skills</label>
-        <div class="skill-group">
-            <input class ="skill" type="text" formControlName="skills" placeholder="skill title">
-            <input class ="skill" type="text" formControlName="skilldetails" placeholder="skill description">
-            <button class="btn"> Add skill +</button>
+        <div class="fix-width">
+            <div class="skill-group" *ngFor="let control of skill['controls'];let i = index">
+                <div class="skill-form-group" [formGroupName]="i">
+                    <input class=" form-input " type="text" formControlName="skills" placeholder="Skill title">
+                    <input class="form-input " type="text" formControlName="skilldetails" placeholder="Skill description">
+                    <button class="btn" (click)="deleteSkill(i)">Delete</button>
+                </div>
+            </div>
         </div>
+        <button class="btn" (click)="addSkill()"> Add skills +</button>
     </div>
-    <div class="form-field">
+
+    <div class="form-field" formArrayName="technical">
         <label for="technical">Technical</label>
-        <div class="skill-group">
-            <input class ="skill" type="text" formControlName="technial" placeholder="Technical">
-            <button class="btn"> Add More +</button>
+        <div class="fix-width">
+            <div class="skill-group" *ngFor="let control of technical['controls'];let i = index">
+                <div class="skill-form-group" [formGroupName]="i">
+                    <div class="fix-width">
+                        <input class="form-input" type="text" formControlName="technical" placeholder="Technical">
+                        <button class="btn">Delete</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        <button class="btn" (click)="addTechnical()"> Add More +</button>
     </div>
-    <div class="form-field">
+    <!-- start:experience -->
+    <div class="form-field" formArrayName="experience">
         <label for="Skills">Experience</label>
-        <div class="skill-group colum">
-            <input class ="skill" type="text" formControlName="company" placeholder="company">
-            <input class ="skill" type="text" formControlName="designationCompany" placeholder="roll in that company">
-            <input class ="skill" type="text" formControlName="detailscompny" placeholder="brief of work">
+        <div class="fix-width experience">
+            <div class="skill-group" *ngFor="let control of experience['controls'];let i = index">
+                <div class="skill-form-group" [formGroupName]="i">
+                    <input class="form-input" type="text" formControlName="company" placeholder="company">
+                    <input class="form-input" type="text" formControlName="designationInCompany"
+                        placeholder="roll in that company">
+                    <input class="form-input" type="text" formControlName="detailscompny" placeholder="brief of work">
+                    <button class="btn">Delete</button>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn" (click)="addExeperience()"> Add Experience +</button>
+            </div>
         </div>
-        <div class="skill-group colum">
-            <button type="button" class="btn"> Add Experience +</button>
-            <input type="date">
-        </div>
-        
     </div>
-
-
-</form> 
+    <!-- end:exepernce -->
+    <!-- start:eduction details -->
+    <div class="form-field">
+        <label for="education">Eduction</label>
+        <div class="fix-width ">
+            <input class="form-input" type="text" formControlName="education" placeholder="Univercity">
+            <input class="form-input" type="text" formControlName="educationDescription" placeholder="details">
+        </div>
+    </div>
+    <!-- end:eduction details -->
+    <button type="submit" class="btn" (click)="saveData()">Create Resume</button>
+</form>

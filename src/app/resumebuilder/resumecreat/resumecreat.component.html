@@ -1,14 +1,15 @@
+<!-- <h1>{{showData | json}}</h1> -->
 <div class="container form-create">
     <div class="resume">
         <div class="header row space-between">
             <div class="main-details">
-                <h1>Jonathan dou</h1>
-                <h4>webdesigner,directo</h4>
+                <h1>{{showData.name}}</h1>
+                <h5>{{showData.designation}}</h5>
             </div>
             <div class="colm">
                 <button>download pdf</button>
-                <a href="mailto@xyz.com">xyz.com</a>
-                <h5 class="sub-title phone">311-464-313</h5>
+                <a href="mailto@xyz.com">{{showData.email}}</a>
+                <h5 class="sub-title phone">{{showData.number}}</h5>
             </div>
         </div>
         <div class="row padding-tb border-bottom">
@@ -17,10 +18,7 @@
             </div>
             <div class="details grow">
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ab numquam nesciunt distinctio. Amet
-                    magni, natus reprehenderit illo quia adipisci voluptatibus veniam expedita obcaecati sed. Aut, id illum
-                    voluptatum voluptatibus voluptatem, deleniti, rem nisi voluptas modi accusantium similique nemo
-                    perspiciatis.</p>
+                {{showData.profile}}</p>
             </div>
         </div>
         <div class="row padding-tb border-bottom">
@@ -30,7 +28,7 @@
             <div class="details skill wd-100">
                 <div class="row">
                     <div class="skill-list">
-                        <h5 class="sub-title">Web Designig</h5>
+                        <h5 class="sub-title"> {{showData.skill.skills}}</h5>
                         <p class="skill-explain">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus adipisci
                             quas atque saepe repellat in?</p>
                     </div>
@@ -115,7 +113,7 @@
             </div>
         </div>
         <div class="footer padding-tb">
-            <p>xyz @gmail,com (9898-2136126-21)</p>
+            <p>{{showData.email}}{{showData.number}}</p>
         </div>
     
     </div>

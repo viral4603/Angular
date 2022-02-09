@@ -12,7 +12,7 @@ import { Department, Employee } from '../model';
   styleUrls: ['./employeeform.component.css']
 })
 export class EmployeeformComponent implements OnInit {
-
+  submited:boolean =false;
   employee: Employee[];
   employeeForm = {} as FormGroup;
   departmentList:Department[];
@@ -53,7 +53,8 @@ export class EmployeeformComponent implements OnInit {
   //create new entry of employee
   saveEmployee() {
     if (this.employeeForm['status'] == 'INVALID') {
-      console.log('reslove error');
+      this.submited =true;
+          console.log('reslove error');
     }
     else {
       if(!this.urlid){
@@ -63,9 +64,11 @@ export class EmployeeformComponent implements OnInit {
         })
       }
       else{
+        
         this.employeeService.updateEmployee(this.urlid,this.employeeForm.value).subscribe(res =>{
           console.log('employee upadte succesfully');
           this.router.navigate(['/employee/list']);
+          
         })
       } 
     

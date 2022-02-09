@@ -10,7 +10,7 @@ export class SearchPipe implements PipeTransform {
     if (searchtext === ''){
        return value;
    }
-    else{      
+    else{            
        return value.filter((data:Employee)=>{
          return data.firstname.toLowerCase().match(searchtext.toLowerCase());
       })

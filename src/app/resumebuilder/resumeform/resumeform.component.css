@@ -27,13 +27,21 @@ textarea.form-input{
     display: flex;
     flex-grow: 1;
     text-align: center;
-    justify-content: space-between;
 }
-.skill-group .skill, .skill-group .btn{
-    padding: 0.25rem 1rem;
-    border: 1px solid #d1d1d1;
+.row{
+    display: flex;
 }
 .colum{
     display: flex;
     flex-direction: column;
+}
+.form-field .btn{
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #d1d1d1;
+}
+.fix-width{
+    flex-grow: 1;
+}
+.btn{
+    padding: 0.25rem 0.5rem;
 }

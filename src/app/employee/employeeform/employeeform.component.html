@@ -3,7 +3,7 @@
         
         <label>First Name</label><br>
         <input formControlName="firstname" id="firstname" type="text" class="form-control" placeholder="Enter your firstname">
-            <div class="error" *ngIf="getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
+            <div class="error" *ngIf="submited || getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
                 <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['required']">firstname is required.</div>
                 <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['minlength']">firstName should be 4 character.</div>
             </div>
@@ -11,7 +11,7 @@
     <div>
         <label>last Name</label><br>
         <input type="text" name="lastname" formControlName="lastname" placeholder="last Name">
-        <div class="error" *ngIf="getValue['lastname'].touched && getValue['lastname'].invalid">
+        <div class="error" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
             <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['required']">lastname is required.</div>
             <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['minlength']">lastname should be 3 character.</div>
         </div>
@@ -19,7 +19,7 @@
     <div>
         <label>email</label><br>
         <input type="text" name="email" formControlName="email" placeholder="enter your email">
-        <div class="error" *ngIf="getValue['email'].touched && getValue['email'].invalid">
+        <div class="error" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
             <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
             <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.</div>
         </div>
@@ -27,7 +27,7 @@
     <div>
         <label>Phone Number</label><br>
         <input type="text" appPhoneMasking name="phone" formControlName="phone" placeholder="Add phone Number" >
-        <div class="error" *ngIf="getValue['phone'].touched && getValue['phone'].invalid">
+        <div class="error" *ngIf="submited ||getValue['phone'].touched && getValue['phone'].invalid">
             <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['required']">Number is required.</div>
             <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['minlength']">Number  should be 10 character.</div>
             <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['maxlength']">Number  should not be more than 10 character.</div>
@@ -51,7 +51,7 @@
                     {{department.name}}
                 </option>
             </select>
-            <div class="error" *ngIf="getValue['department'].touched && getValue['department'].invalid">
+            <div class="error" *ngIf="submited ||getValue['department'].touched && getValue['department'].invalid">
                 <div *ngIf="getValue['department'].errors && getValue['department'].errors['required']"> 
                     select your department
                 </div>
