@@ -62,5 +62,41 @@
       "department": "4",
       "id": 6
     }
+  ],
+  "resume": [
+    {
+      "name": " JONATHAN DOE",
+      "designation": "WEB DESIGNER, DIRECTOR",
+      "email": "name@yourdomain.com",
+      "number": "(313)-867-5309",
+      "profile": "\t\nLorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ab numquam nesciunt distinctio. Amet magni, natus reprehenderit illo quia adipisci voluptatibus veniam expedita obcaecati sed. Aut, id illum voluptatum voluptatibus voluptatem, deleniti, rem nisi voluptas modi accusantium similique nemo perspiciatis.",
+      "skill": [
+        {
+          "skills": "\t Web Design",
+          "skilldetails": "orem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid quos labore ullam"
+        }
+      ],
+      "technical": [
+        {
+          "technical": "html"
+        },
+        {
+          "technical": "css"
+        },
+        {
+          "technical": "javascrpit"
+        }
+      ],
+      "experience": [
+        {
+          "company": "FaceBook",
+          "designationInCompany": "senior Interface designer",
+          "detailscompny": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officiis hic eius exercitationem distinctio esse."
+        }
+      ],
+      "education": "Indiana University",
+      "educationDescription": "Dual Major - 4.0 GPA",
+      "id": 1
+    }
   ]
 }

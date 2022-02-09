@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { DataServicesService } from '../data-services.service';
+import { Employee } from 'src/app/employee/model';
+import { DataServicesService } from '../services/data-services.service';
 
 @Component({
   selector: 'app-resumeform',
@@ -85,8 +86,13 @@ getData = new Subject();
 saveData(){
   this.resumeData = this.resumeForm.value;
   console.log(this.resumeData);
- this.dataservice.resumeData.next(this.resumeForm.value);
- this.router.navigate(['/resumebuilder/create']);
+  this.dataservice.postdata(this.resumeForm.value).subscribe((res)=>{
+    alert('data send suceesfully')
+  }, (error=>{
+    alert("Somethings Went Wrong")
+  }))
+  this.resumeForm.reset();
+//  this.router.navigate(['/resumebuilder/create']);
 }
 //delete skill field
 deleteSkill(index:number){
@@ -98,6 +104,8 @@ deleteSkill(index:number){
     this.skill.removeAt(index);
   }
 }
+//send data to local server
+
 
 
 

@@ -10,7 +10,8 @@ import { EmployeeformComponent } from './employee/employeeform/employeeform.comp
 
 
 const routes: Routes = [
-  {path:'main',component: MainComponent},
+  {path:'',redirectTo:'main',pathMatch:'full'}, 
+  {path:'main',component:MainComponent},
   {path:'reactivefoms',component:VideoComponent},
   {path:'userform',component:UserformsComponent},
   {path:'employee',loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)},
@@ -20,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+    declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

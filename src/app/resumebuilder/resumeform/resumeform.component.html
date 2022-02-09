@@ -3,7 +3,7 @@
 </div>
 <!-- start :form -->
 {{resumeForm.value | json}}
-<form [formGroup]="resumeForm" autocomplete="on">
+<form [formGroup]="resumeForm" autocomplete="off">
     <div class="form-field">
         <label for="name">Name</label>
         <input class="form-input" type="text" formControlName="name" placeholder="Enter your name">
@@ -45,7 +45,7 @@
                 <div class="skill-form-group" [formGroupName]="i">
                     <div class="fix-width">
                         <input class="form-input" type="text" formControlName="technical" placeholder="Technical">
-                        <button class="btn">Delete</button>
+                        <button type="button" class="btn">Delete</button>
                     </div>
                 </div>
             </div>
@@ -80,5 +80,5 @@
         </div>
     </div>
     <!-- end:eduction details -->
-    <button type="submit" class="btn" (click)="saveData()">Create Resume</button>
+    <button type="button" class="btn" (click)="saveData()">Create Resume</button>
 </form>

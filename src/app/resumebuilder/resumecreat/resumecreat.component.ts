@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataServicesService } from '../data-services.service';
+import { Resume } from '../model/resume';
+import { DataServicesService } from '../services/data-services.service';
 
 @Component({
   selector: 'app-resumecreat',
@@ -7,17 +8,35 @@ import { DataServicesService } from '../data-services.service';
   styleUrls: ['./resumecreat.component.css']
 })
 export class ResumecreatComponent implements OnInit {
-  showData:any;
+  showData:Resume;
+  // showData:Resume;
+  // maxid:number;
+  // // find max id
+  
+  // getMaxid(){
+  // return  this.showData.forEach(data =>{
+  //     if(data.id > this.maxid){
+  //       this.maxid = data.id;
+  //     }
+  //   })
+  // }
+ 
+
   constructor(private dataservers:DataServicesService) { }
 
   ngOnInit(): void {
-    this.displaydata()
+    this.getData();
+    debugger
   }
-  displaydata(){
-    this.dataservers.resumeData.subscribe(data=>{
-          this.showData =data;
+  //get all details of resume
+  getData(){
+    this.dataservers.getData().subscribe((data)=>{
+      this.showData =data;
+    },(error=>{
+      alert("did't get data")
     })
-    
-  }
+   )}
 
+    
+  
 }
