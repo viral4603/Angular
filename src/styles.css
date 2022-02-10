@@ -1,9 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *,::before,::after{
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    /* font-size: 16px; */
     font-family: 'Roboto', sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+ul{
+    list-style-type: none;
 }
 .row{
     display: flex;
@@ -21,9 +30,19 @@
 .justify-spacearound{
     justify-content: space-around;
 }
+.justify-center{
+    justify-content: center;
+}
 .m-auto{
     margin: auto;
 }
 .grow{
     flex-grow: 1;
+}
+.btn{
+    color: #ffffff;
+    background-color: #ed7470;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.4rem;
+    border:none;
 }

@@ -1,9 +1,11 @@
 
-    <div class="main-wrapper main row">
+    <div class="main-wrapper main row h-100">
         <aside class="navbar">
-            <div class="navbar-wrap">
-                <h3>Angular Task</h3>
-                <ul class="navbar-list">
+            <div class="navbar-wrap colum h-100">
+                <div class="logo fix-height row align-item-center justify-center ">
+                    <h1 class="title">Angular Task</h1>
+                </div>
+                <ul class="navbar-list grow">
                     <li appChangeColor class="navbar-items"><a routerLink="main">Directives and pipe</a></li>
                     <li appChangeColor class="navbar-items"><a routerLink="userform">Data binding</a></li>
                     <li appChangeColor class="navbar-items"><a routerLink="reactivefoms">Reactive forms</a></li>
@@ -12,7 +14,12 @@
                 </ul>  
             </div>
         </aside>
-        <div class="main-content grow">
-            <router-outlet></router-outlet>
+        <div class="main-content grow colum">
+            <div class="main-header fix-height">
+
+            </div>
+            <div class="main-display-content grow">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>

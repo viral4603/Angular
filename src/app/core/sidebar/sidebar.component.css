@@ -1,13 +1,18 @@
+.width-100{
+    width: 100%;
+}
+.h-100{
+    height: 100%;
+}
+
 .main-wrapper{
     overflow: hidden;
 }
 .main-content{
-    overflow-y: auto;
+    overflow:hidden;
 }
 
-ul{
-    list-style-type: none;
-}
+
 aside ul li a{
     text-decoration: none;
 }
@@ -22,11 +27,25 @@ aside ul li a{
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
+.navbar .navbar-items{
+    border-radius: 0.5rem;
+}
 .navbar .navbar-items a{
     color: black;
     display: flex;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0.5rem 1.5rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     transition: 0.5s all;
+}
+.fix-height{
+    height: 3rem;
+    
+}
+.main-display-content{
+    overflow: auto;
+    background-color: #f5f4ef;
+}
+.main-header{
+    background-color:  #f5f4ef;
 }
