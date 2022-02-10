@@ -3,13 +3,14 @@
     <div class="resume">
         <div class="header row space-between">
             <div class="main-details">
-                <h1>{{showData.name}}</h1>
-                <h5>{{showData.designation}}</h5>
+                <h1>{{showData?.name}}</h1>
+                <h5>{{showData?.designation}}</h5>
             </div>
             <div class="colm">
                 <button>download pdf</button>
-                <a href="mailto@xyz.com">{{showData.email}}</a>
-                <h5 class="sub-title phone">{{showData.number}}</h5>
+                <a href="mailto@xyz.com">{{showData
+                ?.email}}</a>
+                <h5 class="sub-title phone">{{showData?.number}}</h5>
             </div>
         </div>
         <div class="row padding-tb border-bottom">
@@ -18,10 +19,11 @@
             </div>
             <div class="details grow">
                 <p>
-                    {{showData.profile}}
+                    {{showData?.profile}}
                 </p>
             </div>
         </div>
+        
         <!-- skill:start -->
         <div class="row padding-tb border-bottom">
             <div class="details-title wd-250">
@@ -29,9 +31,9 @@
             </div>
             <div class="details skill wd-100">
                 <div class="row">
-                    <div class="skill-list" *ngFor="let skill of showData.skill">
-                        <h5 class="sub-title">{{skill.skills}}</h5>
-                        <p class="skill-explain">{{skill.skilldetails}}</p>
+                    <div class="skill-list" *ngFor="let skill of showData?.skill">
+                        <h5 class="sub-title">{{skill?.skills}}</h5>
+                        <p class="skill-explain">{{skill?.skilldetails}}</p>
                     </div>
                 </div>
             </div>
@@ -47,20 +49,7 @@
             <div class="technical wd-100">
                 <div class="technical skill wd-100">
                     <div class="row space-between border-bottom" >
-                        <h5 class="sub-title" *ngFor="let technical of showData.technical">{{technical.technical}}</h5>
-                        <!-- <h5 class="sub-title">xhtml</h5>
-                        <h5 class="sub-title">xhtml</h5>
-                    </div>
-                    <div class="row space-between border-bottom">
-                        <h5 class="sub-title">xhtml</h5>
-                        <h5 class="sub-title">xhtml</h5>
-                        <h5 class="sub-title">xhtml</h5>
-                    </div>
-                    <div class="row space-between">
-                        <h5 class="sub-title">xhtml</h5>
-                        <h5 class="sub-title">xhtml</h5>
-                        <h5 class="sub-title">xhtml</h5>
-                    </div> -->
+                        <h5 class="sub-title" *ngFor="let technical of showData?.technical">{{technical.technical}}</h5>
                     </div>
                 </div>
             </div>
@@ -69,12 +58,12 @@
             <div class="details-title wd-250">
                 <em>Exeperence</em>
             </div>
-            <div class="exeperence wd-100" *ngFor="let experience of showData.experience">
+            <div class="exeperence wd-100" *ngFor="let experience of showData?.experience">
                 <div class="row space-between border-bottom" >
                     <div class="exp-details" >
-                        <h5 class="sub-title">{{experience.company}}</h5>
-                        <p>{{experience.designationInCompany}}</p>
-                        <p>{{experience.detailscompny}}</p>
+                        <h5 class="sub-title">{{experience?.company}}</h5>
+                        <p>{{experience?.designationInCompany}}</p>
+                        <p>{{experience?.detailscompny}}</p>
                     </div>
                     <div class="exp-period">
                         <p>2005-2007</p>
@@ -98,9 +87,9 @@
                 <em>Education</em>
             </div>
             <div class="Education wd-100">
-                <h5 class="sub-title">{{showData.education}}</h5>
+                <h5 class="sub-title">{{showData?.education}}</h5>
                 <p>
-                    {{showData.educationDescription}}
+                    {{showData?.educationDescription}}
                 </p>
             </div>
         </div>

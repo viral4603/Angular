@@ -2,11 +2,13 @@
     <h2>Resume Builder form</h2>
 </div>
 <!-- start :form -->
-{{resumeForm.value | json}}
 <form [formGroup]="resumeForm" autocomplete="off">
     <div class="form-field">
         <label for="name">Name</label>
-        <input class="form-input" type="text" formControlName="name" placeholder="Enter your name">
+        <input class="form-input" type="text" formControlName="name" placeholder="Enter your name" ngClass="">
+    </div>
+    <div class="error" *ngIf="submited || controls['name']?.dirty || controls['name']?.touched && controls['name'].invalid">
+        <div *ngIf="controls['name'].errors && controls['name'].errors['required']">*name is required.</div>
     </div>
     <div class="form-field">
         <label for="designation">Designation</label>
@@ -24,6 +26,8 @@
         <label for="profile">Profile</label>
         <textarea class="form-input" type="textarea" formControlName="profile" placeholder="profile details">Write profile details</textarea>
     </div>
+
+    <!-- start:skill -->
     <div class="form-field row" formArrayName="skill">
         <label for="Skills">Skills</label>
         <div class="fix-width">
@@ -32,12 +36,24 @@
                     <input class=" form-input " type="text" formControlName="skills" placeholder="Skill title">
                     <input class="form-input " type="text" formControlName="skilldetails" placeholder="Skill description">
                     <button class="btn" (click)="deleteSkill(i)">Delete</button>
+                    <div *ngIf="getAsFormGroup(control).controls['skills'].touched && getAsFormGroup(control).controls['skills'].errors">
+                        <h4>required skill title</h4>
+                    </div>
+                    <div *ngIf="getAsFormGroup(control).controls['skilldetails'].touched && getAsFormGroup(control).controls['skilldetails'].errors">
+                        <h4>required skill details title</h4>
+                    </div>
                 </div>
-            </div>
+        
+           </div>
+            <!-- <div class="error" *ngIF="this.resumeForm['skills'].errors">
+                <h1>skill is required</h1>
+            </div> -->
         </div>
         <button class="btn" (click)="addSkill()"> Add skills +</button>
     </div>
+    <!-- end:skill -->
 
+    <!-- start:technical -->
     <div class="form-field" formArrayName="technical">
         <label for="technical">Technical</label>
         <div class="fix-width">
@@ -52,6 +68,8 @@
         </div>
         <button class="btn" (click)="addTechnical()"> Add More +</button>
     </div>
+    <!-- end:technical -->
+
     <!-- start:experience -->
     <div class="form-field" formArrayName="experience">
         <label for="Skills">Experience</label>

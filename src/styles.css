@@ -1,5 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*,::before,::after{
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+.row{
+    display: flex;
+}
+.colum{
+    display: flex;
+    flex-direction: column;
+}
+.align-item-center{
+    align-items:center ;
+}
+.justify-spacebetween{
+    justify-content: space-between;
+}
+.justify-spacearound{
+    justify-content: space-around;
+}
+.m-auto{
+    margin: auto;
+}
+.grow{
+    flex-grow: 1;
 }

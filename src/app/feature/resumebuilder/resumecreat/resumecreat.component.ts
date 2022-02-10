@@ -22,21 +22,17 @@ export class ResumecreatComponent implements OnInit {
   // }
  
 
-  constructor(private dataservers:DataServicesService) { }
+  constructor(private dataservice:DataServicesService) { }
 
   ngOnInit(): void {
     this.getData();
-    debugger
   }
   //get all details of resume
   getData(){
-    this.dataservers.getData().subscribe((data)=>{
+    this.dataservice.getResumeData().subscribe((data)=>{
       this.showData =data;
     },(error=>{
       alert("did't get data")
     })
-   )}
-
-    
-  
+   )}    
 }

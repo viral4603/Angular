@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Employee } from 'src/app/employee/model';
+import { Employee } from 'src/app/feature/employee/model';
 
 @Pipe({
   name: 'search'

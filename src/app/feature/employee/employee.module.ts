@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeformComponent } from './employeeform/employeeform.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
@@ -21,10 +21,9 @@ import { GetNamePipe } from './get-name.pipe';
     CommonModule,
     EmployeeRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
-    SharedModule
-    
-  ],
+    SharedModule,
+    FormsModule
+ ],
   exports:[
     EmployeeformComponent
   ]

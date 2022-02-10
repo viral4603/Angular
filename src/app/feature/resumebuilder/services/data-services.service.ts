@@ -17,7 +17,7 @@ postdata(data:Resume):Observable<Resume>{
 return this.https.post<Resume>(`${this.httpLink}/resume`,data);
 }
 //get all details from reusme
-getData():Observable<Resume>{
+getResumeData():Observable<Resume>{
   return this.https.get<Resume>(`${this.httpLink}/resume/1`);
 }
 
