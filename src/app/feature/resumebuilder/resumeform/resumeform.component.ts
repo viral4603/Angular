@@ -95,16 +95,13 @@ export class ResumeformComponent implements OnInit {
   //get value of all controls
   saveData() {
     this.resumeData = this.resumeForm.value;
-    console.log(this.resumeForm)
-    debugger
 
-    console.log(this.skillcontrol);
     if (this.resumeForm['status'] === 'INVALID') {
       this.submited = true;
       console.log('resolve errors');
     }
     else {
-      this.dataservice.postdata(this.resumeData).subscribe((res) => {
+       this.dataservice.postdata(this.resumeData).subscribe((res) => {
         alert('data send suceesfully')
       }, (error => {
         alert("Somethings Went Wrong")
@@ -114,18 +111,22 @@ export class ResumeformComponent implements OnInit {
     }
 
   }
-  //delete skill field
-  deleteSkill(index: number) {
-    if (index == 0) {
+
+  //send data to local server
+  deletArray(id:number, control:string){
+    if (id == 0) {
       console.log('this field is not delete');
     }
     else {
-      this.skill = this.resumeForm.get('skill') as FormArray;
-      this.skill.removeAt(index);
+      this.skill = this.resumeForm.get(control) as FormArray;
+      this.skill.removeAt(id);
     }
-  }
-  //send data to local server
 
+  }
+  //reset form
+  resetForm(){
+    return this.resumeForm.reset();
+  }
 
 
 

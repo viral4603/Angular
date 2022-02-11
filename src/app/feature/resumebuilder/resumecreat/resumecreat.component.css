@@ -24,7 +24,7 @@
     justify-content: space-between;
 }
 .padding-tb{
-    padding: 1rem 0;
+    padding: 1.6rem 0;
 }
 .border-bottom{
     border-bottom: 1px solid #d1d1d1;
@@ -40,7 +40,14 @@
     width: 100%;
 }
 .container .resume{
-    padding: 1rem 2rem;
+    padding: 0rem 3rem;
+}
+.header{
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+.header h1{
+    padding-bottom: 0.7rem;
 }
 .main-details h4{
     font-size: 1.6rem;
@@ -49,5 +56,21 @@
 .main-details em{
             font-size: 1.2rem;
 }
+.details .skill-list{
+    width: 30%;
+    padding: 0rem 0.8rem;
+}
 
 
+.form-footer {
+    margin-top: 2.25rem;
+    justify-content: flex-end;
+} 
+.form-footer .btn{
+    padding:0.6rem 2rem
+}
+
+.sub-title{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}

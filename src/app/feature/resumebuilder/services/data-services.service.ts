@@ -17,8 +17,12 @@ postdata(data:Resume):Observable<Resume>{
 return this.https.post<Resume>(`${this.httpLink}/resume`,data);
 }
 //get all details from reusme
-getResumeData():Observable<Resume>{
-  return this.https.get<Resume>(`${this.httpLink}/resume/1`);
+getResumeData():Observable<Resume[]>{
+  return this.https.get<Resume[]>(`${this.httpLink}/resume`);
+}
+//delete 
+deletePreviousData():Observable<Resume>{
+  return this.https.delete<Resume>(`${this.httpLink}/resume`);
 }
 
   

@@ -8,31 +8,31 @@ import { DataServicesService } from '../services/data-services.service';
   styleUrls: ['./resumecreat.component.css']
 })
 export class ResumecreatComponent implements OnInit {
-  showData:Resume;
-  // showData:Resume;
-  // maxid:number;
-  // // find max id
-  
-  // getMaxid(){
-  // return  this.showData.forEach(data =>{
-  //     if(data.id > this.maxid){
-  //       this.maxid = data.id;
-  //     }
-  //   })
-  // }
+  showData:Resume[];
+  resumeWithMaxId: Resume;
  
-
   constructor(private dataservice:DataServicesService) { }
 
   ngOnInit(): void {
     this.getData();
+    console.log(this.showData)
   }
   //get all details of resume
   getData(){
     this.dataservice.getResumeData().subscribe((data)=>{
       this.showData =data;
+      this.maxIdFind();
     },(error=>{
       alert("did't get data")
     })
    )}    
+  maxIdFind(): void {
+    let maxId: number = -1;
+    this.showData.forEach((resume) => {
+      if (resume.id > maxId) {
+        maxId = resume.id;
+        this.resumeWithMaxId = resume;
+      }
+    });
+  }
 }

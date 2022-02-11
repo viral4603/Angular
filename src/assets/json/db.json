@@ -65,264 +65,54 @@
   ],
   "resume": [
     {
-      "name": "Sushil Hariakar",
-      "designation": "1 rivet Owner",
-      "email": "sushil.hariakar@1rivet.com",
-      "number": "9724677566",
-      "profile": "Very very hardworking Guy",
+      "name": " JONATHAN DOE",
+      "designation": "WEB DESIGNER, DIRECTOR",
+      "email": "name@yourdomain.com",
+      "number": "(313)-867-5309",
+      "profile": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ab numquam nesciunt distinctio. Amet magni, natus reprehenderit illo quia adipisci voluptatibus veniam expedita obcaecati sed. Aut, id illum voluptatum voluptatibus voluptatem, deleniti, rem nisi voluptas modi accusantium similique nemo perspiciatis.",
       "skill": [
         {
-          "skills": "front-end ",
-          "skilldetails": "html"
+          "skills": " Web Design",
+          "skilldetails": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid quos labore ullam"
         },
         {
-          "skills": "front-end ",
-          "skilldetails": "Css"
+          "skills": "Interface Design",
+          "skilldetails": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid quos labore ullam"
         },
         {
-          "skills": "front-end",
-          "skilldetails": "angular"
+          "skills": "Project Direction",
+          "skilldetails": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid quos labore ullam"
         }
       ],
       "technical": [
         {
-          "technical": "Sorry there is a Technical issue"
+          "technical": "\t XHTML"
+        },
+        {
+          "technical": "\tJquery"
+        },
+        {
+          "technical": "\tOS X"
+        },
+        {
+          "technical": "\tOS X"
         }
       ],
       "experience": [
         {
-          "company": "1rivet",
-          "designationInCompany": "khud Owner",
-          "detailscompny": "nothing much"
+          "company": "\t Facebook",
+          "designationInCompany": "Senior Interface Deigner",
+          "detailscompny": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officiis hic eius exercitationem distinctio esse."
+        },
+        {
+          "company": "\t Facebook",
+          "designationInCompany": "Senior Interface Deigner",
+          "detailscompny": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officiis hic eius exercitationem distinctio esse."
         }
       ],
-      "education": "GTU",
-      "educationDescription": "404 not found",
+      "education": "\t Indiana University",
+      "educationDescription": "Dual Major - 4.0 GPA",
       "id": 1
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 2
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 3
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 5
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 6
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "designation": "",
-      "email": "",
-      "number": "",
-      "profile": "",
-      "skill": [
-        {
-          "skills": "",
-          "skilldetails": ""
-        }
-      ],
-      "technical": [
-        {
-          "technical": ""
-        }
-      ],
-      "experience": [
-        {
-          "company": "",
-          "designationInCompany": "",
-          "detailscompny": null
-        }
-      ],
-      "education": "",
-      "educationDescription": "",
-      "id": 9
     }
   ]
 }

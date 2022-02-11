@@ -7,8 +7,9 @@
         <label for="name">Name</label>
         <input class="form-input" type="text" formControlName="name" placeholder="Enter your name" ngClass="">
     </div>
-    <div class="error" *ngIf="submited || controls['name']?.dirty || controls['name']?.touched && controls['name'].invalid">
-        <div *ngIf="controls['name'].errors && controls['name'].errors['required']">*name is required.</div>
+    <div class="error"
+        *ngIf="submited || controls['name']?.dirty || controls['name']?.touched && controls['name'].invalid">
+        <div *ngIf="controls['name'].errors && controls['name'].errors['required']">*Name is required.</div>
     </div>
     <div class="form-field">
         <label for="designation">Designation</label>
@@ -24,79 +25,124 @@
     </div>
     <div class="form-field">
         <label for="profile">Profile</label>
-        <textarea class="form-input" type="textarea" formControlName="profile" placeholder="profile details">Write profile details</textarea>
+        <textarea class="form-input" type="textarea" formControlName="profile"
+            placeholder="profile details">Write profile details</textarea>
     </div>
 
     <!-- start:skill -->
     <div class="form-field row" formArrayName="skill">
         <label for="Skills">Skills</label>
-        <div class="fix-width">
-            <div class="skill-group" *ngFor="let control of skill['controls'];let i = index">
-                <div class="skill-form-group" [formGroupName]="i">
-                    <input class=" form-input " type="text" formControlName="skills" placeholder="Skill title">
-                    <input class="form-input " type="text" formControlName="skilldetails" placeholder="Skill description">
-                    <button class="btn" (click)="deleteSkill(i)">Delete</button>
-                    <div *ngIf="getAsFormGroup(control).controls['skills'].touched && getAsFormGroup(control).controls['skills'].errors">
-                        <h4>required skill title</h4>
+        <div class="field-group wd-100 grow">
+            <div class="wd-100" *ngFor="let control of skill['controls'];let i = index">
+                <div class="sub-form-group row justify-spacebetween" [formGroupName]="i">
+                    <div class="sub-title">
+                        <input class="form-input" type="text" formControlName="skills" placeholder="Skill title">
                     </div>
-                    <div *ngIf="getAsFormGroup(control).controls['skilldetails'].touched && getAsFormGroup(control).controls['skilldetails'].errors">
-                        <h4>required skill details title</h4>
+                    <div class="sub-description row">
+                        <input class="form-input" type="text" formControlName="skilldetails"
+                            placeholder="Skill description">
+                        <div class="sub-delete">
+                            <button class="btn" (click)="deletArray(i,'skill')">Delete</button>
+                        </div>
                     </div>
                 </div>
-        
-           </div>
-            <!-- <div class="error" *ngIF="this.resumeForm['skills'].errors">
-                <h1>skill is required</h1>
-            </div> -->
+                <div class="error"
+                    *ngIf="getAsFormGroup(control).controls['skills'].touched && getAsFormGroup(control).controls['skills'].errors">
+                    <h4>*skill required</h4>
+                </div>
+                <div class="error"
+                    *ngIf="getAsFormGroup(control).controls['skilldetails'].touched && getAsFormGroup(control).controls['skilldetails'].errors">
+                    <h4>*skill describe required</h4>
+                </div>
+
+            </div>
         </div>
-        <button class="btn" (click)="addSkill()"> Add skills +</button>
+        <div class="add-btn">
+            <button type="button" class="btn btn-success" (click)="addSkill()"> Add skills +</button>
+        </div>
     </div>
     <!-- end:skill -->
 
     <!-- start:technical -->
     <div class="form-field" formArrayName="technical">
         <label for="technical">Technical</label>
-        <div class="fix-width">
+        <div class="fix-width grow wd-100">
             <div class="skill-group" *ngFor="let control of technical['controls'];let i = index">
-                <div class="skill-form-group" [formGroupName]="i">
-                    <div class="fix-width">
+                <div class="sub-form-group row justify-spacebetween" [formGroupName]="i">
+                    <div class="sub-title">
                         <input class="form-input" type="text" formControlName="technical" placeholder="Technical">
-                        <button type="button" class="btn">Delete</button>
+                    </div>
+                    <div class="sub-delete">
+                        <button type="button" (click)="deletArray(i,'technical')" class="btn">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn" (click)="addTechnical()"> Add More +</button>
+        <div class="add-btn">
+            <button type="button" class="btn btn-success" (click)="addTechnical()"> Add More +</button>
+        </div>
     </div>
     <!-- end:technical -->
 
     <!-- start:experience -->
     <div class="form-field" formArrayName="experience">
-        <label for="Skills">Experience</label>
-        <div class="fix-width experience">
-            <div class="skill-group" *ngFor="let control of experience['controls'];let i = index">
-                <div class="skill-form-group" [formGroupName]="i">
-                    <input class="form-input" type="text" formControlName="company" placeholder="company">
-                    <input class="form-input" type="text" formControlName="designationInCompany"
-                        placeholder="roll in that company">
-                    <input class="form-input" type="text" formControlName="detailscompny" placeholder="brief of work">
-                    <button class="btn">Delete</button>
+        <label for="Skills">Exeperience</label>
+        <div class="fix-width grow wd-100 row">
+            <div class="field-group wd-100 grow">
+                <div class="skill-group" *ngFor="let control of experience['controls'];let i = index">
+                    <div class="sub-form-group row justify-spacebetween" [formGroupName]="i">
+                        <div class="sub-title">
+                            <input class="form-input" type="text" formControlName="company" placeholder="company">
+                        </div>
+                        <div class="sub-title">
+                            <input class="form-input" type="text" formControlName="designationInCompany"
+                                placeholder="roll in that company">
+                        </div>
+                        <div class="sub-title">
+                            <input class="form-input" type="text" formControlName="detailscompny"
+                                placeholder="brief of work">
+                        </div>
+                        <div class="sub-delete">
+                            <button type="button" (click)="deletArray(i,'experience')" class="btn">Delete</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div>
-                <button type="button" class="btn" (click)="addExeperience()"> Add Experience +</button>
+                <button type="button" class="btn btn-success" (click)="addExeperience()"> Add Experience +</button>
             </div>
         </div>
     </div>
     <!-- end:exepernce -->
+
     <!-- start:eduction details -->
     <div class="form-field">
-        <label for="education">Eduction</label>
-        <div class="fix-width ">
-            <input class="form-input" type="text" formControlName="education" placeholder="Univercity">
-            <input class="form-input" type="text" formControlName="educationDescription" placeholder="details">
+        <label for="education">Education</label>
+        <div class="fix-width row grow justify-spacebetween">
+            <div class="sub-title education">
+                <input class="form-input wd-100" type="text" formControlName="education" placeholder="Univercity">
+            </div>
+            <div class="sub-title education wd-100">
+                <input class="form-input wd-100" type="text" formControlName="educationDescription" placeholder="details">
+           </div>
         </div>
     </div>
     <!-- end:eduction details -->
-    <button type="button" class="btn" (click)="saveData()">Create Resume</button>
+
+    <!-- footer:start -->
+    <div class="form-footer row align-item-center justify-spacebetween">
+        <div class="cancel-btn">
+            <button type="button" class="btn btn-cancel" routerLink="/resumebuilder/create">Cancel</button>
+        </div>
+        <div class="btn-right row">
+            <div class="save-btn">
+                <button type="button" class="btn btn-primary" (click)="resetForm()">Reset</button>            
+            </div>
+            <div class="save-btn">
+                <button type="button" class="btn btn-success" (click)="saveData()">Save</button>            
+            </div>
+        </div>
+    </div>
+    <!-- footer:end -->
+    
 </form>

@@ -27,20 +27,15 @@ aside ul li a{
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-.navbar .navbar-items{
-    border-radius: 0.5rem;
-}
 .navbar .navbar-items a{
-    color: black;
     display: flex;
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
-    margin-bottom: 0.5rem;
-    transition: 0.5s all;
+    border-radius: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 .fix-height{
-    height: 3rem;
-    
+    height: 3rem;    
 }
 .main-display-content{
     overflow: auto;
@@ -48,4 +43,7 @@ aside ul li a{
 }
 .main-header{
     background-color:  #f5f4ef;
+}
+.navbar .navbar-items a.active-link{
+    background-color: aqua;
 }
