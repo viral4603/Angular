@@ -1,30 +1,28 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserformsComponent } from './userforms/userforms.component';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HighlightDirective } from './highlight.directive';
-import { UserlistComponent } from './userlist/userlist.component';
-import { FirstcapPipe } from 'src/app/main/custompipe/firstcap.pipe';
+import { UserRoutingModule } from './user-routing.module';
+import { UserComponent } from './user.component';
+import { IdToNamePipe } from './userpipe/id-to-name.pipe';
+import { SearchClientPipe } from './userpipe/search-client.pipe';
+
 
 
 @NgModule({
   declarations: [
-    UserformsComponent,
-    UserlistComponent,
-    HighlightDirective,
-    FirstcapPipe
+    UserComponent,
+    IdToNamePipe,
+    SearchClientPipe
+    
   ],
   imports: [
     CommonModule,
     FormsModule,
+    UserRoutingModule,
     ReactiveFormsModule
   ],
   exports:[
-    HighlightDirective
+    UserComponent,
   ]
 })
-export class UserModule { 
-  constructor(){
-    console.log('user module load');
-  }
-}
+export class UserModule { }

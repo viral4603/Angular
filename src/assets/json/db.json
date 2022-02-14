@@ -26,10 +26,10 @@
       "firstname": "sushi",
       "lastname": "patel",
       "email": "i@ham.com",
-      "phone": "846026854855",
+      "phone": "1234567890",
       "gender": "male",
       "joiningdate": "2022-02-21",
-      "department": 1,
+      "department": "2",
       "id": 2
     },
     {
@@ -113,6 +113,134 @@
       "education": "\t Indiana University",
       "educationDescription": "Dual Major - 4.0 GPA",
       "id": 1
+    }
+  ],
+  "users": [
+    {
+      "firstname": "ajay",
+      "lastname": "sharma",
+      "email": "p@gmail.com",
+      "number": "124567891",
+      "clientname": "1",
+      "office": "2",
+      "id": 1
+    },
+    {
+      "firstname": "sushil",
+      "lastname": "hariyakar",
+      "email": "abc@gmail.com",
+      "number": "1234567898",
+      "clientname": "1",
+      "office": "1",
+      "id": 2
+    },
+    {
+      "firstname": "tanamay",
+      "lastname": "patel",
+      "email": "tanamay@gamail.com",
+      "number": "8460268671",
+      "clientname": "1",
+      "office": "2",
+      "id": 3
+    },
+    {
+      "firstname": "om",
+      "lastname": "patel",
+      "email": "om212@gmail.coma",
+      "number": "7898986561",
+      "clientname": "4",
+      "office": "3",
+      "id": 4
+    },
+    {
+      "firstname": "jigar ",
+      "lastname": "bhanushali",
+      "email": "jigar@gmail.com",
+      "number": "9999999999",
+      "clientname": "2",
+      "office": "3",
+      "id": 5
+    },
+    {
+      "firstname": "jigar ",
+      "lastname": "bhanushali",
+      "email": "jigar@gmail.com",
+      "number": "898989898",
+      "clientname": "1",
+      "office": "3",
+      "id": 7
+    },
+    {
+      "firstname": "jigar ",
+      "lastname": "bhanushali",
+      "email": "jigar@gmail.com",
+      "number": "9184545454",
+      "clientname": "2",
+      "office": "3",
+      "id": 8
+    },
+    {
+      "firstname": "jigar ",
+      "lastname": "bhanushali",
+      "email": "jigar@gmail.com",
+      "number": "8989898981",
+      "clientname": "1",
+      "office": "3",
+      "id": 9
+    },
+    {
+      "firstname": "John ",
+      "lastname": "duo",
+      "email": "jaoha@gmail.com",
+      "number": "1234578568",
+      "clientname": "3",
+      "office": "1",
+      "id": 10
+    },
+    {
+      "firstname": "peter ",
+      "lastname": "parker",
+      "email": "petr@yahoo.com",
+      "number": "9999999999",
+      "clientname": "3",
+      "office": "2",
+      "id": 11
+    }
+  ],
+  "client": [
+    {
+      "id": 1,
+      "name": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "JBL"
+    },
+    {
+      "id": 3,
+      "name": "1rivet"
+    },
+    {
+      "id": 4,
+      "name": "Boat"
+    }
+  ],
+  "office": [
+    {
+      "id": 1,
+      "name": "office1"
+    },
+    {
+      "id": 2,
+      "name": "office2"
+    },
+    {
+      "id": 3,
+      "name": "office3"
+    },
+    {
+      "id": 4,
+      "name": "office4"
     }
   ]
 }

@@ -49,6 +49,13 @@ ul{
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
+.btn:disabled{
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #a57e7d;
+    padding: 0.375rem 0.75rem;
+  
+}
 .btn:hover{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
@@ -69,4 +76,7 @@ input,textarea{
 }
 input:focus-visible,textarea:focus-visible{
     outline: none;
+}
+.wd-100{
+    width: 100%;
 }

@@ -15,8 +15,6 @@ export class SearchPipe implements PipeTransform {
          return data.firstname.toLowerCase().match(searchtext.toLowerCase());
       })
     }
-
-    
   }
 
 }

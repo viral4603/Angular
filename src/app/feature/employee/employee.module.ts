@@ -13,8 +13,7 @@ import { GetNamePipe } from './get-name.pipe';
   declarations: [
     EmployeeformComponent,
     EmployeelistComponent,
-    GetNamePipe,
-    
+    GetNamePipe,   
 
   ],
   imports: [
@@ -30,6 +29,5 @@ import { GetNamePipe } from './get-name.pipe';
 })
 export class EmployeeModule {
   constructor(){
-    console.log('emppoyee module run');
   }
  }
