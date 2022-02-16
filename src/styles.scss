@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "./assets/scss/base/varibale";
+%fix-view{
+    height: 100%;
+    width: 100%;
+}
+%row{
+    display: flex;
+    flex-direction: row
+}
+%colum{
+    display: flex;
+    flex-direction: column
+}
+
+
+html {
+    @extend %fix-view;
+    
+    body {
+        margin: 0;
+        padding: 0;
+        @extend %fix-view;
+        font-family: "Roboto", sans-serif;
+        overflow: hidden;
+        //sidebar css:strat
+        .main-wrapper {
+             @extend %fix-view;
+             @extend %row;
+            //sidebar css
+            .navbar {
+                @extend %colum;
+                width: 240px;
+                border-right: 1px solid $color-primary;
+                //sidebar extend icon
+                .humberger {
+                    height: 0.25rem;
+                    width: 10%;
+                    background-color: $color-secondary;
+                }
+                .logo{
+                    text-align: center;
+                    color: $color-secondary;
+                    border-bottom: 1px solid $color-primary
+                }
+                .navbar-wrap{
+                    flex-grow: 1;
+                    padding: 0px 30px;
+                    .navbar-list {
+                        padding: 0;
+                        list-style-type: none;
+                        .navbar-items {
+                            margin-bottom: 0.1rem;
+                            a {
+                                display: inline-block;
+                                text-decoration: none;
+                                width: 100%;
+                                padding: 0.5rem 0.2rem ;
+                            }
+                        }
+                    }
+                }
+            
+            }
+            .main-content{
+                flex-grow: 1;
+            }
+        }
+    }
+}

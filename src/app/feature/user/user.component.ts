@@ -6,7 +6,7 @@ import { UserService } from './userService/user.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css',]
+  styleUrls: ['./user.component.scss',]
 })
 export class UserComponent implements OnInit {
   //userbtn display form
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   offices: Office[];
   userlist: User[];
   updateId: number;
-  searchId:number;
+  searchId:number = 0;
 
   constructor(private fb: FormBuilder, private services: UserService) { }
 
@@ -70,7 +70,7 @@ export class UserComponent implements OnInit {
   public get control(){
     return this.userForm['controls']
   }
-  //toggle button disble 
+  //toggle button disable 
   public togglebtn() {
     this.userbtn = !this.userbtn;
   }

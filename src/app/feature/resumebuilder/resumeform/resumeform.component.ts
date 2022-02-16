@@ -8,7 +8,7 @@ import { DataServicesService } from '../services/data-services.service';
 @Component({
   selector: 'app-resumeform',
   templateUrl: './resumeform.component.html',
-  styleUrls: ['./resumeform.component.css']
+  styleUrls: ['./resumeform.component.scss']
 })
 export class ResumeformComponent implements OnInit {
   submited: boolean = false;

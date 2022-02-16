@@ -126,15 +126,6 @@
       "id": 1
     },
     {
-      "firstname": "sushil",
-      "lastname": "hariyakar",
-      "email": "abc@gmail.com",
-      "number": "1234567898",
-      "clientname": "1",
-      "office": "1",
-      "id": 2
-    },
-    {
       "firstname": "tanamay",
       "lastname": "patel",
       "email": "tanamay@gamail.com",
@@ -169,15 +160,6 @@
       "clientname": "1",
       "office": "3",
       "id": 7
-    },
-    {
-      "firstname": "jigar ",
-      "lastname": "bhanushali",
-      "email": "jigar@gmail.com",
-      "number": "9184545454",
-      "clientname": "2",
-      "office": "3",
-      "id": 8
     },
     {
       "firstname": "jigar ",

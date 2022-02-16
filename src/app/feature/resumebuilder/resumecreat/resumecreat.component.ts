@@ -5,7 +5,7 @@ import { DataServicesService } from '../services/data-services.service';
 @Component({
   selector: 'app-resumecreat',
   templateUrl: './resumecreat.component.html',
-  styleUrls: ['./resumecreat.component.css']
+  styleUrls: ['./resumecreat.component.scss']
 })
 export class ResumecreatComponent implements OnInit {
   showData:Resume[];

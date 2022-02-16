@@ -18,6 +18,7 @@ form,.title{
 }
 .form-field label{
     width: 200px;
+    flex-shrink: 0;
 }
 .form-field .form-input{
     padding:0.375rem 0.75rem;
@@ -60,6 +61,6 @@ textarea.form-input{
     margin-right: 1.2rem;
 }
 .error{
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: red;
 }

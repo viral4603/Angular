@@ -9,13 +9,13 @@ import { Department, Employee } from '../model';
 @Component({
   selector: 'app-employeeform',
   templateUrl: './employeeform.component.html',
-  styleUrls: ['./employeeform.component.css']
+  styleUrls: ['./employeeform.component.scss']
 })
 export class EmployeeformComponent implements OnInit {
   submited:boolean =false;
-  employee: Employee[];
+  employee: Employee;
   employeeForm = {} as FormGroup;
-  departmentList:Department[];
+  departmentList:Department[]=[];
   urlid:number;
  
   ngOnInit(): void {

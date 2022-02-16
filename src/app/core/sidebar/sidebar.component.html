@@ -1,27 +1,38 @@
+<div class="main-wrapper">
+    <aside class="navbar">
+        <!-- <div class="toggle-menu">
+            <label for="navbartoggle" class="humberger">
+            </label>
+            <input type="checkbox" id="navbartoggle">
+        </div> -->
+        <div class="logo">
+            <h1 class="title">Angular Task</h1>
+        </div>
+        <div class="navbar-wrap ">
+            
+            <ul class="navbar-list">
+                <li class="navbar-items"><a appChangeColor routerLink="main" routerLinkActive="active-link"><span
+                            class="icon-menu"></span>Directives and pipe</a></li>
+                <li class="navbar-items"><a appChangeColor routerLink="userform" routerLinkActive="active-link"><span
+                            class="icon-data_usage"></span>Data binding</a></li>
+                <li class="navbar-items"><a appChangeColor routerLink="reactivefoms"
+                        routerLinkActive="active-link"><span class="icon-copy"></span>Reactive forms</a></li>
+                <li class="navbar-items"><a appChangeColor routerLink="employee" routerLinkActive="active-link"><span
+                            class="icon-user-o"></span>employee</a></li>
+                <li class="navbar-items"><a appChangeColor routerLink="resumebuilder"
+                        routerLinkActive="active-link"><span class="icon-file-play"></span>Resume Builder</a></li>
+                <li class="navbar-items"><a appChangeColor routerLink="user" routerLinkActive="active-link"><span
+                            class="icon-libreoffice"></span>Assisment</a></li>
 
-    <div class="main-wrapper main row h-100">
-        <aside class="navbar">
-            <div class="navbar-wrap colum h-100">
-                <div class="logo fix-height row align-item-center justify-center ">
-                    <h1 class="title">Angular Task</h1>
-                </div>
-                <ul class="navbar-list grow">
-                    <li  class="navbar-items"><a appChangeColor routerLink="main"  routerLinkActive="active-link">Directives and pipe</a></li>
-                    <li  class="navbar-items"><a appChangeColor routerLink="userform"  routerLinkActive="active-link">Data binding</a></li>
-                    <li  class="navbar-items"><a appChangeColor routerLink="reactivefoms"  routerLinkActive="active-link">Reactive forms</a></li>
-                    <li  class="navbar-items"><a appChangeColor routerLink="employee"  routerLinkActive="active-link">employee</a></li>
-                    <li  class="navbar-items"><a appChangeColor routerLink="resumebuilder"  routerLinkActive="active-link">Resume Builder</a></li>
-                    <li  class="navbar-items"><a appChangeColor routerLink="user"  routerLinkActive="active-link">Assisment</a></li>
+            </ul>
+        </div>
+    </aside>
+    <div class="main-content">
+        <div class="main-header">
 
-                </ul>  
-            </div>
-        </aside>
-        <div class="main-content grow colum">
-            <div class="main-header fix-height">    
-
-            </div>
-            <div class="main-display-content grow">
-                <router-outlet></router-outlet>
-            </div>
+        </div>
+        <div class="main-display-content">
+            <router-outlet></router-outlet>
         </div>
     </div>
+</div>

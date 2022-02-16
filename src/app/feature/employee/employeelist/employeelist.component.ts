@@ -6,7 +6,7 @@ import { Department, Employee } from '../model';
 @Component({
   selector: 'app-employeelist',
   templateUrl: './employeelist.component.html',
-  styleUrls: ['./employeelist.component.css']
+  styleUrls: ['./employeelist.component.scss']
 })
 export class EmployeelistComponent implements OnInit {
   departmentList:Department[];
