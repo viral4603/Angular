@@ -1,15 +1,21 @@
-<div class="user-wraper">
+<div class="user-wrapper">
     <!-- user-header-start -->
-    <div class="user-header row justify-spacebetween">
-        <h3>Users</h3>
-        <div class="user-right row align-item-center">
-            <div class="row">
-                <h4>Client</h4>
-                <select [(ngModel)]="searchId">
-                    <option value="0" selected>Select Client</option>
-                    <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}</option>
-                </select>
-                <input class="search" type="search">
+    <div class="user-header row justify-spacebetween align-center">
+        <h2>Users</h2>
+        <div class="user-right row align-center">
+            <div class="row align-center">
+                <div>
+                    <h4>Client</h4>
+                </div>
+                <div>
+                    <select [(ngModel)]="searchId">
+                        <option value="0" selected>Select Client</option>
+                        <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}</option>
+                    </select>
+                </div>
+                <div>
+                    <input class="search" type="search">
+                </div>
             </div>
             <div class="new-user">
                 <button class="btn" type="button" [disabled]="userbtn" (click)="togglebtn()">+ NEW USER</button>

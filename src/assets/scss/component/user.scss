@@ -1,0 +1,14 @@
+//user components css
+.user-wrapper{
+    width: 80%;
+    margin: 0rem auto;
+    padding: 0rem 3rem;
+}
+.user-header {
+    @extend %row;
+    justify-content: space-between;
+    .user-right{
+        @extend %row;
+    }
+    
+}
