@@ -1,0 +1,21 @@
+//create some global class
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.colum{
+    display: flex;
+    flex-direction: column;
+}
+.align-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-space-between{
+    justify-content: space-between;
+}
+.m-auto{
+    margin: 0 auto;
+}

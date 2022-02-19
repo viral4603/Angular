@@ -12,8 +12,6 @@ import { MainComponent } from './main/main.component';
 import { VideoComponent } from './main/video/video.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
