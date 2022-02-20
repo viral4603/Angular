@@ -1,6 +1,6 @@
 <div class="user-wrapper">
     <!-- user-header-start -->
-    <div class="user-header row justify-spacebetween align-center">
+    <div class="user-header row justify-space-between align-center">
         <h2>Users</h2>
         <div class="user-right row align-center">
             <div class="row align-center">
@@ -18,15 +18,15 @@
                 </div>
             </div>
             <div class="new-user">
-                <button class="btn" type="button" [disabled]="userbtn" (click)="togglebtn()">+ NEW USER</button>
+                <button class="button" type="button" [disabled]="userbtn" (click)="togglebtn()">+ NEW USER</button>
             </div>
         </div>
     </div>
     <!-- user-header:end -->
     <!-- user-form:strat -->
-    <div class="user-form" *ngIf="userbtn">
+    <div class="user-form mb-1" *ngIf="userbtn">
         <form [formGroup]="userForm">
-            <div class="row">
+            <div class="row justify-space-between mb-1">
                 <div class="user-form-input">
                     <input type="text" class="user-input" placeholder="first Name*" formControlName="firstname">
                     <div class="error" *ngIf="submitted || control['firstname'].touched && control['firstname'].invalid ">
@@ -74,8 +74,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row m-auto">
-                <div class="user-form-input">
+            <div class="row m-auto justify-space-around mb-1">
+                <div class="user-form-input user-select">
                     <select name="user-client" formControlName="clientname">
                         <option disabled selected>Select Client</option>
                         <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}
@@ -88,7 +88,7 @@
                     </div>
 
                 </div>
-                <div class="user-form-input">
+                <div class="user-form-input user-select">
                     <select name="user-offices" formControlName="office">
                         <option disabled selected>Select office</option>
                         <option *ngFor="let office of offices;let i = index" [value]="office.id">{{office.name}}
@@ -103,23 +103,25 @@
                      </div>
                 </div>
             <div class="form-btn row">
-                <button type="button" class="btn btn-success" (click)="closeForm()">Cancel</button>
-                <button type="button" class="btn btn-primary" (click)="saveUserData()">Save</button>
+                <button type="button" class="button btn-success" (click)="closeForm()">Cancel</button>
+                <button type="button" class="button btn-primary" (click)="saveUserData()">Save</button>
             </div>
         </form>
     </div>
     <!-- user-form:end -->
     <!-- user-display-list:start -->
     <div class="user-list">
-        <table class="wd-100 user-table">
+        <table class="user-table">
             <thead>
-                <th>FIRST NAME</th>
-                <th>LAST NAME</th>
-                <th>CLIENT NAME</th>
-                <th>EMAIL</th>
-                <th>OFFICE</th>
-                <th>CONTACT-NUMBER</th>
-                <th>ACTIONS</th>
+                <tr>
+                    <th>FIRST NAME</th>
+                    <th>LAST NAME</th>
+                    <th>CLIENT NAME</th>
+                    <th>EMAIL</th>
+                    <th>OFFICE</th>
+                    <th>CONTACT-NUMBER</th>
+                    <th colspan="2">ACTIONS</th>
+                </tr>
             </thead>
             <tbody>
                 <tr class="user-row" *ngFor="let user of userlist |searchClient:searchId;let i =index">
@@ -129,8 +131,8 @@
                     <td>{{user.email}}</td>
                     <td>{{user.office|idToName:offices}}</td>
                     <td>{{user.number}}</td>
-                    <td><button type="button" class="btn btn-success" (click)="editUser(user.id)">Edit</button></td>
-                    <td><button type="button" class="btn" (click)="deleteUser(user.id)">Delete</button></td>
+                    <td><button type="button" class="button button-success" (click)="editUser(user.id)">Edit</button></td>
+                    <td><button type="button" class="button" (click)="deleteUser(user.id)">Delete</button></td>
                 </tr>
             </tbody>
             <tfoot>

@@ -24,12 +24,13 @@ ul {
 //main-view scss
 .main-wrapper {
         @extend %fix-view;
+        overflow: hidden;
     .sidebar {
-        flex-basis: 300px;
+        flex-basis: 17rem;
         height: 100%;
         flex-shrink: 0;
         overflow: hidden;
-        border-right: 0.1rem solid $color-primary;
+        border-right: 0.08rem solid $border-primary;
         transition: all 0.5s ease-in-out;
     }
   
@@ -40,8 +41,10 @@ ul {
         height: 4rem;
         padding: 0rem 1.2rem;
             .title{
+                transform: translateX(0);
+                padding-right: 1.3rem;
                 white-space: nowrap;
-                margin-left: 2rem;
+                @extend %transtion;
         }
     }
 }
@@ -58,7 +61,7 @@ ul {
     height: 100%;
     //sidebar header
     .sidebar-header {
-        border-bottom: 0.1rem solid $color-primary;
+        border-bottom: 0.08rem solid $border-primary;
     }
     //toggle button css
     .toggle-btn {
@@ -81,6 +84,7 @@ ul {
     }
     //navigation css
     .navbar-wrap {
+        overflow-y: auto;
         flex-grow: 1;
     }
     .nav-title{
@@ -95,7 +99,7 @@ ul {
 #toggle:checked + .sidebar {
     flex-basis: 70px;
     .title{
-        display: none;
+        transform: translateX(4rem);
     }
     .toggle-btn{
         margin-left: 4px;
@@ -152,4 +156,13 @@ ul {
 .active-link{
     color: $color-secondary;
     background-color: #eaedfc;
+}
+
+//css for main
+.main-content{
+    padding: 0rem 1.5rem;
+}
+.main-display-content{
+    @extend %fix-view;
+    overflow-y: auto;
 }

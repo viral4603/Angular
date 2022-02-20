@@ -1,9 +1,54 @@
 //user components css
 .user-wrapper{
-    width: 80%;
+    width: 100%;
     margin: 0rem auto;
-    padding: 0rem 3rem;
+    padding: 2rem 0rem;
 }
-.user-header {
-    justify-content: space-between;
+.user-header{
+    margin-bottom: 1.5rem;
+    h4,select,input{
+        margin-right: 0.5rem;
+    }
+}
+
+.user-form-input{
+    width: 22%;
+    input{
+        width: 100%;
+    }
+}
+.user-select{
+    width:22%;
+    select{
+        width: 100%;
+    }
+}
+
+.form-btn{
+    justify-content: flex-end;
+    .btn-success{
+        background-color: green;
+        margin-right: 1rem;
+    }
+    .btn-primary{
+        background-color: aqua;
+    }
+}
+.error{
+    color: red;
+}
+.user-list{
+    overflow: auto;
+}
+.user-table{
+    width: 100%;
+    text-align: center;
+    border:1px solid $border-primary;
+    border-radius: $radius-primary;
+    border-collapse: collapse;
+   th,tr td{
+    padding: 0.75rem;
+    border-bottom: 0.01rem solid $border-primary;
+   }
+   
 }
