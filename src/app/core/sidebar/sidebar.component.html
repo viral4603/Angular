@@ -2,45 +2,57 @@
     <!-- sidebar:start -->
     <input type="checkbox" id="toggle">
     <aside class="sidebar colum">
-       
-            <div class="sidebar-header row justify-space-between align-center">
-                <div class="toggle-btn colum">
-                    <label for="toggle" class="line"></label>
-                    <label for="toggle" class="line-1"></label>
-                    <label for="toggle" class="line-2"></label>
-                </div>
-                <div class="logo">
-                    <h1 class="title">Angular Task</h1>
-                </div>
+        <div class="sidebar-header row justify-space-between align-center">
+            <div class="toggle-btn colum">
+                <label for="toggle" class="line"></label>
+                <label for="toggle" class="line-1"></label>
+                <label for="toggle" class="line-2"></label>
             </div>
-            <div class="user-profile">
+            <div class="logo">
+                <h1 class="title">Angular Task</h1>
+            </div>
+        </div>
+        <!-- user:profile:start -->
+        <div class="user-profile row align-center">
+            <div class="user-image row align-center justify-space-between">
+                <figure>
+                    <img src="../../../assets/images/img_avatar.png" alt="profile_image">
+                </figure>
+            </div>
+            <div class="user-details">
+                <h4>Veer Patel</h4>
+                <a href="#">pviral4603@gmail.com</a>
+            </div>
+        </div>
+        <!-- user:profile:end -->
 
-            </div>
+        <div class="navbar-wrap">
+            <ul class="navbar-list">
+                <li class="navbar-items row align-center"><a appChangeColor routerLink="main"
+                        routerLinkActive="active-link"><span class="icon-menu"></span><span class="nav-title">Directives
+                            and pipe</span></a></li>
+                <li class="navbar-items row align-center"><a appChangeColor routerLink="userform"
+                        routerLinkActive="active-link"><span class="icon-data_usage"></span><span class="nav-title">Data
+                            binding</span></a></li>
+                <li class="navbar-items row align-center"><a appChangeColor routerLink="reactivefoms"
+                        routerLinkActive="active-link"><span class="icon-copy"></span><span class="nav-title">Reactive
+                            forms</span></a></li>
+                <li class="navbar-items row align-center"><a appChangeColor routerLink="employee"
+                        routerLinkActive="active-link"><span class="icon-user-o"></span><span
+                            class="nav-title">employee</span></a></li>
+                <li class="navbar-items row align-center"><a appChangeColor routerLink="resumebuilder"
+                        routerLinkActive="active-link"><span class="icon-file-play"></span><span
+                            class="nav-title">Resume Builder</span></a></li>
+                <li class="navbar-items row align-center"><a appChangeColor routerLink="user"
+                        routerLinkActive="active-link"><span class="icon-libreoffice"></span><span
+                            class="nav-title">Assesment</span></a></li>
+            </ul>
+        </div>
 
-            <div class="navbar-wrap">
-                <ul class="navbar-list">
-                    <li class="navbar-items row align-center"><a appChangeColor routerLink="main" routerLinkActive="active-link"><span
-                                class="icon-menu"></span><span class="nav-title">Directives and pipe</span></a></li>
-                    <li class="navbar-items row align-center"><a appChangeColor routerLink="userform"
-                            routerLinkActive="active-link"><span class="icon-data_usage"></span><span class="nav-title">Data binding</span></a></li>
-                    <li class="navbar-items row align-center"><a appChangeColor routerLink="reactivefoms"
-                            routerLinkActive="active-link"><span class="icon-copy"></span><span class="nav-title">Reactive forms</span></a></li>
-                    <li class="navbar-items row align-center"><a appChangeColor routerLink="employee"
-                            routerLinkActive="active-link"><span class="icon-user-o"></span><span class="nav-title">employee</span></a></li>
-                    <li class="navbar-items row align-center"><a appChangeColor routerLink="resumebuilder"
-                            routerLinkActive="active-link"><span class="icon-file-play"></span><span class="nav-title">Resume Builder</span></a></li>
-                    <li class="navbar-items row align-center"><a appChangeColor routerLink="user" routerLinkActive="active-link"><span
-                                class="icon-libreoffice"></span><span class="nav-title">Assesment</span></a></li>
-                </ul>
-            </div>
-      
     </aside>
     <!-- sidebar:end -->
     <!-- start:main-display content -->
     <div class="main-content">
-        <div class="main-header">
-
-        </div>
         <div class="main-display-content">
             <router-outlet></router-outlet>
         </div>

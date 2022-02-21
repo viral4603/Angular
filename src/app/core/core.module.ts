@@ -4,7 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RouterModule } from '@angular/router';
-import { ChangeColorDirective } from '../main/video/change-color.directive';
+
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
@@ -12,7 +12,6 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     SidebarComponent,
     HeaderComponent,
-    ChangeColorDirective,
     PagenotfoundComponent
   ],
   imports: [

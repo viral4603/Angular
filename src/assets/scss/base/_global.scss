@@ -1,4 +1,9 @@
 //create some global class
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 .row{
     display: flex;
     flex-direction: row;
@@ -29,13 +34,12 @@
     font-size: 0.8rem;
     font-weight: 600;
     color: #ffffff;
-    padding: 0.55rem 0.5rem;
+    padding: 0.55rem 0.9rem;
     border: none;
     border-radius: $radius-primary;
-    background-color: $btn-color;
 }
 
-select,input{
+.user-select,.user-input{
     padding: 0.45rem 0.25rem;
     border-radius: 0.45rem;
     font-size: 0.8rem;

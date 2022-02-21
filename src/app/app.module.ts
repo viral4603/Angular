@@ -8,15 +8,11 @@ import { CoreModule } from './core/core.module';
 import { FormComponent } from './feature/form/form.component';
 import { ResumebuilderModule } from './feature/resumebuilder/resumebuilder.module';
 import { UserModule } from './feature/user/user.module';
-import { MainComponent } from './main/main.component';
-import { VideoComponent } from './main/video/video.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    VideoComponent,
     FormComponent,
   ],
   imports: [

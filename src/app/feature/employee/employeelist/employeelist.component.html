@@ -1,15 +1,16 @@
-
-<div class="employee-list d-flex space-between">
-    <div class="employee-display">
-        <div >
-            <h2 class="title">Employee details</h2>
-            <div class="d-flex space-around align-center">
-                <input appPhoneFormat type="search" placeholder="search employee" [(ngModel)]="searchtext">
-                <button class="btn" routerLink="/employee/add">Add Details</button>
-            </div>
+<div class="main-header row align-center">
+    <h2 class="title">Employee details</h2>
+</div>
+<div class="employee-list">
+        <div class="row justify-space-between employee-search mb-1">
+            <input class="user-input"appPhoneFormat type="search" placeholder="search employee" [(ngModel)]="searchtext">
+            <button class=" button button-primary" routerLink="/employee/add">Add Details</button>
         </div>
-        <div class="employee-details">
-            <table>
+   
+    <div class="employee-display">
+        
+        <div class="employee-details user-list">
+            <table class="user-table">
                 <thead>
                     <tr>
                         <th >id</th>
@@ -29,8 +30,8 @@
                         <td>{{employee.gender}}</td>
                         <td>{{employee.joiningdate}}</td>
                         <td>{{employee.department|getName:departmentList }}</td>
-                        <td><button (click)="editEmployee(employee.id)">edit</button></td>
-                        <td><button (click)="deleteEmployee(employee.id)">delete</button></td>
+                        <td><button class="button button-primary" (click)="editEmployee(employee.id)">edit</button></td>
+                        <td><button  class="button button-cancel"(click)="deleteEmployee(employee.id)">delete</button></td>
                     </tr>
                 </thead>
             </table>

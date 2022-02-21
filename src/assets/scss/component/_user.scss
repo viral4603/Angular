@@ -2,37 +2,41 @@
 .user-wrapper{
     width: 100%;
     margin: 0rem auto;
-    padding: 2rem 0rem;
 }
-.user-header{
-    margin-bottom: 1.5rem;
-    h4,select,input{
+.main-header{
+    height: 4rem;
+    .user-select{
+        width: 100%;
+    }
+    .sub-title,.user-search,.select-client{
         margin-right: 0.5rem;
     }
 }
 
+.user-form{
+    margin-bottom: 2rem;
+}
+//input field css
 .user-form-input{
     width: 22%;
     input{
         width: 100%;
     }
-}
-.user-select{
-    width:22%;
-    select{
+    .user-select{
         width: 100%;
     }
 }
+.select-option{
+    width: 22%;
+}
 
+//form submit button
 .form-btn{
     justify-content: flex-end;
-    .btn-success{
-        background-color: green;
+    .button{
         margin-right: 1rem;
     }
-    .btn-primary{
-        background-color: aqua;
-    }
+   
 }
 .error{
     color: red;
@@ -40,15 +44,25 @@
 .user-list{
     overflow: auto;
 }
+
+
+//display list css
 .user-table{
     width: 100%;
     text-align: center;
     border:1px solid $border-primary;
     border-radius: $radius-primary;
-    border-collapse: collapse;
+    border-spacing: 0;
+    th{
+        font-size: 0.8rem;
+        color: $color-primary;
+    }
    th,tr td{
     padding: 0.75rem;
     border-bottom: 0.01rem solid $border-primary;
+   }
+   tr:last-child td{ 
+       border-bottom: none;
    }
    
 }

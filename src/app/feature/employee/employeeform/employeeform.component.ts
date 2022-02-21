@@ -90,6 +90,9 @@ export class EmployeeformComponent implements OnInit {
       this.departmentList =data;
     })
   }
+  public cancelEmployee(){
+    this.router.navigate(['/employee/list']);
+  }
 
 
 }

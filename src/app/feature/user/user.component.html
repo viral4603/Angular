@@ -1,24 +1,24 @@
 <div class="user-wrapper">
     <!-- user-header-start -->
-    <div class="user-header row justify-space-between align-center">
+    <div class="main-header row justify-space-between align-center">
         <h2>Users</h2>
         <div class="user-right row align-center">
             <div class="row align-center">
-                <div>
+                <div class="sub-title">
                     <h4>Client</h4>
                 </div>
-                <div>
-                    <select [(ngModel)]="searchId">
+                <div class="select-client">
+                    <select [(ngModel)]="searchId" class="user-select">
                         <option value="0" selected>Select Client</option>
                         <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}</option>
                     </select>
                 </div>
-                <div>
-                    <input class="search" type="search">
+                <div class="user-search">
+                    <input class="search user-input" type="search">
                 </div>
             </div>
             <div class="new-user">
-                <button class="button" type="button" [disabled]="userbtn" (click)="togglebtn()">+ NEW USER</button>
+                <button class="button button-primary" type="button" [disabled]="userbtn" (click)="togglebtn()">+ NEW USER</button>
             </div>
         </div>
     </div>
@@ -75,8 +75,8 @@
                 </div>
             </div>
             <div class="row m-auto justify-space-around mb-1">
-                <div class="user-form-input user-select">
-                    <select name="user-client" formControlName="clientname">
+                <div class="user-form-input select-option">
+                    <select name="user-client" class="user-select" formControlName="clientname">
                         <option disabled selected>Select Client</option>
                         <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}
                         </option>
@@ -88,8 +88,8 @@
                     </div>
 
                 </div>
-                <div class="user-form-input user-select">
-                    <select name="user-offices" formControlName="office">
+                <div class="user-form-input select-option">
+                    <select name="user-offices" class="user-select" formControlName="office" >
                         <option disabled selected>Select office</option>
                         <option *ngFor="let office of offices;let i = index" [value]="office.id">{{office.name}}
                         </option>
@@ -103,8 +103,8 @@
                      </div>
                 </div>
             <div class="form-btn row">
-                <button type="button" class="button btn-success" (click)="closeForm()">Cancel</button>
-                <button type="button" class="button btn-primary" (click)="saveUserData()">Save</button>
+                <button type="button" class="button button-cancel" (click)="closeForm()">Cancel</button>
+                <button type="button" class="button button-primary" (click)="saveUserData()">Save</button>
             </div>
         </form>
     </div>
@@ -131,8 +131,8 @@
                     <td>{{user.email}}</td>
                     <td>{{user.office|idToName:offices}}</td>
                     <td>{{user.number}}</td>
-                    <td><button type="button" class="button button-success" (click)="editUser(user.id)">Edit</button></td>
-                    <td><button type="button" class="button" (click)="deleteUser(user.id)">Delete</button></td>
+                    <td><span class="edit-icon icon-edit" (click)="editUser(user.id)"></span></td>
+                    <td><span class="edit-icon icon-bin" (click)="deleteUser(user.id)"></span></td>
                 </tr>
             </tbody>
             <tfoot>

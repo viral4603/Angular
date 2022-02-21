@@ -61,6 +61,16 @@
       "joiningdate": "2022-02-17",
       "department": "4",
       "id": 6
+    },
+    {
+      "firstname": "himnashu",
+      "lastname": "parmar",
+      "email": "himanshu@gmail.com",
+      "phone": "8460268671",
+      "gender": "male",
+      "joiningdate": "2022-02-02",
+      "department": "3",
+      "id": 7
     }
   ],
   "resume": [
