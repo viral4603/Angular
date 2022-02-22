@@ -1,0 +1,26 @@
+.button{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: $radius-primary;
+}
+.button-primary{
+    background-color: $color-secondary;
+}
+.button-primary:hover{
+    box-shadow: 1px 1px 1px 0px #2e56e19c;
+}
+.button-secondary{
+    background-color: #28a745;
+}
+.button-secondary:hover{
+    box-shadow: 1px 1px 1px 0px #28a7459c;
+}
+.button-cancel{
+    background-color: #dc3545;
+}
+.button-cancel:hover{
+    box-shadow: 1px 1px 1px 0px #dc35459c;
+}

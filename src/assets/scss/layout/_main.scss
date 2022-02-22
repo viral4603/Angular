@@ -1,0 +1,15 @@
+//css for main
+.main-content {
+    padding: 0rem 1.5rem;
+}
+.main-display-content {
+    @extend %fix-view;
+    overflow-y: auto;
+}
+
+
+//main-content css
+.main-content {
+    overflow: hidden;
+    flex-grow: 1;
+}

@@ -1,0 +1,193 @@
+/*sidebar css*/
+
+//main-view scss
+.main-wrapper {
+    @extend %fix-view;
+    overflow: hidden;
+}
+//checkbox display none
+#toggle {
+    display: none;
+}
+//sidebar-header css
+.sidebar {
+    flex-basis: 17rem;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px 0px $border-primary;
+    @extend %transtion;
+
+    //humberger line
+    .line {
+        @extend %line;
+        &-1 {
+            @extend %line;
+        }
+        &-2 {
+            @extend %line;
+            opacity: 1;
+        }
+    }
+    //heading
+    .sidebar-header {
+        height: 4rem;
+        padding: 0rem 1.2rem;
+        border-bottom: 0.08rem solid $border-primary;
+        .title {
+            font-size: 1.3rem;
+            margin-left: 2rem;
+            transform: translateX(0);
+            color: $color-secondary;
+            white-space: nowrap;
+            @extend %transtion;
+        }
+    }
+
+    //navigation css
+    .navbar-wrap {
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+    //nav-itmes css
+    .nav-title {
+        display: inline-block;
+        font-size: 1.1rem;
+        transform: translateX(0);
+        transition: all 0.3s;
+    }
+
+    //user profile css
+    .user-profile {
+        padding: 1.2rem 1.2rem;
+        border-bottom: 0.01rem solid $border-primary;
+        .user-image {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            overflow: hidden;
+            img {
+                vertical-align: top;
+                height: auto;
+                width: 100%;
+            }
+        }
+        .user-details {
+            transition: all 0.3s ease-in-out;
+            margin-left: 1rem;
+            font-size: 0.9rem;
+            a {
+                text-decoration: none;
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.navbar-list {
+    padding: 1.4rem 1.2rem;
+    .navbar-items {
+        margin-bottom: 0.25rem;
+
+        a {
+            display: flex;
+            align-items: center;
+            color: $color-primary;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 100%;
+            padding: 0.5rem 0rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-radius: $radius-primary;
+            @extend %transtion;
+            span {
+                margin: 0rem 0.4rem;
+            }
+            &:hover{
+                color: $color-secondary;
+                background-color: #eaedfc ;
+            }
+        }
+    }
+}
+
+//css:expand side bar
+#toggle:checked + .sidebar {
+    flex-basis: 70px;
+    .title {
+        transform: translateX(4rem);
+    }
+    .toggle-btn {
+        margin-left: 4px;
+        transform: rotate(360deg);
+    }
+    .line {
+        background-color: red;
+        transform: rotate(45deg);
+        @extend %boxshadow;
+
+        &-1 {
+            width: 0px;
+        }
+        &-2 {
+            transform: rotate(-45deg);
+            background-color: red;
+            @extend %boxshadow;
+            bottom: -6px;
+        }
+    }
+    .navbar-items a{
+        padding: 0.2rem 0rem;
+        margin-bottom: 0.5rem;
+    }
+    .nav-title {
+        transform: translateX(8rem);
+    }
+    .user-profile{
+        padding: 1.2rem 0.8rem;
+    }
+    .user-image{
+        height: 40px;
+        width: 40px;
+        transform: translate(0,0);
+        border-radius: $border-primary;
+    }
+    .user-details{
+        transform: translateX(4rem);
+    }
+}
+
+
+//active-link css
+.active-link {
+    color: $color-secondary ;
+    background-color: #eaedfc;
+}
+
+//ressponsive media query
+@media only screen and (max-width: 992px){
+    html,body{
+        font-size: 14px;
+    }
+    #toggle:checked + .sidebar {
+        .navbar-items a{
+            justify-content: center;
+            padding: 0.5rem 0rem;
+        }
+       .navbar-items span:last-child{
+           display: none;
+       }
+       
+    }
+    .user-select,.user-input,.button{
+        padding: 0.6rem 1.8rem;
+    }
+
+ 
+
+}
+
+    
