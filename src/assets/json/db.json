@@ -63,14 +63,24 @@
       "id": 6
     },
     {
-      "firstname": "himnashu",
-      "lastname": "parmar",
-      "email": "himanshu@gmail.com",
-      "phone": "8460268671",
+      "firstname": "omaaaa",
+      "lastname": "khambhatiya",
+      "email": "om@gmail.com",
+      "phone": "8460268678",
       "gender": "male",
-      "joiningdate": "2022-02-02",
+      "joiningdate": null,
       "department": "3",
       "id": 7
+    },
+    {
+      "firstname": "omaaaa",
+      "lastname": "khambhatiya",
+      "email": "om@gmail.com",
+      "phone": "8460268678",
+      "gender": "male",
+      "joiningdate": null,
+      "department": "3",
+      "id": 8
     }
   ],
   "resume": [
@@ -126,15 +136,6 @@
     }
   ],
   "users": [
-    {
-      "firstname": "ajay",
-      "lastname": "sharma",
-      "email": "p@gmail.com",
-      "number": "124567891",
-      "clientname": "1",
-      "office": "2",
-      "id": 1
-    },
     {
       "firstname": "tanamay",
       "lastname": "patel",

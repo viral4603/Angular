@@ -1,81 +1,84 @@
 <div class="main-header row align-center">
     <h2 class="title">Employee Registration</h2>
+    <button type="button">open form </button>
 </div>
-<form [formGroup]="employeeForm" autocomplete="on" class="employee-form">
-    <div class="mb-1">
 
-        <label>First Name</label><br>
-        <input formControlName="firstname" id="firstname" type="text" class="form-control user-input"
-            placeholder="Enter your firstname">
-        <div class="error"
-            *ngIf="submited || getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
-            <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['required']">firstname is required.
-            </div>
-            <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['minlength']">firstName should be 4
-                character.</div>
-        </div>
-    </div>
-    <div class="mb-1">
-        <label>last Name</label><br>
-        <input type="text" class="user-input" name="lastname" formControlName="lastname" placeholder="last Name">
-        <div class="error" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
-            <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['required']">lastname is required.
-            </div>
-            <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['minlength']">lastname should be 3
-                character.</div>
-        </div>
-    </div>
-    <div class="mb-1">
-        <label>email</label><br>
-        <input type="text" class="user-input" name="email" formControlName="email" placeholder="enter your email">
-        <div class="error" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
-            <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
-            <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.
+    <form [formGroup]="employeeForm" autocomplete="on" class="employee-form">
+        <div class="mb-1">
+    
+            <label>First Name</label><br>
+            <input formControlName="firstname" id="firstname" type="text" class="form-control user-input"
+                placeholder="Enter your firstname">
+            <div class="error"
+                *ngIf="submited || getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
+                <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['required']">firstname is required.
+                </div>
+                <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['minlength']">firstName should be 4
+                    character.</div>
             </div>
         </div>
-    </div>
-    <div class="mb-1">
-        <label>Phone Number</label><br>
-        <input type="text" class="user-input" appPhoneMasking name="phone" formControlName="phone"
-            placeholder="Add phone Number">
-        <div class="error" *ngIf="submited ||getValue['phone'].touched && getValue['phone'].invalid">
-            <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['required']">Number is required.</div>
-            <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['minlength']">Number should be 10
-                character.</div>
-            <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['maxlength']">Number should not be more
-                than 10 character.</div>
+        <div class="mb-1">
+            <label>last Name</label><br>
+            <input type="text" class="user-input" name="lastname" formControlName="lastname" placeholder="last Name">
+            <div class="error" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
+                <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['required']">lastname is required.
+                </div>
+                <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['minlength']">lastname should be 3
+                    character.</div>
+            </div>
         </div>
-    </div>
-    <div class="mb-1 row justify-space-between">
-        <div class="user-gender">
-            <label>Gender:</label>
-            <input class="user-input" type="radio" name="gender" formControlName="gender" value="male"><label for="male">male</label>
-            <input class="user-input" type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">female</label>
-        </div>
-        <div class="user-date">
-            <label class="user-date-label" for="">Joining Date:</label>
-            <input class="user-input" type="date" name="joiningdate" formControlName="joiningdate" id="date">
-        </div>
-    </div>
-
-    <div class="mb-1">
-        <label for="category" class="form-label w-25 me-3">Department:</label>
-        <div>
-            <select class="form-select"  class="user-select" formControlName="department">
-                <option selected disabled>Select Department</option>
-                <option *ngFor="let department of departmentList" [value]="department.id">
-                    {{department.name}}
-                </option>
-            </select>
-            <div class="error" *ngIf="submited ||getValue['department'].touched && getValue['department'].invalid">
-                <div *ngIf="getValue['department'].errors && getValue['department'].errors['required']">
-                    select your department
+        <div class="mb-1">
+            <label>email</label><br>
+            <input type="text" class="user-input" name="email" formControlName="email" placeholder="enter your email">
+            <div class="error" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
+                <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
+                <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.
                 </div>
             </div>
         </div>
-    </div>
-    <div class="user-submit row align-center">
-        <button class="button button-cancel" (click)="cancelEmployee()" >Cancel</button>
-        <button class="button button-primary" type="submit" (click)="saveEmployee()">submit</button>
-    </div>
-</form>
+        <div class="mb-1">
+            <label>Phone Number</label><br>
+            <input type="text" class="user-input" appPhoneMasking name="phone" formControlName="phone"
+                placeholder="Add phone Number">
+            <div class="error" *ngIf="submited ||getValue['phone'].touched && getValue['phone'].invalid">
+                <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['required']">Number is required.</div>
+                <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['minlength']">Number should be 10
+                    character.</div>
+                <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['maxlength']">Number should not be more
+                    than 10 character.</div>
+            </div>
+        </div>
+        <div class="mb-1 row justify-space-between">
+            <div class="user-gender">
+                <label>Gender:</label>
+                <input class="user-input" type="radio" name="gender" formControlName="gender" value="male"><label for="male">male</label>
+                <input class="user-input" type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">female</label>
+            </div>
+            <div class="user-date">
+                <label class="user-date-label" for="">Joining Date:</label>
+                <input class="user-input" type="date" name="joiningdate" formControlName="joiningdate" id="date">
+            </div>
+        </div>
+    
+        <div class="mb-1">
+            <label for="category" class="form-label w-25 me-3">Department:</label>
+            <div>
+                <select class="form-select"  class="user-select" formControlName="department">
+                    <option selected disabled>Select Department</option>
+                    <option *ngFor="let department of departmentList" [value]="department.id">
+                        {{department.name}}
+                    </option>
+                </select>
+                <div class="error" *ngIf="submited ||getValue['department'].touched && getValue['department'].invalid">
+                    <div *ngIf="getValue['department'].errors && getValue['department'].errors['required']">
+                        select your department
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-submit row align-center">
+            <button class="button button-cancel" (click)="cancelEmployee()" >Cancel</button>
+            <button class="button button-primary" type="submit" (click)="saveEmployee()">submit</button>
+        </div>
+    </form>
+

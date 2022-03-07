@@ -8,7 +8,7 @@ import { CoreModule } from './core/core.module';
 import { FormComponent } from './feature/form/form.component';
 import { ResumebuilderModule } from './feature/resumebuilder/resumebuilder.module';
 import { UserModule } from './feature/user/user.module';
-
+import {OverlayModule} from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { UserModule } from './feature/user/user.module';
     HttpClientModule,
     ResumebuilderModule,
     CoreModule,
-    UserModule
+    UserModule,
+    OverlayModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

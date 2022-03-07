@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeletePopUpComponent } from 'src/app/shared/delete-pop-up/delete-pop-up.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeformComponent } from './employeeform/employeeform.component';
@@ -21,12 +22,10 @@ import { GetNamePipe } from './get-name.pipe';
     EmployeeRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
- ],
-  exports:[
-    EmployeeformComponent
-  ]
-})
+    FormsModule,
+    
+ ]
+  })
 export class EmployeeModule {
   constructor(){
   }

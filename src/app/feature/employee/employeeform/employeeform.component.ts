@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
@@ -17,8 +17,10 @@ export class EmployeeformComponent implements OnInit {
   employeeForm = {} as FormGroup;
   departmentList:Department[]=[];
   urlid:number;
+  @Input() UserData:Employee;
+
  
-  ngOnInit(): void {
+    ngOnInit(): void {
     this.employeeForm = this.createEmployeeForm()
     this.listDepartment();
     this.getUrlId();
@@ -27,6 +29,8 @@ export class EmployeeformComponent implements OnInit {
   constructor(private fb: FormBuilder, private employeeService: EmployeeServicesService ,private router:Router,private activateRouter:ActivatedRoute) {
 
   }
+
+  
   //get id from url
   getUrlId(){
     this.urlid = this.activateRouter.snapshot.params['id'];

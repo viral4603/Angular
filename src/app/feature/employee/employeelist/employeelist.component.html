@@ -4,8 +4,8 @@
 <div class="employee-list">
         <div class="row justify-space-between employee-search mb-1">
             <input class="user-input"appPhoneFormat type="search" placeholder="search employee" [(ngModel)]="searchtext">
-            <button class=" button button-primary" routerLink="/employee/add">Add Details</button>
-        </div>
+            <button class=" button button-primary"  (click)="openForm()">Add Details</button>
+        </div> 
    
     <div class="employee-display">
         
