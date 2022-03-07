@@ -1,6 +1,6 @@
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ComponentRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeletePopUpComponent } from 'src/app/shared/delete-pop-up/delete-pop-up.component';
 import { EmployeeformComponent } from '../employeeform/employeeform.component';
@@ -17,6 +17,7 @@ export class EmployeelistComponent implements OnInit {
   departmentList:Department[];
   public searchtext:string="";
   employeeList: Employee[];
+  id:number = 0;
 
 
   overlayRef: OverlayRef;
@@ -39,15 +40,29 @@ export class EmployeelistComponent implements OnInit {
     this.router.navigate([`/employee/add/${id}`]);
   }
   //add user form
-  public openForm(){
+  public openForm(id:number){
     const config = new OverlayConfig();
+    config.hasBackdrop = true;  
     config.positionStrategy = this.overlay.position().global().right();
-    const overlayRef = this.overlay.create(config); 
-
+    const overlayRef = this.overlay.create(config);
     const component = new ComponentPortal(EmployeeformComponent);
     const componetRef = overlayRef.attach(component);
+    componetRef.instance.cancelUser.subscribe(data=>{
+     overlayRef.detach();    
+    })
+    if(id>0){
+      componetRef.instance.patchValueForm(id);
+      componetRef.instance.urlid =id;
+    }
+    componetRef.instance.saveUser.subscribe(data=>{
+      overlayRef.detach();
+      this.getEmployeelist();
+    })
+    overlayRef.backdropClick().subscribe(result=>{
+      overlayRef.detach();
+    })
 
-  
+ 
   }
 
   //delete employee with conformation
@@ -64,14 +79,16 @@ export class EmployeelistComponent implements OnInit {
       if(result){
         this.employeeService.deleteProduct(id).subscribe(res=>alert('delete record succesfully'));
         overlayRef.detach();
+        this.getEmployeelist();
       }
       else{
         overlayRef.detach();
       }
     })
- 
-
+  
+    
   }
+
   listDepartment(){
     this.employeeService.getDepartment().subscribe(data => {
       this.departmentList =data;

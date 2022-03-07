@@ -4,14 +4,12 @@
 <div class="employee-list">
         <div class="row justify-space-between employee-search mb-1">
             <input class="user-input"appPhoneFormat type="search" placeholder="search employee" [(ngModel)]="searchtext">
-            <button class=" button button-primary"  (click)="openForm()">Add Details</button>
-        </div> 
-   
+            <button class=" button button-primary" (click)="openForm(id)">Add Details</button>
+        </div>   
     <div class="employee-display">
-        
         <div class="employee-details user-list">
-            <table class="user-table">
-                <thead>
+            <table class="user-table" >
+                <thead >
                     <tr>
                         <th >id</th>
                         <th>Name</th>
@@ -22,7 +20,7 @@
                         <th>Department</th>
                         <th colspan="2">Action</th>
                     </tr>
-                    <tr *ngFor="let employee of employeeList |search:searchtext ;let i = index">
+                    <tr *ngFor="let employee of employeeList |search:searchtext ;let i = index" cdkDrag >
                         <td>{{i+1}}</td>
                         <td>{{employee.firstname +'  '+ employee.lastname}}</td>
                         <td>{{employee.email}}</td>
@@ -30,7 +28,7 @@
                         <td>{{employee.gender}}</td>
                         <td>{{employee.joiningdate}}</td>
                         <td>{{employee.department|getName:departmentList }}</td>
-                        <td><button class="button button-primary" (click)="editEmployee(employee.id)">edit</button></td>
+                        <td><button class="button button-primary" (click)="openForm(employee.id)">edit</button></td>
                         <td><button  class="button button-cancel"(click)="deleteEmployee(employee.id)">delete</button></td>
                     </tr>
                 </thead>
@@ -39,4 +37,5 @@
     </div>
     
  </div>
+s
 

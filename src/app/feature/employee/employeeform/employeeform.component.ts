@@ -16,15 +16,20 @@ export class EmployeeformComponent implements OnInit {
   employee: Employee;
   employeeForm = {} as FormGroup;
   departmentList:Department[]=[];
-  urlid:number;
+  // urlid:number;
+  closeForm:boolean =true;
   @Input() UserData:Employee;
+
+  @Output() cancelUser:EventEmitter<any> = new EventEmitter<any>();
+  @Output() saveUser:EventEmitter<any> = new EventEmitter<any>();
+  @Input() urlid:number;
 
  
     ngOnInit(): void {
     this.employeeForm = this.createEmployeeForm()
     this.listDepartment();
-    this.getUrlId();
-    this.patchValueForm(this.urlid);
+    // this.getUrlId();
+    // this.patchValueForm(this.urlid);
     }
   constructor(private fb: FormBuilder, private employeeService: EmployeeServicesService ,private router:Router,private activateRouter:ActivatedRoute) {
 
@@ -32,9 +37,9 @@ export class EmployeeformComponent implements OnInit {
 
   
   //get id from url
-  getUrlId(){
-    this.urlid = this.activateRouter.snapshot.params['id'];
-  }
+  // getUrlId(){
+  //   this.urlid = this.activateRouter.snapshot.params['id'];
+  // }
   //upadte value in input 
   patchValueForm(id:number){
     this.employeeService.getDataById(id).subscribe((res:Employee) =>{
@@ -61,18 +66,19 @@ export class EmployeeformComponent implements OnInit {
           console.log('reslove error');
     }
     else {
-      if(!this.urlid){
+      if(this.urlid == 0){
         this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
           console.log('Product created!');
-          this.router.navigate(['/employee/list']);
+          this.saveUser.emit(true);
+          // this.router.navigate(['/employee/list']);
         })
       }
       else{
-        
+              
         this.employeeService.updateEmployee(this.urlid,this.employeeForm.value).subscribe(res =>{
           console.log('employee upadte succesfully');
           this.router.navigate(['/employee/list']);
-          
+          this.saveUser.emit(true);          
         })
       } 
     
@@ -95,6 +101,7 @@ export class EmployeeformComponent implements OnInit {
     })
   }
   public cancelEmployee(){
+    this.cancelUser.emit(this.closeForm);
     this.router.navigate(['/employee/list']);
   }
 
