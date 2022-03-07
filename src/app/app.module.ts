@@ -9,11 +9,15 @@ import { FormComponent } from './feature/form/form.component';
 import { ResumebuilderModule } from './feature/resumebuilder/resumebuilder.module';
 import { UserModule } from './feature/user/user.module';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { DisplayModeComponent } from './feature/display-mode/display-mode.component';
+import { ItemViewComponent } from './feature/display-mode/item-view/item-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
+    DisplayModeComponent,
+    ItemViewComponent,
   ],
   imports: [
     BrowserModule,

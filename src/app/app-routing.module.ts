@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PagenotfoundComponent } from './core/pagenotfound/pagenotfound.component';
+import { DisplayModeComponent } from './feature/display-mode/display-mode.component';
 
 
 const routes: Routes = [
@@ -8,6 +9,7 @@ const routes: Routes = [
   {path:'employee',loadChildren: () => import('./feature/employee/employee.module').then(m => m.EmployeeModule)},
   {path:'resumebuilder',loadChildren: () => import('./feature/resumebuilder/resumebuilder.module').then(m => m.ResumebuilderModule)},
   {path:'user',loadChildren: () => import('./feature/user/user.module').then(m => m.UserModule)},
+  { path: 'ngtemplate', component: DisplayModeComponent },
 
   { path: '**', component: PagenotfoundComponent },
 ];
