@@ -37,7 +37,7 @@ export class EmployeelistComponent implements OnInit {
     })
   }
   editEmployee(id:number){
-    this.router.navigate([`/employee/add/${id}`]);
+    // this.router.navigate([`/employee/add/${id}`]);
   }
   //add user form
   public openForm(id:number){

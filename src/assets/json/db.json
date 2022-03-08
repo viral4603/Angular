@@ -23,23 +23,13 @@
   ],
   "employee": [
     {
-      "firstname": "sushi",
-      "lastname": "patel",
-      "email": "i@ham.com",
-      "phone": "1234567890",
-      "gender": "male",
-      "joiningdate": "2022-02-21",
-      "department": "2",
-      "id": 2
-    },
-    {
       "firstname": "tnamay",
       "lastname": "asasa",
-      "email": "hjhhjhj@gmail.com",
+      "email": "tanmay@gmail.com",
       "phone": "8456566561",
       "gender": "fmale",
-      "joiningdate": "2022-02-10",
-      "department": "3",
+      "joiningdate": "2022-02-23",
+      "department": "2",
       "id": 3
     },
     {
@@ -63,14 +53,24 @@
       "id": 6
     },
     {
-      "firstname": "omaaaa",
-      "lastname": "khambhatiya",
-      "email": "om@gmail.com",
-      "phone": "8460268678",
+      "firstname": "tnamay",
+      "lastname": "patel",
+      "email": "i@ham.com",
+      "phone": "8460268671",
       "gender": "male",
-      "joiningdate": "2022-03-16",
+      "joiningdate": "2022-03-22",
       "department": "3",
       "id": 7
+    },
+    {
+      "firstname": "sushil",
+      "lastname": "hariyakar",
+      "email": "s@gmail.com",
+      "phone": "9898989898",
+      "gender": "male",
+      "joiningdate": "2022-03-03",
+      "department": "2",
+      "id": 9
     }
   ],
   "resume": [

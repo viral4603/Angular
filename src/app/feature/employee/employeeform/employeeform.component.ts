@@ -66,10 +66,10 @@ export class EmployeeformComponent implements OnInit {
           console.log('reslove error');
     }
     else {
-      if(this.urlid == 0){
+      if(!this.urlid){
         this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
           console.log('Product created!');
-          this.saveUser.emit(true);
+          this.saveUser.emit();
           // this.router.navigate(['/employee/list']);
         })
       }
@@ -78,7 +78,7 @@ export class EmployeeformComponent implements OnInit {
         this.employeeService.updateEmployee(this.urlid,this.employeeForm.value).subscribe(res =>{
           console.log('employee upadte succesfully');
           this.router.navigate(['/employee/list']);
-          this.saveUser.emit(true);          
+          this.saveUser.emit();          
         })
       } 
     
