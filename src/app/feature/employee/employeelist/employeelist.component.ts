@@ -1,6 +1,6 @@
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Component, ComponentRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeletePopUpComponent } from 'src/app/shared/delete-pop-up/delete-pop-up.component';
 import { EmployeeformComponent } from '../employeeform/employeeform.component';
@@ -41,6 +41,7 @@ export class EmployeelistComponent implements OnInit {
   }
   //add user form
   public openForm(id:number){
+
     const config = new OverlayConfig();
     config.hasBackdrop = true;  
     config.positionStrategy = this.overlay.position().global().right();

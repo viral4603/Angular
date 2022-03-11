@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +11,7 @@ import { UserModule } from './feature/user/user.module';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { DisplayModeComponent } from './feature/display-mode/display-mode.component';
 import { ItemViewComponent } from './feature/display-mode/item-view/item-view.component';
+import { AuthInterceptor } from './core/helper/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ItemViewComponent } from './feature/display-mode/item-view/item-view.co
     UserModule,
     OverlayModule,
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

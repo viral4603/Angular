@@ -61,16 +61,6 @@
       "joiningdate": "2022-03-22",
       "department": "3",
       "id": 7
-    },
-    {
-      "firstname": "sushil",
-      "lastname": "hariyakar",
-      "email": "s@gmail.com",
-      "phone": "9898989898",
-      "gender": "male",
-      "joiningdate": "2022-03-03",
-      "department": "2",
-      "id": 9
     }
   ],
   "resume": [

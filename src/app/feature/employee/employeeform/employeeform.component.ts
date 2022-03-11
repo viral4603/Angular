@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeServicesService } from '../employeeService/employee-services.service';
 import { Department, Employee } from '../model';
+
 
 
 @Component({
@@ -61,6 +61,7 @@ export class EmployeeformComponent implements OnInit {
   }
   //create new entry of employee
   saveEmployee() {
+  
     if (this.employeeForm['status'] == 'INVALID') {
       this.submited =true;
           console.log('reslove error');
