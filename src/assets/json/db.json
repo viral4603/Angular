@@ -216,4 +216,24 @@
       "name": "office4"
     }
   ]
+  , "customer": [
+    {
+      "id": 1,
+      "name": "veer",
+      "age": 26,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "name": "tnamy",
+      "age": 26,
+      "gender": "male"
+    },
+    {
+      "id": 3,
+      "name": "jinal",
+      "age": 23,
+      "gender": "female"
+    }
+    ]
 }

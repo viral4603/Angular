@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'resumebuilder',loadChildren: () => import('./feature/resumebuilder/resumebuilder.module').then(m => m.ResumebuilderModule)},
   {path:'user',loadChildren: () => import('./feature/user/user.module').then(m => m.UserModule)},
   { path: 'ngtemplate', component: DisplayModeComponent },
+  { path: 'customer', loadChildren: () => import('./feature/customer/customer.module').then(m => m.CustomerModule) },
 
   { path: '**', component: PagenotfoundComponent },
 ];
