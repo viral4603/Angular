@@ -1,1 +1,1 @@
-<app-customer-list-presentation [customerList]="customerList"></app-customer-list-presentation>
+<app-customer-list-presentation [customerList]="$customerList | async" (delete) = "deleteCustomer($event)"></app-customer-list-presentation>

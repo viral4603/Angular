@@ -7,6 +7,7 @@ import { CustomerListContainerComponent } from './customer-list-container/custom
 import { CustomerFormPresentationComponent } from './customer-form-container/customer-form-presentation/customer-form-presentation.component';
 import { CustomerListPresentationComponent } from './customer-list-container/customer-list-presentation/customer-list-presentation.component';
 import { CustomerService } from './customer.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +21,8 @@ import { CustomerService } from './customer.service';
   ],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[
     CustomerService

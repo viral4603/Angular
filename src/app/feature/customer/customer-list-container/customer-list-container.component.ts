@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { observable, Observable } from 'rxjs';
+import { Customer } from '../customer.model';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-customer-list-container',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-list-container.component.scss']
 })
 export class CustomerListContainerComponent implements OnInit {
+  public $customerList:Observable<Customer[]>;
 
-  constructor() { }
+  constructor( private customerService:CustomerService) { 
+    this.$customerList = new Observable();
+  }
 
   ngOnInit(): void {
+    this.$customerList = this.customerService.getCustomer();
   }
+  
+  //delete customer details
+  deleteCustomer(id:number){
+    this.customerService.deleteCustomer(id).subscribe((res)=>{
+      alert("data has been deleted");
+      this.$customerList = this.customerService.getCustomer();
+    })
+  }
+
 
 }

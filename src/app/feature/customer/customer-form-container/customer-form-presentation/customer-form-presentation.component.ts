@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Customer, CustomerForm } from '../../customer.model';
 import { CustomerFormService } from '../customer-form-presenter/customer-form.service';
 
 @Component({
@@ -9,10 +13,48 @@ import { CustomerFormService } from '../customer-form-presenter/customer-form.se
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerFormPresentationComponent implements OnInit {
+  @Input() public set customerData(value:Customer | null){
+    if(value){
+      this.formTitle = 'Edit Customer';
+      this.customerForm.patchValue(value);
+      this._customerData = value;
+    }
+  }
+  public get customerData() : Customer | null {
+    return this._customerData;
+  }
+  @Output() addUser:EventEmitter<CustomerForm>;
+  @Output() editUser:EventEmitter<CustomerForm>;
 
-  constructor() { }
+  private _customerData:Customer;
+  public customerForm:FormGroup;
+  public formTitle:string;
+
+  
+  constructor(public customerFormPresenterService:CustomerFormService ,private Location:Location,private activateRoute:ActivatedRoute) { 
+    this.customerForm  = this.customerFormPresenterService.buildFormGroup();
+    this.addUser = new EventEmitter();
+    this.editUser = new EventEmitter();
+  }
 
   ngOnInit(): void {
+   
+    this.customerFormPresenterService.customerData$.subscribe((res:CustomerForm)=>{
+      if(this.formTitle ==='Edit Customer'){
+        this.editUser.emit(res)
+      }
+      else{
+        this.addUser.emit(res)
+      }
+    })
+  }
+  
+  //form submit
+  onSubmit(){
+    this.customerFormPresenterService.onSubmit(this.customerForm);
+  }
+  onCancel(){
+    this.Location.back();
   }
 
 }

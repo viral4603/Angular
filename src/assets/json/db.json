@@ -215,8 +215,8 @@
       "id": 4,
       "name": "office4"
     }
-  ]
-  , "customer": [
+  ],
+  "customer": [
     {
       "id": 1,
       "name": "veer",
@@ -225,15 +225,21 @@
     },
     {
       "id": 2,
-      "name": "tnamy",
+      "name": "veer",
       "age": 26,
       "gender": "male"
     },
     {
-      "id": 3,
-      "name": "jinal",
-      "age": 23,
-      "gender": "female"
+      "name": "jigar",
+      "age": "19",
+      "gender": "Male",
+      "id": 3
+    },
+    {
+      "name": "on",
+      "age": "25",
+      "gender": "Female",
+      "id": 4
     }
-    ]
+  ]
 }

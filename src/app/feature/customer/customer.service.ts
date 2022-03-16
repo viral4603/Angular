@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Customer } from './customer.model';
+import { Customer, CustomerForm } from './customer.model';
 
 @Injectable()
 export class CustomerService {
@@ -12,5 +12,25 @@ export class CustomerService {
   //get all customer 
   getCustomer():Observable<Customer[]>{
     return this.http.get<Customer[]>(`${this.baseurl}/customer`)
+  }
+
+  //delete customer
+  deleteCustomer(id:number):Observable<number>{
+    return this.http.delete<number>(`${this.baseurl}/customer/${id}`)
+  }
+
+  //post a new customer
+  addUser(user:CustomerForm):Observable<CustomerForm>{
+    return this.http.post<CustomerForm>(`${this.baseurl}/customer`,user)
+  }
+
+  //get data of perticular id
+  getCustomerById(id:string):Observable<Customer>{
+    return this.http.get<Customer>(`${this.baseurl}/customer/${id}`)
+  }
+
+  //editCustomer
+  editCustomer(user:CustomerForm,id:string):Observable<CustomerForm>{
+    return this.http.put<CustomerForm>(`${this.baseurl}/customer/${id}`,user)
   }
 }
