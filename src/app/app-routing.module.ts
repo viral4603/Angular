@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'user',loadChildren: () => import('./feature/user/user.module').then(m => m.UserModule)},
   { path: 'ngtemplate', component: DisplayModeComponent },
   { path: 'customer', loadChildren: () => import('./feature/customer/customer.module').then(m => m.CustomerModule) },
+  { path: 'userForm', loadChildren: () => import('./feature/userForm/user-form.module').then(m => m.UserFormModule) },
 
   { path: '**', component: PagenotfoundComponent },
 ];

@@ -7,12 +7,13 @@ import { CustomerForm } from '../../customer.model';
   providedIn: 'root'
 })
 export class CustomerFormService {
-  private customerData:Subject<CustomerForm>;
+  public customerData:Subject<CustomerForm>;
   public customerData$:Observable<CustomerForm>;
+  
   
   constructor(private fb:FormBuilder) { 
     this.customerData = new Subject();
-    this.customerData$ = this.customerData.asObservable();
+    // this.customerData.asObservable();
   }
   //create form group
   buildFormGroup(){

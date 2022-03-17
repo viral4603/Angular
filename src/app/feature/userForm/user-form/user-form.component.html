@@ -1,0 +1,43 @@
+<div class="main-header row align-center">
+    <h2 class="title">Employee Registration</h2>
+</div>
+
+    <form [formGroup]="userForm" autocomplete="on" class="employee-form">
+        <div class="mb-1">
+    
+            <label>First Name</label><br>
+            <input formControlName="firstname" id="firstname" type="text" class="form-control user-input"
+                placeholder="Enter your firstname">
+            <!-- <div class="error"
+                *ngIf="submited || getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
+                <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['required']">firstname is required.
+                </div>
+                <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['minlength']">firstName should be 4
+                    character.</div>
+            </div> -->
+        </div>
+        <div class="mb-1">
+            <label>last Name</label><br>
+            <input type="text" class="user-input" name="lastname" formControlName="lastname" placeholder="last Name">
+            <!-- <div class="error" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
+                <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['required']">lastname is required.
+                </div>
+                <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['minlength']">lastname should be 3
+                    character.</div>
+            </div> -->
+        </div>
+        <div class="mb-1">
+            <label>email</label><br>
+            <input type="text" class="user-input" name="email" formControlName="email" placeholder="enter your email">
+            <!-- <div class="error" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
+                <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
+                <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.
+                </div>
+            </div> -->
+        </div>
+        
+        <div class="user-submit row align-center">
+            <button class="button button-primary" type="submit" (click)="saveUser()">submit</button>
+        </div>
+    </form>
+

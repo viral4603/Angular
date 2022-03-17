@@ -32,7 +32,7 @@ export class CustomerListPresentationComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.customerListPresenterService.delete$.subscribe((res:number) => this.delete.emit(res));
+    this.customerListPresenterService.delete$.subscribe((res:number) => this.delete.emit(res),() => {}, () => {console.log("Complete")});
   }
   
   //edit method

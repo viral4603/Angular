@@ -13,6 +13,7 @@ import { CustomerFormService } from '../customer-form-presenter/customer-form.se
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerFormPresentationComponent implements OnInit {
+  
   @Input() public set customerData(value:Customer | null){
     if(value){
       this.formTitle = 'Edit Customer';
@@ -39,7 +40,8 @@ export class CustomerFormPresentationComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.customerFormPresenterService.customerData$.subscribe((res:CustomerForm)=>{
+    this.customerFormPresenterService.customerData.subscribe((res:CustomerForm)=>{
+      res
       if(this.formTitle ==='Edit Customer'){
         this.editUser.emit(res)
       }
