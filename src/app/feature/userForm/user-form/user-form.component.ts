@@ -8,37 +8,36 @@ import { UserdatatransferService } from '../userdatatransfer.service';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
-  public userForm:FormGroup;
-  public editMode = false;
-  constructor(private fb:FormBuilder ,private userService:UserdatatransferService) {    
-   }
+  public userForm: FormGroup;
+  constructor(private fb: FormBuilder, private userService: UserdatatransferService) {
+  }
 
   ngOnInit(): void {
     this.userForm = this.createUserForm();
-    this.userService.editData.subscribe((res)=> {
+    this.userService.editData.subscribe((res) => {
+      console.log(res);
       this.userForm.patchValue(res)
-      this.editMode= true
     });
   }
 
   //creat form group
-  public createUserForm():FormGroup{
+  public createUserForm(): FormGroup {
     return this.fb.group({
-      firstname:['',Validators.required],
-      lastname:['',Validators.required],
-      email:['']
-    })  
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['']
+    });
   }
 
   //submit user data
-  public saveUser(){
-    if(!this.userForm.valid){
+  public saveUser() {
+    if (!this.userForm.valid) {
       alert("please fill a form");
     }
-    else{
+    else {
       console.log(this.userForm.value);
-      this.userService.userData.next(this.userForm.value);
+      this.userService._showdata.next(this.userForm.value);
+      this.userForm.reset();
     }
   }
-
 }

@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject, subscribeOn } from 'rxjs';
 import { User } from './userForm.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserdatatransferService {
-  public userData:Subject<User>;
   public editData:Subject<User>;
+  public _showdata:BehaviorSubject<User>;
 
-  constructor() { 
-    this.userData =new Subject<User>();
+  constructor() {
     this.editData = new Subject<User>();
+    this._showdata = new BehaviorSubject<User>({firstname: 'tnamay', lastname: 'patel', email: 'ASDDA@GMAIL.COM'});
   }
 }

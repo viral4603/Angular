@@ -9,22 +9,37 @@ import { User } from '../userForm.model';
 })
 export class UserListComponent implements OnInit {
   //creat a array for store data
-  filterData:User;
-  public showdata:User[] =[{firstname: 'tnamay', lastname: 'patel', email: 'ASDDA@GMAIL.COM'}]; 
+  filterData: User;
+  activeId: number;
+  isEditMode: boolean = false;
+  //display list of user
+  userdata: User[] = [];
 
-  constructor(private userService:UserdatatransferService) {
-    
-   }
+
+  constructor(private userService: UserdatatransferService) {
+
+  }
 
   ngOnInit(): void {
-    this.userService.userData.subscribe(res => this.showdata.push(res));
+    this.userService._showdata.subscribe(res => {
+      if (this.isEditMode) {
+        this.userdata[this.activeId] = res;
+        this.isEditMode = false;
+      } else {
+        this.userdata.push(res);
+      }
+    });
   }
-  editForm(id:number){
-    this.filterData = this.showdata[id-1];
-    this.userService.editData.next(this.filterData);
-  }
-  deleteUser(id:number){
 
+  editForm(id: number) {
+    this.filterData = this.userdata[id];
+    this.userService.editData.next(this.filterData);
+    this.activeId = id;
+    this.isEditMode = true;
+  }
+
+  deleteUser(id: number) {
+    return this.userdata.splice(id, 1);
   }
 
 }

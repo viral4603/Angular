@@ -8,18 +8,15 @@
                     <th>Name</th>
                     <th>email</th>
                     <th>Contact No</th>
-                    <th>Gender</th>
-                    <th>Joining Date</th>
-                    <th>Department</th>
                     <th colspan="2">Action</th>
                 </tr>
-                <tr *ngFor="let user of showdata; let i = index">
+                <tr *ngFor="let user of userdata; let i = index">
                     <td>{{i+1}}</td>
                     <td>{{user.firstname}}</td>
                     <td>{{user.lastname}}</td>
                     <td>{{user.email}}</td>
-                    <td><button class="button button-primary" (click)="editForm(i+1)">edit</button></td>
-                    <td><button  class="button button-cancel"(click)="deleteUser(i+1)">delete</button></td>
+                    <td><button class="button button-primary" (click)="editForm(i)">edit</button></td>
+                    <td><button  class="button button-cancel"(click)="deleteUser(i)">delete</button></td>
                 </tr>
             </thead>
         </table>
