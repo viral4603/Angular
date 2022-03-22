@@ -1,14 +1,13 @@
-<div class="main-header row align-center">
-    <h2 class="title">Employee Registration</h2>
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>Employee Registration</h4>
 </div>
 
-    <form [formGroup]="employeeForm" autocomplete="on" class="employee-form">
-        <div class="mb-1">
-    
+    <form [formGroup]="employeeForm" autocomplete="on" class="employee-form px-4 bg-white h-100">
+        <div class="mb-3">    
             <label>First Name</label><br>
             <input formControlName="firstname" id="firstname" type="text" class="form-control user-input"
                 placeholder="Enter your firstname">
-            <div class="error"
+            <div class="error text-danger"
                 *ngIf="submited || getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
                 <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['required']">firstname is required.
                 </div>
@@ -16,30 +15,30 @@
                     character.</div>
             </div>
         </div>
-        <div class="mb-1">
+        <div class="mb-3">
             <label>last Name</label><br>
-            <input type="text" class="user-input" name="lastname" formControlName="lastname" placeholder="last Name">
-            <div class="error" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
+            <input type="text" class="user-input form-control" name="lastname" formControlName="lastname" placeholder="last Name">
+            <div class="error text-danger" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
                 <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['required']">lastname is required.
                 </div>
                 <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['minlength']">lastname should be 3
                     character.</div>
             </div>
         </div>
-        <div class="mb-1">
+        <div class="mb-3">
             <label>email</label><br>
-            <input type="text" class="user-input" name="email" formControlName="email" placeholder="enter your email">
-            <div class="error" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
+            <input type="text" class="user-input form-control" name="email" formControlName="email" placeholder="enter your email">
+            <div class="error text-danger" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
                 <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
                 <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.
                 </div>
             </div>
         </div>
-        <div class="mb-1">
+        <div class="mb-3">
             <label>Phone Number</label><br>
-            <input type="text" class="user-input" appPhoneMasking name="phone" formControlName="phone"
+            <input type="text" class="user-input form-control" appPhoneMasking name="phone" formControlName="phone"
                 placeholder="Add phone Number">
-            <div class="error" *ngIf="submited ||getValue['phone'].touched && getValue['phone'].invalid">
+            <div class="error text-danger" *ngIf="submited ||getValue['phone'].touched && getValue['phone'].invalid">
                 <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['required']">Number is required.</div>
                 <div *ngIf="getValue['phone'].errors && getValue['phone'].errors['minlength']">Number should be 10
                     character.</div>
@@ -47,22 +46,25 @@
                     than 10 character.</div>
             </div>
         </div>
-        <div class="mb-1 row justify-space-between">
+        <div class="mb-3 row justify-space-between">
             <div class="user-gender">
-                <label>Gender:</label>
-                <input class="user-input" type="radio" name="gender" formControlName="gender" value="male"><label for="male">male</label>
-                <input class="user-input" type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">female</label>
+                <label class="me-4">Gender:</label>
+                <input class="user-input me-1" type="radio" name="gender" formControlName="gender" value="male"><label for="male" class="me-4">male</label>
+                <input class="user-input me-1" type="radio" name="gender" formControlName="gender" value="fmale"><label for="male">female</label>
             </div>
-            <div class="user-date">
-                <label class="user-date-label" for="">Joining Date:</label>
-                <input class="user-input" type="date" name="joiningdate" formControlName="joiningdate" id="date">
-            </div>
+           
+        </div>
+        <div class="mb-3 row justify-space-between">
+        <div class="user-date">
+            <label class="user-date-label" for="">Joining Date:</label>
+            <input class="user-input form-control" type="date" name="joiningdate" formControlName="joiningdate" id="date">
+        </div>
         </div>
     
-        <div class="mb-1">
+        <div class="mb-3">
             <label for="category" class="form-label w-25 me-3">Department:</label>
             <div>
-                <select class="form-select"  class="user-select" formControlName="department">
+                <select class="form-select user-select form-control" formControlName="department">
                     <option selected disabled>Select Department</option>
                     <option *ngFor="let department of departmentList" [value]="department.id">
                         {{department.name}}
@@ -75,9 +77,9 @@
                 </div>
             </div>
         </div>
-        <div class="user-submit row align-center">
-            <button class="button button-cancel" (click)="cancelEmployee()" >Cancel</button>
-            <button class="button button-primary" type="submit" (click)="saveEmployee()">submit</button>
+        <div class="user-submit d-flex justify-content-end">
+            <button class="btn btn-danger me-4" (click)="cancelEmployee()" >Cancel</button>
+            <button class="btn btn-primary" type="submit" (click)="saveEmployee()">submit</button>
         </div>
     </form>
 

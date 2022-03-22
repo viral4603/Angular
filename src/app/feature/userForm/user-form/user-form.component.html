@@ -1,43 +1,32 @@
-<div class="main-header row align-center">
-    <h2 class="title">Employee Registration</h2>
+<div class="main-heading d-flex align-items-center">
+    <h4>Employee Registration</h4>
 </div>
+<form [formGroup]="userForm" autocomplete="on" class="employee-form rounded w-100">
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" formControlName="firstname" id="firstname"
+                    placeholder="first Name">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" name="lastname" formControlName="lastname"
+                    placeholder="last Name">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" name="email" formControlName="email"
+                    placeholder="enter your email">
+            </div>
+        </div>
+    </div>
 
-    <form [formGroup]="userForm" autocomplete="on" class="employee-form">
-        <div class="mb-1">
-    
-            <label>First Name</label><br>
-            <input formControlName="firstname" id="firstname" type="text" class="form-control user-input"
-                placeholder="Enter your firstname">
-            <!-- <div class="error"
-                *ngIf="submited || getValue['firstname'].dirty || getValue['firstname'].touched && getValue['firstname'].invalid">
-                <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['required']">firstname is required.
-                </div>
-                <div *ngIf="getValue['firstname'].errors && getValue['firstname'].errors['minlength']">firstName should be 4
-                    character.</div>
-            </div> -->
-        </div>
-        <div class="mb-1">
-            <label>last Name</label><br>
-            <input type="text" class="user-input" name="lastname" formControlName="lastname" placeholder="last Name">
-            <!-- <div class="error" *ngIf=" submited || getValue['lastname'].touched && getValue['lastname'].invalid">
-                <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['required']">lastname is required.
-                </div>
-                <div *ngIf="getValue['lastname'].errors && getValue['lastname'].errors['minlength']">lastname should be 3
-                    character.</div>
-            </div> -->
-        </div>
-        <div class="mb-1">
-            <label>email</label><br>
-            <input type="text" class="user-input" name="email" formControlName="email" placeholder="enter your email">
-            <!-- <div class="error" *ngIf=" submited ||getValue['email'].touched && getValue['email'].invalid">
-                <div *ngIf="getValue['email'].errors && getValue['email'].errors['required']">email is required.</div>
-                <div *ngIf="getValue['email'].errors && getValue['email'].errors['minlength']">email should be 3 character.
-                </div>
-            </div> -->
-        </div>
-        
-        <div class="user-submit row align-center">
-            <button class="button button-primary" type="submit" (click)="saveUser()">submit</button>
-        </div>
-    </form>
-
+    <div class="user-submit mt-auto pt-4">
+        <button class="btn btn-primary" type="submit" (click)="saveUser()">Submit</button>
+    </div>
+</form>

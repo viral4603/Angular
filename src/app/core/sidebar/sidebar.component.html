@@ -1,9 +1,9 @@
-<div class="main-wrapper row">
+<div class="main-wrapper d-flex">
     <!-- sidebar:start -->
     <input type="checkbox" id="toggle">
-    <aside class="sidebar colum">
-        <div class="sidebar-header row  align-center">
-            <div class="toggle-btn colum">
+    <aside class="sidebar d-flex flex-column h-100">
+        <div class="sidebar-header d-flex  align-items-center px-2 border-bottom">
+            <div class="toggle-btn d-flex flex-column">
                 <label for="toggle" class="line"></label>
                 <label for="toggle" class="line-1"></label>
                 <label for="toggle" class="line-2"></label>
@@ -12,52 +12,79 @@
                 <h1 class="title">Angular Task</h1>
             </div>
         </div>
+
         <!-- user:profile:start -->
-        <div class="user-profile row align-center">
-            <div class="user-image row align-center justify-space-between">
-                <figure>
+        <div class="user-profile d-flex  align-items-center px-2 border-bottom py-4">
+            <div class="user-image d-flex  align-items-center">
+                <figure class="mb-0">
                     <img src="../../../assets/images/img_avatar.png" alt="profile_image">
                 </figure>
             </div>
             <div class="user-details">
-                <h4>Veer Patel</h4>
-                <a href="#">pviral4603@gmail.com</a>
+                <h5>Veer Patel</h5>
+                <a href="#" class="text-info">pviral4603@gmail.com</a>
             </div>
         </div>
         <!-- user:profile:end -->
 
-        <div class="navbar-wrap">
-            <ul class="navbar-list">
+        <!-- Navbar:start -->
+        <div class="navbar-wrap px-2 py-4">
+            <ul class="nav flex-column">
 
-                <li class="navbar-items"><a appChangeColor routerLink="userForm" routerLinkActive="active-link"><span
-                            class="icon-data_usage"></span><span class="nav-title">Data
-                            binding</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="reactivefoms"
-                        routerLinkActive="active-link"><span class="icon-copy"></span><span class="nav-title">Reactive
-                            forms</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="employee" routerLinkActive="active-link"><span
-                            class="icon-user-o"></span><span class="nav-title">employee</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="resumebuilder"
-                        routerLinkActive="active-link"><span class="icon-file-play"></span><span
-                            class="nav-title">Resume Builder</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="user" routerLinkActive="active-link"><span
-                            class="icon-libreoffice"></span><span class="nav-title">Assesment</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="cdk" routerLinkActive="active-link"><span
-                            class="icon-user-o"></span><span class="nav-title">Cdk</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="ngtemplate" routerLinkActive="active-link"><span
-                            class="icon-menu"></span><span class="nav-title">Ng Templates</span></a></li>
-                <li class="navbar-items"><a appChangeColor routerLink="customer" routerLinkActive="active-link"><span
-                            class="icon-menu"></span><span class="nav-title">MVP pattern</span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="userForm" routerLinkActive="active-link">
+                        <span class="icon-data_usage"></span>
+                        <span class="nav-title ps-4">Data binding</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="reactivefoms" routerLinkActive="active-link">
+                        <span class="icon-copy"></span><span class="nav-title ps-4">Reactive forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="employee" routerLinkActive="active-link">
+                        <span class="icon-user-o"></span>
+                        <span class="nav-title ps-4">employee</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="resumebuilder" routerLinkActive="active-link">
+                        <span class="icon-file-play"></span>
+                        <span class="nav-title ps-4">Resume Builder</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="user" routerLinkActive="active-link">
+                        <span class="icon-libreoffice"></span>
+                        <span class="nav-title ps-4">Assesment</span>
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" appChangeColor routerLink="cdk" routerLinkActive="active-link">
+                    <span class="icon-user-o"></span>
+                    <span class="nav-title ps-4">Cdk</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="ngtemplate" routerLinkActive="active-link">
+                        <span class="icon-menu"></span>
+                        <span class="nav-title ps-4">Ng Templates</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="customer" routerLinkActive="active-link">
+                        <span class="icon-menu"></span>
+                        <span class="nav-title ps-4">MVP pattern</span>
+                    </a>
+                </li>
             </ul>
         </div>
-
+        <!-- Navbar:end -->
     </aside>
     <!-- sidebar:end -->
+
     <!-- start:main-display content -->
-    <div class="main-content">
-        <div class="main-display-content">
-            <router-outlet></router-outlet>
-        </div>
+    <div class="main-content flex-grow-1 px-5">
+        <router-outlet></router-outlet>
     </div>
     <!-- end:main-display content -->
 

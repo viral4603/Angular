@@ -12,8 +12,10 @@ export class UserListComponent implements OnInit {
   filterData: User;
   activeId: number;
   isEditMode: boolean = false;
+  
   //display list of user
   userdata: User[] = [];
+
 
 
   constructor(private userService: UserdatatransferService) {

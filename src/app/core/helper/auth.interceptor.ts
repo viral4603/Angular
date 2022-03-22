@@ -17,7 +17,6 @@ export class AuthInterceptor implements HttpInterceptor {
     const tokenReq = request.clone({
       setHeaders:{
         Authorization:`Bearer ${this.tokenservice.getToken()}`
-        
       }
     })
     return next.handle(tokenReq);

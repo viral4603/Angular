@@ -1,15 +1,20 @@
-<div class="main-header row align-center">
-    <h2 class="title">Employee details</h2>
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>Employee details</h4>
 </div>
-<div class="employee-list">
-        <div class="row justify-space-between employee-search mb-1">
-            <input class="user-input"appPhoneFormat type="search" placeholder="search employee" [(ngModel)]="searchtext">
-            <button class=" button button-primary" (click)="openForm(id)">Add Details</button>
+<div class="employee-list mt-3">
+
+        <div class="row d-flex justify-content-between mb-4 w-100">         
+                <div class="col-8">
+                    <input class="user-input form-control" appPhoneFormat type="search" placeholder="search employee" [(ngModel)]="searchtext">
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    <button class="btn btn-primary" (click)="openForm(id)">Add Details</button>
+                </div>         
         </div>   
-    <div class="employee-display">
+
         <div class="employee-details user-list">
-            <table class="user-table" >
-                <thead >
+            <table class="table" >
+                <thead class="bg-dark text-white">
                     <tr>
                         <th >id</th>
                         <th>Name</th>
@@ -20,6 +25,8 @@
                         <th>Department</th>
                         <th colspan="2">Action</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr *ngFor="let employee of employeeList |search:searchtext ;let i = index" cdkDrag >
                         <td>{{i+1}}</td>
                         <td>{{employee.firstname +'  '+ employee.lastname}}</td>
@@ -28,13 +35,13 @@
                         <td>{{employee.gender}}</td>
                         <td>{{employee.joiningdate}}</td>
                         <td>{{employee.department|getName:departmentList }}</td>
-                        <td><button class="button button-primary" (click)="openForm(employee.id)">edit</button></td>
-                        <td><button  class="button button-cancel"(click)="deleteEmployee(employee.id)">delete</button></td>
+                        <td><button class="btn btn-primary" (click)="openForm(employee.id)">edit</button></td>
+                        <td><button  class="btn btn-danger"(click)="deleteEmployee(employee.id)">delete</button></td>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
-    </div>
+
     
  </div>
 

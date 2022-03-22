@@ -15,7 +15,7 @@
     height: 100%;
     flex-shrink: 0;
     overflow: hidden;
-    box-shadow: 0px 0px 8px 0px $border-primary;
+    box-shadow: 0px 0px 4px 0px $secondary;
     @extend %transtion;
 
     //humberger line
@@ -29,16 +29,16 @@
             opacity: 1;
         }
     }
+
     //heading
     .sidebar-header {
         height: 4rem;
         padding: 0rem 1.2rem;
-        border-bottom: 0.08rem solid $border-primary;
         .title {
             font-size: 1.3rem;
             margin-left: 2rem;
             transform: translateX(0);
-            color: $color-secondary;
+            color: $primary;
             white-space: nowrap;
             @extend %transtion;
         }
@@ -46,6 +46,7 @@
 
     //navigation css
     .navbar-wrap {
+        overflow-x: hidden;
         overflow-y: auto;
         flex-grow: 1;
     }
@@ -59,8 +60,7 @@
 
     //user profile css
     .user-profile {
-        padding: 1.2rem 1.2rem;
-        border-bottom: 0.01rem solid $border-primary;
+
         .user-image {
             height: 50px;
             width: 50px;
@@ -79,40 +79,25 @@
             font-size: 0.9rem;
             a {
                 text-decoration: none;
-                color: $color-primary;
+                color: $primary;
             }
         }
     }
 }
 
-.navbar-list {
-    padding: 1.4rem 1.2rem;
-    .navbar-items {
-        margin-bottom: 0.25rem;
 
-        a {
-            display: flex;
-            align-items: center;
-            color: $color-primary;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            width: 100%;
-            padding: 0.5rem 0rem;
+
+.nav-link {
             white-space: nowrap;
             overflow: hidden;
-            border-radius: $radius-primary;
+            border-radius: $border-radius;
+            margin-bottom: 0.25rem;
+            font-weight: $font-weight-bold;
             @extend %transtion;
-            span {
-                margin: 0rem 0.4rem;
-            }
             &:hover{
-                color: $color-secondary;
-                background-color: #eaedfc ;
+                background-color: $link-hover-bg-color;
             }
         }
-    }
-}
 
 //css:expand side bar
 #toggle:checked + .sidebar {
@@ -139,10 +124,6 @@
             bottom: -6px;
         }
     }
-    .navbar-items a{
-        padding: 0.2rem 0rem;
-        margin-bottom: 0.5rem;
-    }
     .nav-title {
         transform: translateX(8rem);
     }
@@ -153,17 +134,22 @@
         height: 40px;
         width: 40px;
         transform: translate(0,0);
-        border-radius: $border-primary;
+        // border-radius: $primary;
     }
     .user-details{
         transform: translateX(4rem);
     }
+    .nav-link{
+        width: 50px;
+    }
+    
+
 }
 
 
 //active-link css
 .active-link {
-    color: $color-secondary ;
+    color: #002afd ;
     background-color: #eaedfc;
 }
 
