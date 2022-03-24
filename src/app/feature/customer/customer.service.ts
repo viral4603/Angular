@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Customer, CustomerForm } from './customer.model';
+import { Category, Customer, CustomerForm } from './customer.model';
 
 @Injectable()
 export class CustomerService {
@@ -33,4 +33,10 @@ export class CustomerService {
   editCustomer(user:CustomerForm,id:string):Observable<CustomerForm>{
     return this.http.put<CustomerForm>(`${this.baseurl}/customer/${id}`,user)
   }
+
+  //get customer categories
+  getCustomerCatgeroies():Observable<Category[]>{
+    return this.http.get<Category[]>(`${this.baseurl}/category`)
+  }
+
 }

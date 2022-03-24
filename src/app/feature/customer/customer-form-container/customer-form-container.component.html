@@ -1,1 +1,1 @@
-<app-customer-form-presentation [customerData]="customerData$ | async" (addUser)="onsubmit($event)" (editUser)="editCustomer($event)" ></app-customer-form-presentation>
+<app-customer-form-presentation [customerData]="customerData$ | async" [customerCategories]="categories$ | async"(addUser)="onsubmit($event)" (editUser)="editCustomer($event)" ></app-customer-form-presentation>

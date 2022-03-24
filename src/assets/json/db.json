@@ -61,6 +61,26 @@
       "joiningdate": "2022-03-22",
       "department": "3",
       "id": 7
+    },
+    {
+      "firstname": "tnamay",
+      "lastname": "patel",
+      "email": "ASDDA@GMAIL.COM",
+      "phone": "8460268548",
+      "gender": "male",
+      "joiningdate": "2022-03-01",
+      "department": "2",
+      "id": 8
+    },
+    {
+      "firstname": "tnamay",
+      "lastname": "patel",
+      "email": "ASDDA@GMAIL.COM",
+      "phone": "8460268548",
+      "gender": "male",
+      "joiningdate": "2022-03-09",
+      "department": "3",
+      "id": 9
     }
   ],
   "resume": [
@@ -236,40 +256,70 @@
   ],
   "customer": [
     {
-      "id": 1,
-      "name": "veer",
-      "age": 26,
-      "gender": "male"
-    },
-    {
-      "id": 2,
-      "name": "veer",
-      "age": 26,
-      "gender": "male"
-    },
-    {
-      "name": "jigar",
-      "age": "19",
+      "name": "viral",
+      "age": "25",
+      "email": "p@gmail.com",
       "gender": "Male",
+      "category": "Health & Personal Care",
+      "id": 1
+    },
+    {
+      "name": "virat",
+      "age": "30",
+      "email": "virataaa@gmail.com",
+      "gender": "Male",
+      "category": "Accessories",
+      "id": 2
+    },
+    {
+      "name": "sachin",
+      "age": "40",
+      "email": "sachin@gmail.com",
+      "gender": "Male",
+      "category": "Software",
       "id": 3
     },
     {
-      "name": "on",
-      "age": "25",
-      "gender": "Female",
+      "name": "dhoni",
+      "age": "45",
+      "email": "dhoni@gmail.com",
+      "gender": "Male",
+      "category": "Electronics",
       "id": 4
     },
     {
-      "name": "viral",
-      "age": "25",
+      "name": "virat",
+      "age": "26",
+      "email": "virat123@gmail.com",
       "gender": "Male",
+      "category": "Electronics",
       "id": 5
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Accessories"
     },
     {
-      "name": "nirali",
-      "age": "25",
-      "gender": "Female",
-      "id": 6
+      "id": 2,
+      "name": "Electronics"
+    },
+    {
+      "id": 3,
+      "name": "Home & Kitchen"
+    },
+    {
+      "id": 4,
+      "name": "Health & Personal Care"
+    },
+    {
+      "id": 5,
+      "name": "Software"
+    },
+    {
+      "id": 6,
+      "name": "Video Games"
     }
   ]
 }

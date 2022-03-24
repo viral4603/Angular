@@ -20,7 +20,9 @@ export class CustomerFormService {
     return this.fb.group({
       name:['',[Validators.required]],
       age:['',Validators.required],
-      gender:['',Validators.required]
+      email:['',Validators.email],
+      gender:['',Validators.required],
+      category:[]
     })
   }
   onSubmit(customerForm:FormGroup){

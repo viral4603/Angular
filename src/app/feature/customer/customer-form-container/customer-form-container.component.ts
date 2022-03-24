@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Customer, CustomerForm } from '../customer.model';
+import { Category, Customer, CustomerForm } from '../customer.model';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { CustomerService } from '../customer.service';
 export class CustomerFormContainerComponent implements OnInit {
   private urlId:string;
   public customerData$:Observable<Customer>;
+  public categories$:Observable<Category[]>;
   
   constructor(private customerService:CustomerService, private route:Router,private activateRoute:ActivatedRoute) { 
     this.customerData$ = new Observable();
@@ -23,6 +24,7 @@ export class CustomerFormContainerComponent implements OnInit {
     if(this.urlId){
       this.customerData$ = this.customerService.getCustomerById(this.urlId);
     }
+    this.categories$ = this.customerService.getCustomerCatgeroies();
   }
 
   //post a data

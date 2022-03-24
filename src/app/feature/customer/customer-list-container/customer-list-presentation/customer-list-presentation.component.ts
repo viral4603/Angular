@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Customer } from '../../customer.model';
+import { Customer, filterdata } from '../../customer.model';
 import { CustomerListService } from '../customer-list-presenter/customer-list.service';
 
 @Component({
@@ -14,25 +14,40 @@ export class CustomerListPresentationComponent implements OnInit {
 
   @Input() public set customerList(value: Customer[] | null){
     if (value) {
-            this._customerList = value;
+      console.log(this.filterData);
+      
+      this._customerList = value;
     }
   }
   @Output() public delete:EventEmitter<number>;
 
   //get value of customer list
-  public get customerList() : Customer[] | null {
-    return this._customerList;
-  }
+  public get customerList() : Customer[]{
+     return this._customerList = this._customerList;
+   }
 
   //declare customerList 
   private _customerList!: Customer[];
 
-  constructor(private customerListPresenterService:CustomerListService ,private route:Router) {
+  //filterData
+  public filterData:filterdata;
+
+  constructor(private customerListPresenterService:CustomerListService ,private route:Router,
+    private cdr:ChangeDetectorRef) {
     this.delete = new EventEmitter();
    }
 
   ngOnInit(): void {
-    this.customerListPresenterService.delete$.subscribe((res:number) => this.delete.emit(res),(error) => {console.log('something went wrong')}, () => {console.log("Complete")});
+    this.customerListPresenterService.delete$.subscribe((res:number) => this.delete.emit(res),
+    (error) => {console.log('something went wrong')},
+     () => {console.log("Complete")}
+     );
+    this.customerListPresenterService.filterdata$.subscribe(res=>{
+      const newCustomerList= this._customerList.filter(data=> data.name == res.searchname);
+      console.log(newCustomerList);    
+      this._customerList = newCustomerList;  
+      this.cdr.detectChanges();
+    }) 
   }
   
   //edit method
@@ -43,6 +58,10 @@ export class CustomerListPresentationComponent implements OnInit {
   //delete method
   public onDelete(id:number){
     this.customerListPresenterService.onDelete(id);
+  }
+  //open filter cdk
+  openFilter(){
+    this.customerListPresenterService.openfilterForm();
   }
 
 }

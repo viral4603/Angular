@@ -1,0 +1,24 @@
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>Filter Form</h4>
+</div>
+
+    <form [formGroup]="filterForm" autocomplete="on" class="employee-form px-4 bg-white h-100">
+        <div class="mb-3">    
+            <label>Name</label><br>
+            <input formControlName="searchname" id="firstname" type="text" class="form-control user-input"
+                placeholder="Enter your firstname">
+            </div>
+        <div class="mb-3">
+            <label>email</label><br>
+            <input type="text" class="user-input form-control" name="email" formControlName="email" placeholder="last Name">
+        </div>
+        <div class="mb-3">
+            <label>age</label><br>
+            <input type="text" class="user-input form-control" name="age" formControlName="age" placeholder="enter your email">
+        </div>       
+        <div class="user-submit d-flex justify-content-end">
+            <button class="btn btn-danger me-4" (click)="cancelFilter()" >Cancel</button>
+            <button class="btn btn-primary" type="submit" (click)="applyFilter()">submit</button>
+        </div>
+    </form>
+

@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Customer, CustomerForm } from '../../customer.model';
+import { Category, Customer, CustomerForm } from '../../customer.model';
 import { CustomerFormService } from '../customer-form-presenter/customer-form.service';
 
 @Component({
@@ -13,6 +13,11 @@ import { CustomerFormService } from '../customer-form-presenter/customer-form.se
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerFormPresentationComponent implements OnInit {
+  @Input() public set customerCategories(value:Category[] | null){
+    if(value){
+      this._customerCategories = value;
+    }
+  }
   
   @Input() public set customerData(value:Customer | null){
     if(value){
@@ -21,13 +26,18 @@ export class CustomerFormPresentationComponent implements OnInit {
       this._customerData = value;
     }
   }
+  public get categories():Category[]{
+    return this._customerCategories;
+  }
   public get customerData() : Customer | null {
     return this._customerData;
   }
+  
   @Output() addUser:EventEmitter<CustomerForm>;
   @Output() editUser:EventEmitter<CustomerForm>;
 
   private _customerData:Customer;
+  private _customerCategories:Category[];
   public customerForm:FormGroup;
   public formTitle:string;
 
