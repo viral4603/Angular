@@ -22,7 +22,7 @@ export class FilterFormComponent implements OnInit {
   }
   buildForm():FormGroup{
     return this.fb.group({
-      searchname:[''],
+      name:[''],
       email:[''],
       age:['']
     })

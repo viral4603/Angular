@@ -6,7 +6,9 @@
   <div class="d-flex justify-content-between">
       <!-- <input type="text" placeholder="Search User" [formControl]="search"> -->
       <button class="btn btn-dark" routerLink="../add">+ Add</button>
-      <button class="btn btn-success" (click)="openFilter()">Filter</button>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-success" (click)="openFilter()">Filter</button><span *ngIf="FilterActive" class="ms-2 text-danger bg-danger filter-active"></span>
+      </div>
     </div>
   </div>
   
@@ -38,7 +40,7 @@
      
     </tbody>
     <tfoot>
-      <tr class="w-100"  *ngIf="!customerList.length">
+      <tr class="w-100"  *ngIf="!customerList?.length">
         <td colspan="7" class="text-center text-danger">No record Found</td>
       </tr>
     </tfoot>

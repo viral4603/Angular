@@ -5,7 +5,7 @@
     <form [formGroup]="filterForm" autocomplete="on" class="employee-form px-4 bg-white h-100">
         <div class="mb-3">    
             <label>Name</label><br>
-            <input formControlName="searchname" id="firstname" type="text" class="form-control user-input"
+            <input formControlName="name" id="firstname" type="text" class="form-control user-input"
                 placeholder="Enter your firstname">
             </div>
         <div class="mb-3">
@@ -13,7 +13,7 @@
             <input type="text" class="user-input form-control" name="email" formControlName="email" placeholder="last Name">
         </div>
         <div class="mb-3">
-            <label>age</label><br>
+            <label>add minimum age</label><br>
             <input type="text" class="user-input form-control" name="age" formControlName="age" placeholder="enter your email">
         </div>       
         <div class="user-submit d-flex justify-content-end">

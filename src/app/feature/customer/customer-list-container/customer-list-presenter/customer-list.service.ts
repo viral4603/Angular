@@ -4,26 +4,27 @@ import { Injectable } from '@angular/core';
 import { observable, Observable, Subject } from 'rxjs';
 import { EmployeeformComponent } from 'src/app/feature/employee/employeeform/employeeform.component';
 import { FilterFormComponent } from 'src/app/shared/filter-form/filter-form.component';
-import { filterdata } from '../../customer.model';
+import { Customer, filterdata } from '../../customer.model';
 
 @Injectable()
 export class CustomerListService {
   private delete:Subject<number>;
   public delete$:Observable<number>;
-  public filterdata:filterdata;
-  public filterdata$:Subject<filterdata>;
+  public filterdata:Customer[];
+  public filterdata$:Subject<Customer[]>;
 
   constructor( private overlay: Overlay) { 
     this.delete = new Subject();
     this.delete$ = this.delete.asObservable();
-    this.filterdata$ = new Subject<filterdata>();
+    this.filterdata$ = new Subject<Customer[]>();
   }
 
   public onDelete(id:number){
     this.delete.next(id);
   }
   
-  openfilterForm(){
+  openfilterForm(currentList:Customer[]){
+    console.log(`prenter`,currentList)
     const config = new OverlayConfig();
     config.hasBackdrop = true;  
     config.positionStrategy = this.overlay.position().global().right();
@@ -35,9 +36,22 @@ export class CustomerListService {
       overlayRef.detach()
     });
 
-    componetRef.instance.filterData.subscribe(res =>{
-      this.filterdata$.next(res);
+    componetRef.instance.filterData.subscribe((res : any) =>{
+
+      let dataKey = Object.keys(currentList[0]);
+      console.log(dataKey);
+      let newData = [...currentList];
+      console.log(res);
+      dataKey.forEach((item : any) => {
+        if (res[item]) {
+          newData = newData.filter((data : any) => {
+            return data[item] == res[item]
+          });
+        }
+      });
+      this.filterdata$.next(newData);
       overlayRef.detach();
+      
     });
     overlayRef.backdropClick().subscribe(result=>{
       overlayRef.detach();

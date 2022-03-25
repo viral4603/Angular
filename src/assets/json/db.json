@@ -294,6 +294,14 @@
       "gender": "Male",
       "category": "Electronics",
       "id": 5
+    },
+    {
+      "name": "jigar",
+      "age": "22",
+      "email": "jigar@gmail.com",
+      "gender": "Male",
+      "category": "Electronics",
+      "id": 6
     }
   ],
   "category": [

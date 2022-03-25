@@ -12,56 +12,60 @@ import { CustomerListService } from '../customer-list-presenter/customer-list.se
 })
 export class CustomerListPresentationComponent implements OnInit {
 
-  @Input() public set customerList(value: Customer[] | null){
+  @Input() public set customerList(value: Customer[] | null) {
     if (value) {
-      console.log(this.filterData);
-      
+      if (!this._customerListOriginal) {
+        this._customerListOriginal = value;
+      }
       this._customerList = value;
     }
   }
-  @Output() public delete:EventEmitter<number>;
+  @Output() public delete: EventEmitter<number>;
+  FilterActive:boolean = false;
+
 
   //get value of customer list
-  public get customerList() : Customer[]{
-     return this._customerList = this._customerList;
-   }
+  public get customerList(): Customer[] {
+    return this._customerList = this._customerList;
+  }
 
   //declare customerList 
   private _customerList!: Customer[];
+  private _customerListOriginal:Customer[];
 
   //filterData
-  public filterData:filterdata;
 
-  constructor(private customerListPresenterService:CustomerListService ,private route:Router,
-    private cdr:ChangeDetectorRef) {
+  constructor(private customerListPresenterService: CustomerListService, private route: Router,
+    private cdr: ChangeDetectorRef) {
     this.delete = new EventEmitter();
-   }
+  }
 
   ngOnInit(): void {
-    this.customerListPresenterService.delete$.subscribe((res:number) => this.delete.emit(res),
-    (error) => {console.log('something went wrong')},
-     () => {console.log("Complete")}
-     );
-    this.customerListPresenterService.filterdata$.subscribe(res=>{
-      const newCustomerList= this._customerList.filter(data=> data.name == res.searchname);
-      console.log(newCustomerList);    
-      this._customerList = newCustomerList;  
-      this.cdr.detectChanges();
-    }) 
+    this.customerListPresenterService.delete$.subscribe((res: number) => this.delete.emit(res),
+      (error) => { console.log('something went wrong') },
+      () => { console.log("Complete") }
+    );
+    //subscribe filter data
+    this.customerListPresenterService.filterdata$.subscribe(res => {
+      this._customerList = res;
+      this.FilterActive = true;
+      this.cdr.markForCheck();
+    })
   }
-  
+
+
   //edit method
-  public onEdit(id:number){
+  public onEdit(id: number) {
     this.route.navigateByUrl(`customer/edit/${id}`);
   }
 
   //delete method
-  public onDelete(id:number){
+  public onDelete(id: number) {
     this.customerListPresenterService.onDelete(id);
   }
   //open filter cdk
-  openFilter(){
-    this.customerListPresenterService.openfilterForm();
+  openFilter() {
+    this.customerListPresenterService.openfilterForm(this._customerListOriginal);
   }
 
 }

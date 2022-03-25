@@ -3,14 +3,14 @@
 export class Customer {
     public id: number;
     public name: string;
-    public age: string;
+    public age: number;
     public email:string;
     public gender: string;
     public category: string;
     constructor(
       id: number,
       name: string,
-      age: string,
+      age: number,
       email:string,
       gender: string,
       category:string
@@ -27,13 +27,13 @@ export class Customer {
   /** User Form Model */
   export class CustomerForm {
     public name: string;
-    public age: string;
+    public age: number;
     public email:string;
     public gender: string;
     public category: string;
     constructor(
       name: string,
-      age: string,
+      age: number,
       email:string,
       gender: string,
       category: string
@@ -59,7 +59,7 @@ export class Customer {
   }
 
   export interface filterdata{
-    searchname:string,
+    name:string,
     email:string,
     age:number
   }
