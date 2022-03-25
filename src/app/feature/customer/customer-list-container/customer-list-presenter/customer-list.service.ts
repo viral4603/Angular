@@ -37,14 +37,17 @@ export class CustomerListService {
     });
 
     componetRef.instance.filterData.subscribe((res : any) =>{
-
+      
+      //get keys of array
       let dataKey = Object.keys(currentList[0]);
-      console.log(dataKey);
+
       let newData = [...currentList];
-      console.log(res);
+      
       dataKey.forEach((item : any) => {
         if (res[item]) {
+          console.log(res[item])
           newData = newData.filter((data : any) => {
+            console.log(data[item])
             return data[item] == res[item]
           });
         }

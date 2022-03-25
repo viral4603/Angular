@@ -292,7 +292,7 @@
       "age": "26",
       "email": "virat123@gmail.com",
       "gender": "Male",
-      "category": "Electronics",
+      "category": "Software",
       "id": 5
     },
     {
@@ -302,6 +302,38 @@
       "gender": "Male",
       "category": "Electronics",
       "id": 6
+    },
+    {
+      "name": "nirali",
+      "age": "22",
+      "email": "nirali@gmail.com",
+      "gender": "Female",
+      "category": "Electronics",
+      "id": 7
+    },
+    {
+      "name": "shefali",
+      "age": "23",
+      "email": "shefali@gmail.com",
+      "gender": "Female",
+      "category": "Electronics",
+      "id": 8
+    },
+    {
+      "name": "pooja",
+      "age": "23",
+      "email": "pooja@gmail.com",
+      "gender": "Female",
+      "category": "Electronics",
+      "id": 9
+    },
+    {
+      "name": "sneha",
+      "age": "25",
+      "email": "sneha@gmail.com",
+      "gender": "Female",
+      "category": "Home & Kitchen",
+      "id": 10
     }
   ],
   "category": [

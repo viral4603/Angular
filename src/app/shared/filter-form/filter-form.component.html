@@ -13,10 +13,18 @@
             <input type="text" class="user-input form-control" name="email" formControlName="email" placeholder="last Name">
         </div>
         <div class="mb-3">
-            <label>add minimum age</label><br>
+            <label>age</label><br>
             <input type="text" class="user-input form-control" name="age" formControlName="age" placeholder="enter your email">
-        </div>       
-        <div class="user-submit d-flex justify-content-end">
+        </div>  
+        <div class="mb-3">
+            <label>gender</label><br>
+            <div class="d-flex">
+                <input type="radio" class="form-check-input me-2" name="gender" formControlName="gender" value="Male"><label for="male" class="me-4">male</label>
+                <input type="radio" class="form-check-input me-2" name="gender" formControlName="gender" value="Female"><label for="female">Female</label>
+            </div>  
+            
+        </div>         
+        <div class="user-submit d-flex">
             <button class="btn btn-danger me-4" (click)="cancelFilter()" >Cancel</button>
             <button class="btn btn-primary" type="submit" (click)="applyFilter()">submit</button>
         </div>

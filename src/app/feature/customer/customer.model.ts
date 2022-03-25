@@ -61,7 +61,8 @@ export class Customer {
   export interface filterdata{
     name:string,
     email:string,
-    age:number
+    age:number,
+    gender:string
   }
   /** User Edit Details Model */
   // export class UserEditDetails {

@@ -24,7 +24,8 @@ export class FilterFormComponent implements OnInit {
     return this.fb.group({
       name:[''],
       email:[''],
-      age:['']
+      age:[''],
+      gender:['']
     })
   }
   cancelFilter(){
