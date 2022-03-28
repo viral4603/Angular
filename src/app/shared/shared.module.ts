@@ -4,6 +4,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { DeletePopUpComponent } from './delete-pop-up/delete-pop-up.component';
 import { FilterFormComponent } from './filter-form/filter-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -11,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     SearchPipe,
     DeletePopUpComponent,
-    FilterFormComponent
+    FilterFormComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports:[
     SearchPipe,
-    DeletePopUpComponent
+    DeletePopUpComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Customer, filterdata } from '../../customer.model';
+import { Customer } from '../../customer.model';
 import { CustomerListService } from '../customer-list-presenter/customer-list.service';
 
 @Component({
@@ -11,6 +11,9 @@ import { CustomerListService } from '../customer-list-presenter/customer-list.se
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerListPresentationComponent implements OnInit {
+  red:boolean = true;
+  userList:Customer[];
+
 
   @Input() public set customerList(value: Customer[] | null) {
     if (value) {
@@ -68,4 +71,14 @@ export class CustomerListPresentationComponent implements OnInit {
     this.customerListPresenterService.openfilterForm(this._customerListOriginal);
   }
 
+  //pagination
+  changePage(userList:Customer[]) {
+       this.userList = userList;
+      this.cdr.markForCheck();
+      console.log(this.userList);
+   
+  }
+
+
+ 
 }

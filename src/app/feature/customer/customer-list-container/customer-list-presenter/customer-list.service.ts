@@ -24,7 +24,6 @@ export class CustomerListService {
   }
   
   openfilterForm(currentList:Customer[]){
-    console.log(`prenter`,currentList)
     const config = new OverlayConfig();
     config.hasBackdrop = true;  
     config.positionStrategy = this.overlay.position().global().right();
@@ -37,22 +36,19 @@ export class CustomerListService {
     });
 
     componetRef.instance.filterData.subscribe((res : any) =>{
-      
       //get keys of array
       let dataKey = Object.keys(currentList[0]);
 
-      let newData = [...currentList];
-      
       dataKey.forEach((item : any) => {
         if (res[item]) {
           console.log(res[item])
-          newData = newData.filter((data : any) => {
+          currentList = currentList.filter((data : any) => {
             console.log(data[item])
             return data[item] == res[item]
           });
         }
       });
-      this.filterdata$.next(newData);
+      this.filterdata$.next(currentList);
       overlayRef.detach();
       
     });

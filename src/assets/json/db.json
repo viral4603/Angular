@@ -264,14 +264,6 @@
       "id": 1
     },
     {
-      "name": "virat",
-      "age": "30",
-      "email": "virataaa@gmail.com",
-      "gender": "Male",
-      "category": "Accessories",
-      "id": 2
-    },
-    {
       "name": "sachin",
       "age": "40",
       "email": "sachin@gmail.com",
@@ -292,7 +284,7 @@
       "age": "26",
       "email": "virat123@gmail.com",
       "gender": "Male",
-      "category": "Software",
+      "category": "Video Games",
       "id": 5
     },
     {
@@ -328,12 +320,28 @@
       "id": 9
     },
     {
-      "name": "sneha",
+      "name": "Mithali",
       "age": "25",
       "email": "sneha@gmail.com",
       "gender": "Female",
       "category": "Home & Kitchen",
       "id": 10
+    },
+    {
+      "name": "virat",
+      "age": "40",
+      "email": "i@ham.com",
+      "gender": "Male",
+      "category": "Electronics",
+      "id": 11
+    },
+    {
+      "name": "sushil",
+      "age": "hariyakar",
+      "email": "sushil@gmail.com",
+      "gender": "Male",
+      "category": "Video Games",
+      "id": 12
     }
   ],
   "category": [
