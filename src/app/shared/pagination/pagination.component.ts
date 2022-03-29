@@ -35,13 +35,10 @@ export class PaginationComponent implements OnInit {
   setPage(page: number) {
     // get new pager object for specified page
     this.pager = this.paginate(this.items.length, page, this.itemsPerPage, this.maxPages);
-    
     // get new page of items from items array
     var pageOfItems = this.items.slice(this.pager.startIndex, this.pager.endIndex + 1);
     
-    console.log(pageOfItems,'page pf Index herer')
     // call change page function in parent component
-
     this.changePage.emit(pageOfItems);
   }
 
@@ -52,6 +49,7 @@ export class PaginationComponent implements OnInit {
     if (maxPages === 0) { maxPages = 10; }
     // calculate total pages
     let totalPages = Math.ceil(totalItems / itemsPerPage);
+    
     // ensure current page isn't out of range
     if (currentPage < 1) {
       currentPage = 1;
@@ -90,6 +88,7 @@ export class PaginationComponent implements OnInit {
     var endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems - 1);
     // create an array of pages to ng-repeat in the pager control
     var pages = Array.from(Array((endPage + 1) - startPage).keys()).map(function (i) { return startPage + i; });
+   
     // return object with all pager properties required by the view
     return {
       totalItems: totalItems,

@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ThisReceiver } from '@angular/compiler';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customer } from '../../customer.model';
 import { CustomerListService } from '../customer-list-presenter/customer-list.service';
@@ -12,7 +14,9 @@ import { CustomerListService } from '../customer-list-presenter/customer-list.se
 })
 export class CustomerListPresentationComponent implements OnInit {
   red:boolean = true;
-  userList:Customer[];
+  public userList:Customer[];
+  isSort: boolean = false;
+  sortItems:any;
 
 
   @Input() public set customerList(value: Customer[] | null) {
@@ -40,6 +44,7 @@ export class CustomerListPresentationComponent implements OnInit {
 
   constructor(private customerListPresenterService: CustomerListService, private route: Router,
     private cdr: ChangeDetectorRef) {
+    this.userList =[];
     this.delete = new EventEmitter();
   }
 
@@ -49,13 +54,19 @@ export class CustomerListPresentationComponent implements OnInit {
       () => { console.log("Complete") }
     );
     //subscribe filter data
+    this.getFilterData();
+    console.log(this.sortData);
+  }
+
+
+  //get filter data
+  public getFilterData(){
     this.customerListPresenterService.filterdata$.subscribe(res => {
       this._customerList = res;
       this.FilterActive = true;
       this.cdr.markForCheck();
     })
   }
-
 
   //edit method
   public onEdit(id: number) {
@@ -66,6 +77,7 @@ export class CustomerListPresentationComponent implements OnInit {
   public onDelete(id: number) {
     this.customerListPresenterService.onDelete(id);
   }
+
   //open filter cdk
   openFilter() {
     this.customerListPresenterService.openfilterForm(this._customerListOriginal);
@@ -73,12 +85,18 @@ export class CustomerListPresentationComponent implements OnInit {
 
   //pagination
   changePage(userList:Customer[]) {
-       this.userList = userList;
+    this.userList = userList;
       this.cdr.markForCheck();
-      console.log(this.userList);
-   
+  } 
+  //drage row method
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.userList, event.previousIndex, event.currentIndex);
   }
 
-
- 
+  //sortData
+  sortData(event:any){
+    this.sortItems = event.target.innerHTML;
+    this.isSort = !this.isSort;
+    this.customerListPresenterService.sortingData(this.sortItems,this.userList,this.isSort)
+  }
 }

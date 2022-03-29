@@ -56,4 +56,17 @@ export class CustomerListService {
       overlayRef.detach();
     })
   }
+  //sorting data
+  sortingData(sortItem:string,sortData:Customer[],isSort:boolean){
+    console.log(sortItem.toLowerCase());
+    const property = sortItem.toString().toLowerCase()
+    if(sortData){
+      if(isSort){
+        sortData = sortData.sort((a:any,b:any)=> b[property] - a[property]);
+      }
+      else{
+        sortData = sortData.sort((a:any,b:any)=> a[property] - b[property]);
+      }
+   }
+  }
 }

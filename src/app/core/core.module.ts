@@ -25,6 +25,5 @@ import { HeaderComponent } from './header/header.component';
 })
 export class CoreModule {
   constructor() {
-    console.log('core  module load');
   }
 }

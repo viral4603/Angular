@@ -9,6 +9,7 @@ import { CustomerListPresentationComponent } from './customer-list-container/cus
 import { CustomerService } from './customer.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -24,7 +25,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     CustomerRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    DragDropModule
   ],
   providers:[
     CustomerService

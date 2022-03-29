@@ -275,7 +275,7 @@
       "name": "dhoni",
       "age": "45",
       "email": "dhoni@gmail.com",
-      "gender": "Male",
+      "gender": "Female",
       "category": "Electronics",
       "id": 4
     },
@@ -305,7 +305,7 @@
     },
     {
       "name": "shefali",
-      "age": "23",
+      "age": "25",
       "email": "shefali@gmail.com",
       "gender": "Female",
       "category": "Electronics",
@@ -328,20 +328,28 @@
       "id": 10
     },
     {
-      "name": "virat",
-      "age": "40",
-      "email": "i@ham.com",
-      "gender": "Male",
-      "category": "Electronics",
+      "name": "mn",
+      "age": "25",
+      "email": "ASDDA@GMAIL.COM",
+      "gender": "Female",
+      "category": "Accessories",
       "id": 11
     },
     {
       "name": "sushil",
-      "age": "hariyakar",
-      "email": "sushil@gmail.com",
+      "age": "25",
+      "email": "ASDDA@GMAIL.COM",
       "gender": "Male",
-      "category": "Video Games",
+      "category": "Software",
       "id": 12
+    },
+    {
+      "name": "salman",
+      "age": "55",
+      "email": "salman@gmail.com",
+      "gender": "Male",
+      "category": "Accessories",
+      "id": 13
     }
   ],
   "category": [
