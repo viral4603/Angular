@@ -15,7 +15,6 @@ import { CustomerListService } from '../customer-list-presenter/customer-list.se
 export class CustomerListPresentationComponent implements OnInit {
   red:boolean = true;
   public userList:Customer[];
-  isSort: boolean = false;
   sortItems:any;
 
 
@@ -85,7 +84,7 @@ export class CustomerListPresentationComponent implements OnInit {
 
   //pagination
   changePage(userList:Customer[]) {
-    this.userList = userList;
+      this.userList = userList;
       this.cdr.markForCheck();
   } 
   //drage row method
@@ -95,8 +94,7 @@ export class CustomerListPresentationComponent implements OnInit {
 
   //sortData
   sortData(event:any){
-    this.sortItems = event.target.innerHTML;
-    this.isSort = !this.isSort;
-    this.customerListPresenterService.sortingData(this.sortItems,this.userList,this.isSort)
+    this.sortItems = event.target.innerHTML;    
+    this.customerListPresenterService.sortingData(this.sortItems,this.userList)
   }
 }

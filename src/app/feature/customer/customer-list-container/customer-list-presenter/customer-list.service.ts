@@ -12,6 +12,8 @@ export class CustomerListService {
   public delete$:Observable<number>;
   public filterdata:Customer[];
   public filterdata$:Subject<Customer[]>;
+  public isSort: boolean = false;
+
 
   constructor( private overlay: Overlay) { 
     this.delete = new Subject();
@@ -57,16 +59,22 @@ export class CustomerListService {
     })
   }
   //sorting data
-  sortingData(sortItem:string,sortData:Customer[],isSort:boolean){
+  sortingData(sortItem:string,sortData:Customer[]){
     console.log(sortItem.toLowerCase());
+    this.isSort = !this.isSort;
+    let direction = this.isSort ? 1: -1;
     const property = sortItem.toString().toLowerCase()
-    if(sortData){
-      if(isSort){
-        sortData = sortData.sort((a:any,b:any)=> b[property] - a[property]);
+    // sorting
+    sortData = sortData.sort((a:any,b:any)=>{
+      if(a[property] < b[property]){
+        return -1 * direction;
+      }
+      else if(a[property] > b[property]){
+        return 1 * direction;
       }
       else{
-        sortData = sortData.sort((a:any,b:any)=> a[property] - b[property]);
+        return 0
       }
-   }
+    })
   }
 }

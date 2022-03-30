@@ -20,10 +20,7 @@ import { GetNamePipe } from './get-name.pipe';
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule,
     SharedModule,
-    FormsModule,
-    
  ]
   })
 export class EmployeeModule {

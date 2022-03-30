@@ -4,8 +4,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RouterModule } from '@angular/router';
-
 import { HeaderComponent } from './header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,10 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormsModule,
+    ReactiveFormsModule,
+
   ]
 })
 export class CoreModule {

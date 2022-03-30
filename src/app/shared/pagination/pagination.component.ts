@@ -86,6 +86,7 @@ export class PaginationComponent implements OnInit {
     // calculate start and end item indexes
     var startIndex = (currentPage - 1) * itemsPerPage;
     var endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems - 1);
+
     // create an array of pages to ng-repeat in the pager control
     var pages = Array.from(Array((endPage + 1) - startPage).keys()).map(function (i) { return startPage + i; });
    
