@@ -1,10 +1,14 @@
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SearchPipe } from './pipes/search.pipe';
-import { DeletePopUpComponent } from './delete-pop-up/delete-pop-up.component';
-import { FilterFormComponent } from './filter-form/filter-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeletePopUpComponent } from './delete-pop-up/delete-pop-up.component';
+import { FileUploadContainerComponent } from './file-upload-container/file-upload-container.component';
+import { FileUploadPresentationComponent } from './file-upload-container/file-upload-presentation/file-upload-presentation.component';
+import { FilterFormComponent } from './filter-form/filter-form.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { FileDragAndDropDirective } from './directives/file-drag-and-drop.directive';
 
 
 
@@ -13,12 +17,16 @@ import { PaginationComponent } from './pagination/pagination.component';
     SearchPipe,
     DeletePopUpComponent,
     FilterFormComponent,
-    PaginationComponent
+    PaginationComponent,
+    FileUploadContainerComponent,
+    FileUploadPresentationComponent,
+    FileDragAndDropDirective
+   
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     SearchPipe,
@@ -26,7 +34,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     PaginationComponent,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileUploadContainerComponent,
   ]
 })
 export class SharedModule { }
