@@ -320,7 +320,7 @@
       "id": 9
     },
     {
-      "name": "Mithali",
+      "name": "mithali",
       "age": "25",
       "email": "sneha@gmail.com",
       "gender": "Female",
@@ -377,5 +377,8 @@
       "id": 6,
       "name": "Video Games"
     }
+  ],
+  "files":[
+    
   ]
 }

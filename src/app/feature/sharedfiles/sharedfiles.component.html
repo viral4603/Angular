@@ -1,0 +1,13 @@
+<app-file-upload-presentation></app-file-upload-presentation>
+
+<!-- date : start -->
+<div class="p-4">
+    <form>
+        <label for="startDate">From:</label>
+        <input type="date" class="ms-2" (change)="readStartDate($event)" min="{{startDate}}">
+
+        <label for="endDate" class="ms-3">To:</label>
+        <input type="date" class="ms-2" (change)="readEndDate($event)" max="{{endDate}}">
+    </form>
+</div>
+<!-- date : end -->

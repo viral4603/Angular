@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'ngtemplate', component: DisplayModeComponent },
   { path: 'customer', loadChildren: () => import('./feature/customer/customer.module').then(m => m.CustomerModule) },
   { path: 'userForm', loadChildren: () => import('./feature/userForm/user-form.module').then(m => m.UserFormModule) },
+  { path: 'sharedfile', loadChildren: () => import('./feature/sharedfiles/sharedfiles.module').then(m => m.SharedfilesModule) },
 
   { path: '**', component: PagenotfoundComponent },
 ];

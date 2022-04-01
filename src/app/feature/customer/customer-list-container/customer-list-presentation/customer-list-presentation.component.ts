@@ -95,6 +95,6 @@ export class CustomerListPresentationComponent implements OnInit {
   //sortData
   sortData(event:any){
     this.sortItems = event.target.innerHTML;    
-    this.customerListPresenterService.sortingData(this.sortItems,this.userList)
+    this.userList = this.customerListPresenterService.sortingData(this.sortItems,this._customerListOriginal)
   }
 }

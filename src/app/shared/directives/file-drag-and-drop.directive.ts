@@ -5,9 +5,8 @@ import { Directive, EventEmitter, HostBinding, HostListener, Output } from '@ang
 })
 export class FileDragAndDropDirective {
 
-  //@Input() private allowed_extensions : Array<string> = ['png', 'jpg', 'bmp'];
   @Output() public filesChangeEmiter: EventEmitter<File[]> = new EventEmitter();
-  //@Output() private filesInvalidEmiter : EventEmitter<File[]> = new EventEmitter();
+
   @HostBinding('style.background') private background = '#eee';
   @HostBinding('style.border') private borderStyle = '2px dashed';
   @HostBinding('style.border-color') private borderColor = '#696D7D';
@@ -48,4 +47,5 @@ export class FileDragAndDropDirective {
     }
     this.filesChangeEmiter.emit(valid_files);
   }
+
 }

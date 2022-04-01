@@ -19,6 +19,7 @@ export class FileUploadPresentationComponent implements OnInit {
       this.filesList.emit(res);
       this.cdr.markForCheck();
       this.files = res;
+      console.log(res);
     });
   }
 
@@ -28,6 +29,10 @@ export class FileUploadPresentationComponent implements OnInit {
   
   openConfirmDialog(index:number){
     alert(index);
+  }
+  
+  removeFiles(filename:string){
+    this.fs.removeFiles(filename,this.files)
   }
 
 }
