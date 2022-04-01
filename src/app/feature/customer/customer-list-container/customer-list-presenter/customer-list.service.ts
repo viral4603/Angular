@@ -65,7 +65,7 @@ export class CustomerListService {
     let direction = this.isSort ? 1: -1;
     const property = sortItem.toString().toLowerCase()
     // sorting
-    sortData = sortData.sort((a:any,b:any)=>{
+    return [...sortData].sort((a:any,b:any)=>{
       if(a[property] < b[property]){
         return -1 * direction;
       }

@@ -1,15 +1,15 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-display-mode',
   templateUrl: './display-mode.component.html',
   styleUrls: ['./display-mode.component.scss']
 })
-export class DisplayModeComponent implements OnInit {
+export class DisplayModeComponent implements OnInit, AfterViewChecked {
   mode:string ='card';
   @ViewChild('cardTemplate') cardTemplate:TemplateRef<HTMLElement>;
   @ViewChild('listTemplate') listTemplate:TemplateRef<HTMLElement>;
-  constructor() { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
@@ -32,13 +32,23 @@ export class DisplayModeComponent implements OnInit {
     { mode: "card" },
     { mode: "list" },
   ];
+
+  ngAfterViewChecked(){
+    //your code to update the model
+    this.cdr.detectChanges();
+ }
+
   get template() {
  
-    if(this.mode=="list") return this.listTemplate
+    if(this.mode=="list") {
+      console.log('hii');
+      return this.listTemplate; 
+    }
     else{
-      return this.cardTemplate
+      console.log(this.cardTemplate);
+      return this.cardTemplate; 
     }
   }
- 
+
 
 }
