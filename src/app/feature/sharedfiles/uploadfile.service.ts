@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { file } from 'src/app/shared/file-upload/file.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -13,7 +14,11 @@ export class UploadfileService {
     this.url = environment.baseURL;
   }
   
-  postFile(file:any):Observable<any>{
-    return this.http.post<any>(`${this.url}/files`,file);
+  postFile(file:file):Observable<file>{
+    return this.http.post<file>(`${this.url}/files`,file);
   }
+  getFiles():Observable<file[]>{
+    return this.http.get<file[]>(`${this.url}/files`);
+  }
+
 }

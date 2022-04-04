@@ -1,34 +1,36 @@
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>Users</h4>
+</div>
 <div class="user-wrapper">
     <!-- user-header-start -->
-    <div class="main-header row justify-space-between align-center">
-        <h2>Users</h2>
-        <div class="user-right row align-center">
+    <div class="main-header col-6">
+        <div class="user-right align-center">
             <div class="row align-center">
                 <div class="sub-title">
                     <h4>Client</h4>
                 </div>
-                <div class="select-client">
-                    <select [(ngModel)]="searchId" class="user-select">
+                <div class="dropdown mb-3">
+                    <select [(ngModel)]="searchId" class="form-control form-select user-select">
                         <option value="0" selected>Select Client</option>
                         <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}</option>
                     </select>
                 </div>
-                <div class="user-search">
-                    <input class="search user-input" type="search">
+                <div class="user-search mb-3">
+                    <input class="search form-control user-input" type="search">
                 </div>
             </div>
-            <div class="new-user">
+            <div class="new-user mb-3">
                 <button type="button" class="btn btn-primary" [disabled]="userbtn" (click)="togglebtn()"><span>+</span> new user</button>
             </div>
         </div>
     </div>
     <!-- user-header:end -->
     <!-- user-form:strat -->
-    <div class="user-form mb-1" *ngIf="userbtn">
+    <div class="user-form col-6 mb-1" *ngIf="userbtn">
         <form [formGroup]="userForm">
-            <div class="row justify-space-between mb-1">
-                <div class="user-form-input">
-                    <input type="text" class="user-input" placeholder="first Name*" formControlName="firstname">
+            <div class="d-flex flex-column justify-content-between mb-1">
+                <div class="user-form-input mb-3">
+                    <input type="text" class="form-control user-input" placeholder="first Name*" formControlName="firstname">
                     <div class="error" *ngIf="submitted || control['firstname'].touched && control['firstname'].invalid ">
                         <small class="input-error"
                             *ngIf="control['firstname'].errors && control['firstname'].errors['required']">
@@ -37,8 +39,8 @@
                     </div>
                 </div>
 
-                <div class="user-form-input">
-                    <input type="text" class="user-input" placeholder="Last Name*" formControlName="lastname">
+                <div class="user-form-input mb-3">
+                    <input type="text" class="form-control user-input" placeholder="Last Name*" formControlName="lastname">
                     <div class="error" *ngIf="submitted ||control['lastname'].touched && control['lastname'].invalid ">
                         <small class="input-error"
                             *ngIf="control['lastname'].errors && control['lastname'].errors['required']">
@@ -46,8 +48,8 @@
                         </small>
                     </div>
                 </div>
-                <div class="user-form-input">
-                    <input type="text" class="user-input" placeholder="Email*" formControlName="email">
+                <div class="user-form-input mb-3">
+                    <input type="text" class="form-control user-input" placeholder="Email*" formControlName="email">
                     <div class="error" *ngIf="submitted ||control['email'].touched && control['email'].invalid ">
                         <small class="input-error"
                             *ngIf="control['email'].errors && control['email'].errors['required']">
@@ -58,8 +60,8 @@
                         </small>
                     </div>
                 </div>
-                <div class="user-form-input">
-                    <input type="text" class="user-input" placeholder="Private Contact Number*"
+                <div class="user-form-input mb-3">
+                    <input type="text" class="form-control user-input" placeholder="Private Contact Number*"
                         formControlName="number">
                     <div class="error" *ngIf="submitted ||control['number'].touched && control['number'].invalid">
                         <small class="input-error" *ngIf="control['number'].errors && control['number'].errors['required']">
@@ -74,9 +76,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row m-auto justify-space-around mb-1">
+            <div class="d-flex m-auto justify-space-around mb-3">
                 <div class="user-form-input select-option">
-                    <select name="user-client" class="user-select" formControlName="clientname">
+                    <select name="user-client" class="form-control form-select user-select" formControlName="clientname">
                         <option disabled selected>Select Client</option>
                         <option *ngFor="let client of clients;let i = index" [value]="client.id">{{client.name}}
                         </option>
@@ -89,7 +91,7 @@
 
                 </div>
                 <div class="user-form-input select-option">
-                    <select name="user-offices" class="user-select" formControlName="office" >
+                    <select name="user-offices" class="form-control form-select user-select ms-3" formControlName="office" >
                         <option disabled selected>Select office</option>
                         <option *ngFor="let office of offices;let i = index" [value]="office.id">{{office.name}}
                         </option>
@@ -102,17 +104,17 @@
                         </div>
                      </div>
                 </div>
-            <div class="form-btn row">
-                <button type="button" class="button button-cancel" (click)="closeForm()">Cancel</button>
-                <button type="button" class="button button-primary" (click)="saveUserData()">Save</button>
+            <div class="form-btn d-flex">
+                <button type="button" class="btn btn-danger" (click)="closeForm()">Cancel</button>
+                <button type="button" class="ms-3 btn btn-primary" (click)="saveUserData()">Save</button>
             </div>
         </form>
     </div>
     <!-- user-form:end -->
     <!-- user-display-list:start -->
-    <div class="user-list">
-        <table class="user-table">
-            <thead>
+    <div class="user-list mt-4">
+        <table class="table table-hover border">
+            <thead class="bg-dark text-white">
                 <tr>
                     <th>FIRST NAME</th>
                     <th>LAST NAME</th>

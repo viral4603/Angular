@@ -6,6 +6,7 @@ import { Directive, EventEmitter, HostBinding, HostListener, Output } from '@ang
 export class FileDragAndDropDirective {
 
   @Output() public filesChangeEmiter: EventEmitter<File[]> = new EventEmitter();
+  
 
   @HostBinding('style.background') private background = '#eee';
   @HostBinding('style.border') private borderStyle = '2px dashed';
@@ -45,6 +46,7 @@ export class FileDragAndDropDirective {
         console.error("File size limit (2 MB) exceeded");
       }
     }
+    console.log(valid_files);
     this.filesChangeEmiter.emit(valid_files);
   }
 

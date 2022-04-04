@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { file } from 'src/app/shared/file-upload/file.model';
 
 @Component({
   selector: 'app-file-list-presentation',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-list-presentation.component.scss']
 })
 export class FileListPresentationComponent implements OnInit {
+  @Input() displayFileList:file[];
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

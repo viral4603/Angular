@@ -1,4 +1,9 @@
-<app-file-upload-presentation></app-file-upload-presentation>
+
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>File Upload</h4>
+</div>
+
+<app-file-upload-presentation (filesList)="postUploadedFile($event)" [displayFileList] ="fileList"></app-file-upload-presentation>
 
 <!-- date : start -->
 <div class="p-4">
@@ -11,3 +16,6 @@
     </form>
 </div>
 <!-- date : end -->
+<!-- display file filelist -->
+
+<app-file-list-presentation  [displayFileList] ="fileList" ></app-file-list-presentation>

@@ -1,5 +1,6 @@
-import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FileUploadServiceService } from '../file-upload-presentor/file-upload-service.service';
+import { file } from '../file.model';
 
 @Component({
   selector: 'app-file-upload-presentation',
@@ -7,7 +8,10 @@ import { FileUploadServiceService } from '../file-upload-presentor/file-upload-s
   styleUrls: ['./file-upload-presentation.component.scss']
 })
 export class FileUploadPresentationComponent implements OnInit {
-  @Output() filesList:EventEmitter<any> = new EventEmitter<any>();
+  @Input() displayFileList:file[];
+  @Output() filesList : EventEmitter<file> = new EventEmitter<file>();
+  fileList:File[];
+  file:File[];
 
 
   //files array
@@ -18,21 +22,21 @@ export class FileUploadPresentationComponent implements OnInit {
     this.fs.files$.subscribe(res=>{
       this.filesList.emit(res);
       this.cdr.markForCheck();
-      this.files = res;
-      console.log(res);
     });
   }
 
   onFileChange(file:any){
-    this.fs.getFiles(file);
+    this.files = Object.keys(file).map(key => file[key]);
+    this.file = file;
   }
-  
-  openConfirmDialog(index:number){
-    alert(index);
-  }
-  
+ 
   removeFiles(filename:string){
-    this.fs.removeFiles(filename,this.files)
+    this.fs.removeFiles(filename,this.files);
   }
 
+  uploadFiles(){
+    this.fs.getFiles(this.file,this.displayFileList);   
+    this.file =[]; 
+    this.files =[];
+  }
 }

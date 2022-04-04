@@ -1,1 +1,20 @@
-<p>file-list-presentation works!</p>
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th >id</th>
+            <th>Name</th>
+            <th>size</th>
+            <th>type</th>
+            <th>content</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let files of displayFileList ;let i = index" >
+            <td>{{i+1}}</td>
+           <td>{{files.name}}</td>
+           <td>{{(files.size/1024/1024).toFixed(2)}}MB</td>
+           <td>{{files.type}}</td>
+           <td><img src={{files.content}} alt="upload image" style="height: 25px; width: 25px;"></td>
+        </tr>
+    </tbody>
+</table>
