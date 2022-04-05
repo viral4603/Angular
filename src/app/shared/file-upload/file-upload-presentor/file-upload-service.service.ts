@@ -6,19 +6,15 @@ import { file } from '../file.model';
   providedIn: 'root'
 })
 export class FileUploadServiceService {
-
-  public fileData: file;
-
-  private _files: Subject<any>;
-  public files$: Observable<any>;
+  private _files: Subject<file>;
+  public files$: Observable<file>;
 
   constructor() {
     this._files = new Subject<any>();
     this.files$ = this._files.asObservable();
-
   }
 
-  getFiles(file: File[], filelist: file[]) {
+  public uploadFiles(file: File[], filelist: file[]) {
     //get filename which already exists in json
     const fileNames = filelist.map(value => value.name);
 
@@ -34,12 +30,12 @@ export class FileUploadServiceService {
           let reader = new FileReader();
           reader.readAsDataURL(file[i]);
           reader.onload = () => {
-            this.fileData = {} as file;
-            this.fileData.name = file[i].name;
-            this.fileData.size = file[i].size;
-            this.fileData.type = file[i].type;
-            this.fileData.content = reader.result;
-            this._files.next(this.fileData);
+            const fileData = {} as file;
+            fileData.name = file[i].name;
+            fileData.size = file[i].size;
+            fileData.type = file[i].type;
+            fileData.content = reader.result;
+            this._files.next(fileData);
           }
         }
       }

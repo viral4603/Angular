@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let files of displayFileList ;let i = index" >
+        <tr *ngFor="let files of displayFileList ;let i = index" class="align-middle" >
             <td>{{i+1}}</td>
            <td>{{files.name}}</td>
            <td>{{(files.size/1024/1024).toFixed(2)}}MB</td>

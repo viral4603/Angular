@@ -16,26 +16,26 @@ export class FileUploadPresentationComponent implements OnInit {
   constructor(private fs:FileUploadServiceService,private cdr:ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.fs.files$.subscribe(res=>{
+    this.fs.files$.subscribe((res:any)=>{
       this.filesList.emit(res);
       this.files.splice(this.files.indexOf(res.name),1);
       this.cdr.markForCheck();
     });
   }
 
-  onFileChange(file:File[]){
+  public onFileChange(file:File[]){
     this.files = Object.keys(file).map((key:any) => file[key]);
   }
  
-  removeFiles(filename:string){
+  public removeFiles(filename:string){
     this.fs.removeFiles(filename,this.files);   
-   this.files = this.files;
+    this.files = this.files;
 
   }
 
-  uploadFiles(){
+  public uploadFiles(){
     if(this.files.length>0){
-      this.fs.getFiles(this.files,this.displayFileList);   
+      this.fs.uploadFiles(this.files,this.displayFileList);   
       this.files =[];
     }
     else{
