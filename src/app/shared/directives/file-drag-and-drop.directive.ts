@@ -37,16 +37,7 @@ export class FileDragAndDropDirective {
     this.background = '#eee';
     this.borderColor = '#696D7D';
     this.borderStyle = '2px dashed';
-
-    let valid_files: Array<File> = [];
-    for (let file of evt.dataTransfer.files) {
-      if ((file.size / (1024 ** 2)) < 2) {
-        valid_files.push(file);
-      } else {
-        console.error("File size limit (2 MB) exceeded");
-      }
-    }
-    console.log(valid_files);
+    let valid_files: Array<File> = evt.dataTransfer.files;
     this.filesChangeEmiter.emit(valid_files);
   }
 

@@ -10,33 +10,36 @@ import { file } from '../file.model';
 export class FileUploadPresentationComponent implements OnInit {
   @Input() displayFileList:file[];
   @Output() filesList : EventEmitter<file> = new EventEmitter<file>();
-  fileList:File[];
-  file:File[];
-
 
   //files array
-  public files: any[] = [];
+  public files: File[] = [];
   constructor(private fs:FileUploadServiceService,private cdr:ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.fs.files$.subscribe(res=>{
       this.filesList.emit(res);
+      this.files.splice(this.files.indexOf(res.name),1);
       this.cdr.markForCheck();
     });
   }
 
-  onFileChange(file:any){
-    this.files = Object.keys(file).map(key => file[key]);
-    this.file = file;
+  onFileChange(file:File[]){
+    this.files = Object.keys(file).map((key:any) => file[key]);
   }
  
   removeFiles(filename:string){
-    this.fs.removeFiles(filename,this.files);
+    this.fs.removeFiles(filename,this.files);   
+   this.files = this.files;
+
   }
 
   uploadFiles(){
-    this.fs.getFiles(this.file,this.displayFileList);   
-    this.file =[]; 
-    this.files =[];
+    if(this.files.length>0){
+      this.fs.getFiles(this.files,this.displayFileList);   
+      this.files =[];
+    }
+    else{
+      alert("select a files");
+    }
   }
 }

@@ -1,7 +1,25 @@
 .dropzone{
     border:2px dotted $primary;
-    height: 300px;
+    height: 400px;
     width: 100%;
     background-color: $secondary;
 }
 
+.fileItem{
+    width: fit-content;
+    background-color: $danger;
+    color: $white;
+    border-radius: $border-radius;
+}
+.view-image{
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    img{
+        height: auto;
+        width: 100%;
+    }
+}
+.file{
+    border-radius: $border-radius;
+}

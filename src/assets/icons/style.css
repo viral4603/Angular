@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'app';
-  src:  url('fonts/app.eot?653jk8');
-  src:  url('fonts/app.eot?653jk8#iefix') format('embedded-opentype'),
-    url('fonts/app.ttf?653jk8') format('truetype'),
-    url('fonts/app.woff?653jk8') format('woff'),
-    url('fonts/app.svg?653jk8#app') format('svg');
+  src:  url('fonts/app.eot?htrtkm');
+  src:  url('fonts/app.eot?htrtkm#iefix') format('embedded-opentype'),
+    url('fonts/app.ttf?htrtkm') format('truetype'),
+    url('fonts/app.woff?htrtkm') format('woff'),
+    url('fonts/app.svg?htrtkm#app') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,32 +25,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-menu:before {
-  content: "\e900";
+.icon-arrest:before {
+  content: "\e909";
 }
-.icon-food:before {
-  content: "\e901";
-}
-.icon-lunch:before {
-  content: "\e901";
-}
-.icon-soup:before {
-  content: "\e901";
-}
-.icon-data_usage:before {
-  content: "\e902";
-}
-.icon-logout:before {
-  content: "\e905";
-}
-.icon-edit:before {
-  content: "\e906";
-}
-.icon-user-o:before {
-  content: "\e903";
-}
-.icon-database:before {
-  content: "\e904";
+.icon-cross:before {
+  content: "\e907";
 }
 .icon-files-empty:before {
   content: "\e925";
@@ -81,4 +60,67 @@
 }
 .icon-libreoffice:before {
   content: "\eae3";
+}
+.icon-cancel:before {
+  content: "\e908";
+}
+.icon-food:before {
+  content: "\e901";
+}
+.icon-lunch:before {
+  content: "\e901";
+}
+.icon-soup:before {
+  content: "\e901";
+}
+.icon-file-play:before {
+  content: "\e929";
+}
+.icon-copy:before {
+  content: "\e92c";
+}
+.icon-stack:before {
+  content: "\e92e";
+}
+.icon-folder-open:before {
+  content: "\e930";
+}
+.icon-spinner:before {
+  content: "\e97a";
+}
+.icon-stats-bars:before {
+  content: "\e99c";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
+.icon-libreoffice:before {
+  content: "\eae3";
+}
+.icon-data_usage:before {
+  content: "\e902";
+}
+.icon-logout:before {
+  content: "\e905";
+}
+.icon-edit:before {
+  content: "\e906";
+}
+.icon-menu:before {
+  content: "\e900";
+}
+.icon-file-play:before {
+  content: "\e929";
+}
+.icon-copy:before {
+  content: "\e92c";
+}
+.icon-user-o:before {
+  content: "\e903";
+}
+.icon-database:before {
+  content: "\e904";
 }
