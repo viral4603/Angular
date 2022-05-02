@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeServicesService } from '../employeeService/employee-services.service';
 import { Department, Employee } from '../model';
+import * as crypto from 'crypto-js';
 
 
 
@@ -16,10 +17,11 @@ export class EmployeeformComponent implements OnInit {
   employee: Employee;
   employeeForm = {} as FormGroup;
   departmentList:Department[]=[];
+  formData = new FormData();
+  selectedFile: string | Blob;
   // urlid:number;
   closeForm:boolean =true;
   @Input() UserData:Employee;
-
   @Output() cancelUser:EventEmitter<any> = new EventEmitter<any>();
   @Output() saveUser:EventEmitter<any> = new EventEmitter<any>();
   @Input() urlid:number;
@@ -46,7 +48,11 @@ export class EmployeeformComponent implements OnInit {
       this.employeeForm.patchValue(res);
     })
   }
-
+//select file 
+  public onFileSelected(event:any) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+  }
   //create a employe form
   createEmployeeForm(): FormGroup {
     return this.fb.group({
@@ -56,20 +62,41 @@ export class EmployeeformComponent implements OnInit {
       phone: [null, [Validators.required, Validators.minLength(10),Validators.maxLength(10)]],
       gender: ['male'],
       joiningdate: [null],
-      department: ['', Validators.required]
+      department: ['', Validators.required],
     })
   }
+
+  //send data using form group
+
   //create new entry of employee
   saveEmployee() {
-  
+
+// Encrypt
+    var ciphertext = crypto.SHA512('Veer@123').toString();
+    console.log(ciphertext);
+    console.log(ciphertext.length);
+    // var deCrypt = crypto.AES.decrypt(ciphertext,'secret key 123').toString(crypto.enc.Utf8);
+    // console.log(deCrypt);
+
+    this.formData.append('firstname',this.employeeForm.value.firstname);
+    this.formData.append('lastname',this.employeeForm.value.lastname);
+    this.formData.append('email',this.employeeForm.value.email);
+    this.formData.append('phone',this.employeeForm.value.phone);
+    this.formData.append('gender',this.employeeForm.value.gender);
+    this.formData.append('joiningdate',this.employeeForm.value.joiningdate);
+    this.formData.append('department',this.employeeForm.value.department);
+    this.formData.append('image', this.selectedFile);    
+    console.log(this.formData.get("image"));
+
     if (this.employeeForm['status'] == 'INVALID') {
       this.submited =true;
           console.log('reslove error');
     }
     else {
+  
       if(!this.urlid){
-        this.employeeService.createEmployee(this.employeeForm.value).subscribe(res => {
-          console.log('Product created!');
+        this.employeeService.createEmployee(this.formData).subscribe(res => {
+          console.log('Product created!',res);
           this.saveUser.emit();
           // this.router.navigate(['/employee/list']);
         })

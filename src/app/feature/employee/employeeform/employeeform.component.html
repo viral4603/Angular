@@ -77,6 +77,10 @@
                 </div>
             </div>
         </div>
+        <div>
+            <input type="file" multiple name="image" (change)="onFileSelected($event)">
+      </div>        
+
         <div class="user-submit d-flex justify-content-end">
             <button class="btn btn-danger me-4" (click)="cancelEmployee()" >Cancel</button>
             <button class="btn btn-primary" type="submit" (click)="saveEmployee()">submit</button>

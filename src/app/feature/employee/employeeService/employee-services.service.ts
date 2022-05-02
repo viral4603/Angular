@@ -20,7 +20,7 @@ export class EmployeeServicesService {
      
   } 
   //add employee
-  createEmployee(employee:Employee): Observable<Employee> {
+  createEmployee(employee:FormData): Observable<Employee> {
      return this.https.post<Employee>(`${this.httpLink}/employee`,employee);
   }
   
