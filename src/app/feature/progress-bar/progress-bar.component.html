@@ -1,0 +1,63 @@
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>Progress Bar</h4>
+</div>
+<div class="progress-bar mt-5 px-5">
+    <div class="row g-0">
+        <div class="col-3 progress-step" [ngClass]="{'finish':isSecondForm}">
+            <div class="progress-circle">
+                <p class="mb-0 d-flex align-item-center justify-content-center">1</p>
+            </div>
+        </div>
+        <div class="col-3 progress-step" [ngClass]="{'finish':isSecondCompleted}">
+            <div class="progress-circle">
+                <p class="mb-0 d-flex align-items-center justify-content-center">2</p>
+            </div>
+        </div>
+        <div class="col-3 progress-step" [ngClass]="{'finish':isSecondCompleted}">
+            <div class="progress-circle d-flex align-items-center justify-content-center">
+                <p class="mb-0"><span class="icon icon-data_usage fs-6"></span></p>
+            </div>
+        </div>
+   
+    </div>
+</div>
+
+<div class="progress-form p-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-step-1" *ngIf="!isSecondForm">  
+                <form [formGroup]="firstForm">
+                    <div class="mb-3">    
+                        <label>First Name</label><br>
+                        <input formControlName="firstname" id="firstname" type="text" class="form-control user-input mt-3"
+                            placeholder="Enter your firstname">
+                    </div>
+                    <div class="mb-3">    
+                        <label>Last Name</label><br>
+                        <input formControlName="lastname" id="lastname" type="text" class="form-control user-input mt-3"
+                            placeholder="Enter your lastname">
+                    </div>
+                </form>    
+            </div>
+            <div class="form-step-2" *ngIf="isSecondForm">
+                <form [formGroup]="secondForm">
+                    <div class="mb-3">    
+                        <label>Email</label><br>
+                        <input formControlName="email" id="email" type="text" class="form-control user-input mt-3"
+                            placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">    
+                        <label>Address</label><br>
+                        <input formControlName="address" id="address" type="text" class="form-control user-input mt-3"
+                            placeholder="Enter your address">
+                    </div>
+                </form>    
+            </div>
+            <div class="submit-button text-end">
+                <button type="submit" class="btn btn-primary me-2" (click)="onPrevious()">Previous</button>
+                <button type="button" class="btn btn-success" (click)="onSubmit()">Next</button>
+            </div>            
+        </div>
+    </div>
+    
+</div>

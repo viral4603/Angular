@@ -12,13 +12,15 @@ import { ItemViewComponent } from './feature/display-mode/item-view/item-view.co
 import { FormComponent } from './feature/form/form.component';
 import { ResumebuilderModule } from './feature/resumebuilder/resumebuilder.module';
 import { UserModule } from './feature/user/user.module';
+import { ProgressBarComponent } from './feature/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     DisplayModeComponent,
-    ItemViewComponent,   
+    ItemViewComponent,
+    ProgressBarComponent,   
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PagenotfoundComponent } from './core/pagenotfound/pagenotfound.component';
 import { DisplayModeComponent } from './feature/display-mode/display-mode.component';
+import { ProgressBarComponent } from './feature/progress-bar/progress-bar.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'customer', loadChildren: () => import('./feature/customer/customer.module').then(m => m.CustomerModule) },
   { path: 'userForm', loadChildren: () => import('./feature/userForm/user-form.module').then(m => m.UserFormModule) },
   { path: 'sharedfile', loadChildren: () => import('./feature/sharedfiles/sharedfiles.module').then(m => m.SharedfilesModule) },
+  { path: 'progress-bar', component:ProgressBarComponent },
 
   { path: '**', component: PagenotfoundComponent },
 ];
