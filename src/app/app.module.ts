@@ -18,7 +18,7 @@ import { UserModule } from './feature/user/user.module';
     AppComponent,
     FormComponent,
     DisplayModeComponent,
-    ItemViewComponent,   
+    ItemViewComponent,
   ],
   imports: [
     BrowserModule,

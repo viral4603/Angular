@@ -19,6 +19,7 @@
                     <td><button class="btn btn-primary" (click)="editForm(i)">edit</button></td>
                     <td><button  class="btn btn-danger"(click)="deleteUser(i)">delete</button></td>
                 </tr>
+                <tr class="text-center" *ngIf="!userdata.length"><td colspan="6">No Record Found</td></tr>
             </tbody>
         
         </table>

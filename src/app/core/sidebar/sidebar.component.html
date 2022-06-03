@@ -76,6 +76,24 @@
                         <span class="nav-title ps-4">MVP pattern</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a id="patient" class="nav-link" appChangeColor routerLink="doctor" routerLinkActive="active-link">
+                        <span class="icon-menu"></span>
+                        <span class="nav-title ps-4">Doctor</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="doctor/create-prescription" routerLinkActive="">
+                        <span class="icon-menu"></span>
+                        <span class="nav-title ps-4">Creted Prescription</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" appChangeColor routerLink="" routerLinkActive="">
+                        <span class="icon-menu"></span>
+                        <span class="nav-title ps-4">Pharmacies</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Navbar:end -->
@@ -83,7 +101,7 @@
     <!-- sidebar:end -->
 
     <!-- start:main-display content -->
-    <div class="main-content flex-grow-1 px-5">
+    <div class="main-content flex-grow-1 p-5">
         <router-outlet></router-outlet>
     </div>
     <!-- end:main-display content -->

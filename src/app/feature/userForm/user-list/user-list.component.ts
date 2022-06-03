@@ -12,6 +12,7 @@ export class UserListComponent implements OnInit {
   filterData: User;
   activeId: number;
   isEditMode: boolean = false;
+  localItem:string | null;
   
   //display list of user
   userdata: User[] = [];
@@ -19,6 +20,13 @@ export class UserListComponent implements OnInit {
 
 
   constructor(private userService: UserdatatransferService) {
+    this.localItem = localStorage.getItem("userData");
+    if(this.localItem == null){
+      this.userdata = [];
+    }
+    else{
+      this.userdata = JSON.parse(this.localItem);
+    }
 
   }
 
@@ -27,10 +35,14 @@ export class UserListComponent implements OnInit {
       if (this.isEditMode) {
         this.userdata[this.activeId] = res;
         this.isEditMode = false;
+        localStorage.setItem("userData",JSON.stringify(this.userdata));
+
       } else {
         this.userdata.push(res);
+        localStorage.setItem("userData",JSON.stringify(this.userdata));
       }
     });
+    console.log(localStorage.getItem("userData"));
   }
 
   editForm(id: number) {
@@ -41,7 +53,8 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(id: number) {
-    return this.userdata.splice(id, 1);
+    this.userdata.splice(id, 1);
+    localStorage.setItem("userData",JSON.stringify(this.userdata)); 
   }
 
 }
