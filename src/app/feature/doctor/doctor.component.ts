@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-doctor',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctor.component.scss']
 })
 export class DoctorComponent implements OnInit {
-
-  constructor() { }
-
+  public user:FormGroup;
+  constructor(private fb:FormBuilder) { 
+    this.user = this.fb.group({
+      
+    })
+  }
+    
   ngOnInit(): void {
   }
 

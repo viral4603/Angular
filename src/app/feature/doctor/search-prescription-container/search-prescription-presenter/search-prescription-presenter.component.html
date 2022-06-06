@@ -1,0 +1,50 @@
+<div class="main-heading bg-white d-flex align-items-center px-4">
+    <h4>Customer Registration</h4>
+</div>
+<div class="search-prescription row g-4">
+    <form class="col-12 ">      
+        <form class="col-6 d-flex" [formGroup]="searchForm">    
+            <div class="w-100">
+                <input type="text" class="user-input form-control" name="phoneNumber" formControlName="userPhone" placeholder="enter your number">
+                <div class="error text-danger mt-3" *ngIf="getControl!['dirty'] || getControl!['touched'] && getControl!['errors']">
+                    <div *ngIf="getControl!['errors'] && getControl!['errors']!['required']">*Number is required.
+                    </div>
+                    <div *ngIf="getControl!['errors'] && getControl!['errors']!['maxlength']">*Number Should be max 10
+                        character.</div>
+                </div>
+            </div>           
+            <div>
+                <button type="submit" class="btn btn-primary ms-3" (click)="onSearch()">Search</button>
+            </div>
+        </form>            
+    </form>
+    <!--list view:start-->
+    <div class="col-12 pt-1">
+        <div class="col-6 border rounded" >
+            <div class="row" *ngFor="let user of userDetails ; let i = index;" (click)="viewUser(i)">
+                <div class="col-8 item-details d-flex align-items-center"> 
+                    <figure class="phramacy-image mb-0">
+                        <img src="../../../assets/images/img_avatar.png" alt="pharmacy iamge">
+                    </figure>
+                    <div class="overflow-hidden ps-3">
+                        <h6 class="fw-bold pharmacy-name mb-0 text-truncate">
+                            {{user.firstname}}
+                        </h6>
+                        <p class="mb-0">{{user.email}}</p>
+                    </div>
+                </div>
+                <div class="col-4 pharmacy-contact text-end">
+                    <p class="mb-0">12:30 PM</p>
+                </div>
+            </div>
+            <div *ngIf="!userDetails?.length">
+                no record found
+            </div>
+        </div>
+        <div class="col-6">
+
+        </div>
+    </div>
+    <!--list view:end-->
+    
+</div>

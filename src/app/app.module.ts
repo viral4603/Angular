@@ -22,9 +22,7 @@ import { UserModule } from './feature/user/user.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
     ResumebuilderModule,
     CoreModule,
